@@ -1,24 +1,42 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 
-		<title>Bitcoin Wallet by Coinb.in</title>
+		<title>Veles Wallet</title>
 
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<meta name="keywords" content="bitcoin, wallet, multisig, multisignature, address, browser, segwit, javascript, js, broadcast, transaction, verify, decode" />
-		<meta name="description" content="A Bitcoin Wallet written in Javascript. Supports Multisig, SegWit, Custom Transactions, nLockTime and more!" />
+		<meta name="keywords" content="veles, wallet, multisig, multisignature, address, browser, segwit, javascript, js, broadcast, transaction, verify, decode" />
+		<meta name="description" content="A Veles Wallet written in Javascript. Supports Multisig, SegWit, Custom Transactions, nLockTime and more!" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="css/custom.css" media="screen">
 		<link rel="stylesheet" href="css/style.css" media="screen">
-		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://veles.network/js/src/jquery.jqplot.css">
+
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/moment.min.js"></script>
 		<script type="text/javascript" src="js/transition.js"></script>
 		<script type="text/javascript" src="js/collapse.js"></script>
+
+		<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+		<script src="https://veles.network/js/src/jquery.jqplot.js"></script>
+		<script src="https://veles.network/js/src/plugins/jqplot.dateAxisRenderer.js"></script>
+		<script src="https://veles.network/js/src/plugins/jqplot.categoryAxisRenderer.js"></script>
+		<script src="https://veles.network/js/src/plugins/jqplot.ohlcRenderer.js"></script>
+		<script src="https://veles.network/js/src/plugins/jqplot.pieRenderer.js"></script>
+		<script src="https://veles.network/js/src/plugins/jqplot.highlighter.js"></script>
+		<script src="https://veles.network/js/src/plugins/jqplot.cursor.js"></script>
+		<script src="https://veles.network/js/charts.js"></script>
+		<script src="https://veles.network/js/websocket.js"></script>
+		<script src="https://veles.network/js/websocket-ui.js"></script>
+		<script src="https://veles.network/js/footer.js"></script>
+		<script src="https://veles.network/js/console.js"></script>
+
 
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
@@ -39,63 +57,147 @@
 		<script type="text/javascript" src="js/coinbin.js"></script>
 	</head>
 
+
+			<!-- Fixed navbar -->
+		<!--
+		<div id="header" class="navbar navbar-default " role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#home" class="navbar-brand" id="homeBtn"><img src="images/coinbin.gif" style="height:25px;margin-top:-5px"></a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> New<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#newAddress" data-toggle="tab">Address</a></li>
+								<li><a href="#newSegWit" data-toggle="tab">SegWit Address</a></li>
+								<li><a href="#newMultiSig" data-toggle="tab">MultiSig Address</a></li>
+								<li><a href="#newTimeLocked" data-toggle="tab">Time Locked Address</a></li>
+								<li><a href="#newHDaddress" data-toggle="tab">HD Address</a></li>
+								<li class="divider"></li>
+								<li><a href="#newTransaction" data-toggle="tab">Transaction</a></li>
+							</ul>
+						</li>
+						<li><a href="#verify" data-toggle="tab"><span class="glyphicon glyphicon-ok"></span> Verify</a></li>
+						<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign</a></li>
+						<li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast</a></li>
+						<li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>
+						<li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+
+						<li class="hidden"><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+						<li class="hidden"><a href="#fees" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span> Fees</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		-->
 	<body>
 		<div id="wrap">
-			<!-- Fixed navbar -->
-			<div id="header" class="navbar navbar-default " role="navigation">
-				<div class="container">
-					<div class="navbar-header">
+			<div class="nav navbar navbar-fixed-top" role="navigation">
+			  <div class="container">
+			    <div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
+							<span class="icon-bar"><i class="fas fa-bars"></i></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="#home" class="navbar-brand" id="homeBtn"><img src="images/coinbin.gif" style="height:25px;margin-top:-5px"></a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav">
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> New<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="#newAddress" data-toggle="tab">Address</a></li>
-									<li><a href="#newSegWit" data-toggle="tab">SegWit Address</a></li>
-									<li><a href="#newMultiSig" data-toggle="tab">MultiSig Address</a></li>
-									<li><a href="#newTimeLocked" data-toggle="tab">Time Locked Address</a></li>
-									<li><a href="#newHDaddress" data-toggle="tab">HD Address</a></li>
-									<li class="divider"></li>
-									<li><a href="#newTransaction" data-toggle="tab">Transaction</a></li>
-								</ul>
-							</li>
-							<li><a href="#verify" data-toggle="tab"><span class="glyphicon glyphicon-ok"></span> Verify</a></li>
-							<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign</a></li>
-							<li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast</a></li>
-							<li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>
-							<li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
-
-							<li class="hidden"><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-							<li class="hidden"><a href="#fees" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span> Fees</a></li>
-						</ul>
-					</div>
-				</div>
+						<a class="navbar-brand" href="#home" title="Homepage">
+                <img id="icon" src="images/veles.ico"></img>
+                <p id="brand-text"> Veles</p>
+            </a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="navbar-collapse">
+			      <ul class="nav navbar-nav">
+			        <li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									New
+									<i class="fa fa-angle-down" aria-hidden="true"></i>
+								</a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><a class="dropdown-item" href="#newAddress" data-toggle="tab">Address</a></li>
+										<li><a class="dropdown-item" href="#newSegWit" data-toggle="tab">SegWit Address</a></li>
+										<li><a class="dropdown-item" href="#newMultiSig" data-toggle="tab">MultiSig Address</a></li>
+										<li><a class="dropdown-item" href="#newTimeLocked" data-toggle="tab">Time Locked Address</a></li>
+										<li><a class="dropdown-item" href="#newHDaddress" data-toggle="tab">HD Address</a></li>
+										<li><a class="dropdown-item" href="#newTransaction" data-toggle="tab">Transaction</a></li>
+									</ul>
+			        </li>
+							<li class="nav-item"><a class="nav-link" href="#verify">Verify</a></li>
+							<li class="nav-item"><a class="nav-link" href="#sign">Sign</a></li>
+							<li class="nav-item"><a class="nav-link" href="#broadcast">Broadcast</a></li>
+							<li class="nav-item"><a class="nav-link" href="#wallet">Wallet</a></li>
+							<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Website
+									<i class="fa fa-angle-down" aria-hidden="true"></i>
+								</a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><a class="dropdown-item" href="https://www.veles.network/">Home</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/roadmap.en.html">Roadmap</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/team.en.html">Team</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/download.en.html">Download</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/coin-specs.en.html">Resources</a></li>
+									</ul>
+			        </li>
+							<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explorer
+									<i class="fa fa-angle-down" aria-hidden="true"></i>
+								</a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><a class="dropdown-item" href="https://explorer.veles.network/">Index</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/movement">Movement</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/richlist">Richlist</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/masternodes">Masternodes</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/miningstats">Miningstats</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/info">Api</a></li>
+									</ul>
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
 			</div>
 
 			<div id="content" class="container">
+
+				<br>
 
 				<noscript class="alert alert-danger center-block"><span class="glyphicon glyphicon-exclamation-sign"></span> This page uses javascript, please enable it to continue!</noscript>
 
 				<div class="tab-content">
 					<div class="tab-pane tab-content active" id="home">
+						<!--
 						<div class="row">
 							<div class="col-md-12">
-								<h2>Coinb.in <small>Welcome to the Blockchain</small></h2>
+								<h1 class="mt-4 mb-3">Webwallet. <small class="grey">Welcome to the Blockchain</small></h1>
 							</div>
 						</div>
-
+					-->
 						<div class="jumbotron">
-							<h1>Bitcoin. It's your money!</h1>
-							<p>Be your own bank, take control of your own money and start using Bitcoin today!</p>
-							<p><a class="btn btn-primary btn-lg" href="#about" role="button">Learn more &raquo;</a></p>
+							<h1>Veles. It's your money!</h1>
+							<p>Be your own bank, take control of your own money and start using Veles today!</p>
+						<!--	<p><a class="btn btn-primary btn-lg" href="#about" role="button">Learn more &raquo;</a></p>
+						</div>
+						-->
+							<p>
+									<a target="_blank" rel="noopener noreferrer" href="#about">
+											<div class="button-effect btn">
+													<span class="label">Learn more &raquo;</span>
+													<span class="icon">
+													<span></span>
+													</span>
+													<span class="icon2"></span>
+											</div>
+									</a>
+							</p>
 						</div>
 
 						<hr>
@@ -108,7 +210,7 @@
 
 							<div class="col-md-4">
 								<h3><span class="glyphicon glyphicon-fullscreen"></span> MultiSig</h3>
-								<p>We offer a fully transparent <a href="#newMultiSig">multisig</a> solution which works seamlessly offline and with other bitcoin clients.</p>
+								<p>We offer a fully transparent <a href="#newMultiSig">multisig</a> solution which works seamlessly offline and with other Veles clients.</p>
 							</div>
 
 							<div class="col-md-4">
@@ -138,14 +240,14 @@
 					<div class="tab-pane tab-content" id="wallet">
 						<div class="row">
 							<div class="col-md-12">
-								<h2>Open Wallet <small> browser based bitcoin wallet</small></h2>
+								<h2 class="page-subtitle">Open Wallet <small> browser based Veles wallet</small></h2>
 								<div id="openLogin">
 									<form class="form-signin" role="form" action="javascript:;">
 
 										<p>Use the form below to open a wallet and begin using this service.</p>
 
 										<div class="alert alert-warning">
-											<b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as lost accounts can not be recovered! 
+											<b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as lost accounts can not be recovered!
 										</div>
 
 										<input id="openEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
@@ -171,7 +273,16 @@
 										</div>
 
 										<div id="openLoginStatus" class="alert alert-danger hidden"></div>
-										<button id="openBtn" class="btn btn-primary" type="submit">Submit</button>
+										<!--<button id="openBtn" class="btn btn-primary" type="submit">Submit</button>-->
+										<a target="_blank" rel="noopener noreferrer" type="submit" id="openBtn">
+												<div class="button-effect btn">
+														<span class="label">Submit</span>
+														<span class="icon">
+														<span></span>
+														</span>
+														<span class="icon2"></span>
+												</div>
+										</a>
 									</form>
 								</div>
 
@@ -184,7 +295,7 @@
 											<div id="walletQrCode"></div> <br>
 											<div>
 												<span id="walletLoader" class="hidden"><img src="images/loader.gif"></span>
-												<span id="walletAddress"></span> 
+												<span id="walletAddress"></span>
 
 												<div class="btn-group">
 													<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="walletToBtn">SegWit <span class="caret"></span></button>
@@ -198,11 +309,68 @@
 											<br>
 											<div style="text-align:center; width:350px;">
 												<ul class="nav nav-pills" role="tablist">
-													<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 BTC</a></li>
+													<!--
+													<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 VLS</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
 													<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
-													<li role="presentation"><a href="https://localbitcoins.com/?ch=173j" target="_blank">Buy</a></li>
+													<li role="presentation"><a href="https://localVeles.com/?ch=173j" target="_blank">Buy</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
+												-->
+													<li role="presentation" class="active">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletBalance">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">0.00 VLS</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowKeys">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">Keys</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowSpend">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">Spend</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletHistory">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">History</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">Buy</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
 												</ul>
 
 												<br>
@@ -221,7 +389,16 @@
 														<input class="form-control privkey" type="password" readonly>
 
 														<span class="input-group-btn">
-															<button class="showKey btn btn-default" type="button">Show</button>
+															<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+															<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+																	<div class="button-effect button-show btn">
+																			<span class="label label-show">Show</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
 														</span>
 													</div>
 
@@ -282,14 +459,23 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="newAddress">
-						<h2>New Address <small>create a new address</small></h2>
-						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the bitcoins.</p>
+						<h2 class="page-subtitle">New Address <small>create a new address</small></h2>
+						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the Veles.</p>
 						<label>Address (Share)</label>
 
 						<div class="input-group">
 							<input id="newBitcoinAddress" type="text" class="form-control address" value="" readonly>
 							<span class="input-group-btn">
-								<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+								<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+								<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+										<div class="button-effect button-show btn">
+												<span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -299,7 +485,16 @@
 						<div class="input-group">
 							<input id="newPrivKey" type="password" class="form-control" value="" readonly>
 							<span class="input-group-btn">
-								<button class="showKey btn btn-default" type="button">Show</button>
+								<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+								<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+										<div class="button-effect button-show btn">
+												<span class="label label-show">Show</span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -339,6 +534,7 @@
 						</div>
 
 						<div class="btn-group">
+							<!--
 							<input type="button" class="btn btn-primary" value="Generate" id="newKeysBtn">
 							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="caret"></span>
@@ -346,22 +542,51 @@
 							</button>
 							<ul class="dropdown-menu">
 								<li><a href="#" id="newPaperwalletBtn">Print</a></li>
-							</ul>							
+							</ul>
+						-->
+							<a target="_blank" rel="noopener noreferrer" id="newKeysBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Generate</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" id="newPaperwalletBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Print</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
+
 						</div>
 						<br>
 					</div>
 
 					<div class="tab-pane tab-content" id="newSegWit">
-						<h2>New SegWit Address <small> Smaller &amp; Faster Transactions</small></h2>
+						<h2 class="page-subtitle">New SegWit Address <small> Smaller &amp; Faster Transactions</small></h2>
 
-						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the bitcoins.</p>
+						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the Veles.</p>
 
 						<label>SegWit Address (Share)</label>
 
 						<div class="input-group">
 							<input id="newSegWitAddress" type="text" class="form-control address" value="" readonly>
 							<span class="input-group-btn">
-								<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+								<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+								<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+										<div class="button-effect button-show btn">
+												<span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -375,7 +600,16 @@
 						<div class="input-group">
 							<input id="newSegWitPrivKey" type="password" class="form-control" value="" readonly>
 							<span class="input-group-btn">
-								<button class="showKey btn btn-default" type="button">Show</button>
+								<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+								<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+										<div class="button-effect button-show btn">
+												<span class="label label-show">Show</span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -393,6 +627,7 @@
 						</div>
 
 						<div class="btn-group">
+							<!--
 							<input type="button" class="btn btn-primary" value="Generate" id="newSegWitKeysBtn">
 							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="caret"></span>
@@ -402,17 +637,36 @@
 							<ul class="dropdown-menu">
 								<li><a href="#" id="newSegwitPaperwalletBtn">Print</a></li>
 							</ul>
+						-->
+							<a target="_blank" rel="noopener noreferrer" value="Generate" id="newSegWitKeysBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Generate</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" id="newSegwitPaperwalletBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Print</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
 						</div>
 						<br>
 					</div>
 
 					<div class="tab-pane tab-content" id="newMultiSig">
-						<h2>New Multisig Address <small>Secure multisig address</small></h2>
+						<h2 class="page-subtitle">New Multisig Address <small>Secure multisig address</small></h2>
 
 						<div class="row">
 
 							<div class="col-md-8">
-								<p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your bitcoin client</a>.</p>
+								<p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your Veles client</a>.</p>
 								<p>Enter the public keys of all the participants, to create a <a href="https://en.bitcoin.it/wiki/Address#Multi-signature_addresses" target="_blank">multi signature address</a>. Maximum of 15 allowed. Compressed and uncompressed public keys are accepted.</p>
 							</div>
 
@@ -469,30 +723,50 @@
 									<div class="input-group">
 										<input type="text" class="form-control address" value="" readonly>
 										<span class="input-group-btn">
-											<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+											<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+											<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+													<div class="button-effect button-show btn">
+															<span class="label label-show">
+																<span class="glyphicon glyphicon-qrcode"></span>
+															</span>
+															<span class="icon">
+															<span></span>
+															</span>
+															<span class="icon2"></span>
+													</div>
+											</a>
 										</span>
 									</div>
 								</div>
 							</div>
 							<label>Redeem Script</label>
-							<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
+							<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the Veles.</p>
 							<textarea class="form-control script" style="height:160px" readonly></textarea>
 							<label>Shareable URL</label>
 							<input type="text" class="scriptUrl form-control" readonly>
 						</div>
 
-						<input type="button" class="btn btn-primary" value="Submit" id="newMultiSigAddress">
+						<!--<input type="button" class="btn btn-primary" value="Submit" id="newMultiSigAddress">-->
+						<a target="_blank" rel="noopener noreferrer" id="newMultiSigAddress" type="Submit">
+								<div class="button-effect btn">
+										<span class="label">Submit</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
 						<br>
 					</div>
 
                     <div class="tab-pane tab-content" id="newTimeLocked">
-                        <h2>New Time Locked Address <small>Coins can be released only after a certain date</small></h2>
+                        <h2 class="page-subtitle">New Time Locked Address <small>Coins can be released only after a certain date</small></h2>
 
                         <div class="row">
 
                             <div class="col-md-11">
 				<p>Use <i><a href="https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki" target="_blank">OP_CHECKLOCKTIMEVERIFY</a></i> (OP_HODL) to create a time locked address where the funds are unspendable until a set date and time has passed.</p>
-                                <p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your bitcoin client</a>.</p>
+                                <p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your Veles client</a>.</p>
                                 <p>Enter the public key that will be able to unlock the funds after the a certain date.
                             </div>
 
@@ -509,23 +783,36 @@
                         </div>
 
                         <p id="timeLockedRbTypeBox">
-                        	Enter the 
-                        		<input type="radio" id="timeLockedRbTypeDate" name="timeLockedRbType" value="date" checked="checked"> 
-                        		<label for="timeLockedRbTypeDate">date and time</label> 
-                        		or                         		
+                        	Enter the
+                        		<input type="radio" id="timeLockedRbTypeDate" name="timeLockedRbType" value="date" checked="checked">
+                        		<label for="timeLockedRbTypeDate">date and time</label>
+                        		or
                         		<input type="radio" id="timeLockedRbTypeBlockHeight" name="timeLockedRbType" value="blockheight">
                         		<label for="timeLockedRbTypeBlockHeight">blockheight</label>
 
-                        		required to release the coins: 
+                        		required to release the coins:
                         </p>
                         <div class="row">
                             <div class='col-md-6'>
                                 <div class="form-group">
                                     <div class='input-group date' id='timeLockedDateTimePicker'>
                                         <input type='text' class="form-control" placeholder="MM/DD/YYYY hh:mm" />
-                                        <span class="input-group-addon">
+																				<!--
+																				<span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
+																			-->
+																				<a href="#" class="input-group-addon" >
+																						<div class="button-effect button-show btn" style="float:right;">
+																								<span class="label label-show">
+																									<span class="glyphicon glyphicon-calendar"></span>
+																								</span>
+																								<span class="icon">
+																								<span></span>
+																								</span>
+																								<span class="icon2"></span>
+																						</div>
+																				</a>
                                     </div>
                                     <div class='input-group hidden' id='timeLockedBlockHeight'>
                                         <input type='text' id='timeLockedBlockHeightVal' class="form-control" placeholder="Blockheight" />
@@ -546,24 +833,44 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control address" value="" readonly>
                                         <span class="input-group-btn">
-                                            <button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+                                            <!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+																						<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+																								<div class="button-effect button-show btn">
+																										<span class="label label-show">
+																											<span class="glyphicon glyphicon-qrcode"></span>
+																										</span>
+																										<span class="icon">
+																										<span></span>
+																										</span>
+																										<span class="icon2"></span>
+																								</div>
+																						</a>
                                         </span>
                                     </div>
                                 </div>
                             </div>
                             <label>Redeem Script</label>
-                            <p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
+                            <p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the Veles.</p>
                             <textarea class="form-control script" style="height:160px" readonly></textarea>
                             <label>Shareable URL</label>
                             <input type="text" class="scriptUrl form-control" readonly>
                         </div>
 
-                        <input type="button" class="btn btn-primary" value="Submit" id="newTimeLockedAddress">
+                        <!--<input type="button" class="btn btn-primary" value="Submit" id="newTimeLockedAddress">-->
+												<a target="_blank" rel="noopener noreferrer" id="newTimeLockedAddress" type="Submit">
+														<div class="button-effect btn">
+																<span class="label">Submit</span>
+																<span class="icon">
+																<span></span>
+																</span>
+																<span class="icon2"></span>
+														</div>
+												</a>
                         <br>
                     </div>
 
 					<div class="tab-pane tab-content" id="newHDaddress">
-						<h2>New HD Address <small>making bip32 even easier</small></h2>
+						<h2 class="page-subtitle">New HD Address <small>making bip32 even easier</small></h2>
 						<p>Use the form below to generate a <i>master</i> hierarchical deterministic address.</p>
 
 						<label>xPub Address</label>
@@ -584,17 +891,27 @@
 
 						<h3>Address Options</h3>
 						<p>You can use the advanced options below to generate different kinds of master addresses.</p>
-						
+
 						<div class="checkbox">
 							<label><input type="checkbox" id="newHDBrainwallet" class="checkbox-inline"> Custom Seed or Brain Wallet</label>
 							<input type="text" class="form-control hidden" id="HDBrainwallet">
 						</div>
 
-						<input type="button" class="btn btn-primary" value="Generate" id="newHDKeysBtn">
+						<!--<input type="button" class="btn btn-primary" value="Generate" id="newHDKeysBtn">-->
+						<a target="_blank" rel="noopener noreferrer" value="Generate" id="newHDKeysBtn" type="button">
+								<div class="button-effect btn">
+										<span class="label">Generate</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
+
 					</div>
 
 					<div class="tab-pane tab-content" id="newTransaction">
-						<h2>Transaction <small>Create a new transaction</small></h2>
+						<h2 class="page-subtitle">Transaction <small>Create a new transaction</small></h2>
 						<p>Use this page to create a raw transaction</p>
 
 						<b>Address, WIF key or Redeem Script</b>:
@@ -754,7 +1071,18 @@
 
 						<div id="transactionCreate" class="alert alert-success hidden">
 							<label>Transaction</label>
-							<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>
+							<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+							<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;">
+									<div class="button-effect button-show btn">
+											<span class="label label-show">
+												<span class="glyphicon glyphicon-qrcode"></span>
+											</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
 
 							<p>The transaction below has been generated and encoded. It can be broadcasted once it has been signed.</p>
 							<br>
@@ -763,18 +1091,27 @@
 							<p class="text-muted">Size: <span class="txSize">0</span> <i>bytes</i></p>
 						</div>
 
-						<input type="button" value="Submit" class="btn btn-primary" id="transactionBtn">
+						<!--<input type="button" value="Submit" class="btn btn-primary" id="transactionBtn">-->
+						<a target="_blank" rel="noopener noreferrer" id="transactionBtn" type="Submit">
+								<div class="button-effect btn">
+										<span class="label">Submit</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
 
 						<br>
 					</div>
 
 
 					<div class="tab-pane tab-content" id="fees">
-						<h2>Bitcoin Fee Calculator</h2>
-						<p>This page will give you a guide on the lowest fee to use to get your transaction included within the next few blocks. It works by predicting the size of a transaction and comparing it to another transaction in a recent block to determine an appropriate fee.</p>	
+						<h2 class="page-subtitle">Veles Fee Calculator</h2>
+						<p>This page will give you a guide on the lowest fee to use to get your transaction included within the next few blocks. It works by predicting the size of a transaction and comparing it to another transaction in a recent block to determine an appropriate fee.</p>
 
 						<div align="center" class="alert alert-info">
-							<h2><span class="glyphicon glyphicon-question-sign"></span> Recommended Fee: <span class="recommendedFee">0.00000000</span> BTC <small> <br> for a transaction of <span class="feeTxSize">0</span> bytes</small></h2>
+							<h2><span class="glyphicon glyphicon-question-sign"></span> Recommended Fee: <span class="recommendedFee">0.00000000</span> VLS <small> <br> for a transaction of <span class="feeTxSize">0</span> bytes</small></h2>
 							<span class="text-muted"><i><span class="feeSatByte">?</span> Sat/Byte</i></span>
 						</div>
 
@@ -787,11 +1124,11 @@
 									<span><span class="txsize">0</span> Bytes</span>
 								</div>
 
-								<h4 class="regular"><abbr title="Spending from a compressed legacy address. p2pkh">Regular</abbr> <small>Compressed</small> 
-									<span class="badge inputno" title="Number of Regular Inputs">1</span> 
+								<h4 class="regular"><abbr title="Spending from a compressed legacy address. p2pkh">Regular</abbr> <small>Compressed</small>
+									<span class="badge inputno" title="Number of Regular Inputs">1</span>
 									<small><span class="bytes">148</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
-								</h4> 
+								</h4>
 
 								<div class="input-group">
 									<span class="input-group-btn"><button class="btn sliderbtn down" type="button"><span class="glyphicon glyphicon-chevron-left"></span></button></span>
@@ -799,11 +1136,11 @@
 									<span class="input-group-btn"><button class="btn sliderbtn up" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 								</div>
 
-								<h4 class="segwit"><abbr title="Spending from a segwit address. p2sh">SegWit</abbr> 
+								<h4 class="segwit"><abbr title="Spending from a segwit address. p2sh">SegWit</abbr>
 									<span class="badge inputno" title="Number of SegWit Inputs">0</span>
 									<small><span class="bytes">0</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
-								</h4> 
+								</h4>
 
 								<div class="input-group">
 									<span class="input-group-btn"><button class="btn sliderbtn down" type="button"><span class="glyphicon glyphicon-chevron-left"></span></button></span>
@@ -811,11 +1148,11 @@
 									<span class="input-group-btn"><button class="btn sliderbtn up" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 								</div>
 
-								<h4 class="multisig"><abbr title="Spending from a multisig address. p2sh">MultiSig</abbr>  
+								<h4 class="multisig"><abbr title="Spending from a multisig address. p2sh">MultiSig</abbr>
 									<span class="badge inputno" title="Number of MultiSig Inputs">0</span>
 									<small><span class="bytes">0</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
-								</h4> 
+								</h4>
 
 								<div class="input-group">
 									<span class="input-group-btn"><button class="btn sliderbtn down" type="button"><span class="glyphicon glyphicon-chevron-left"></span></button></span>
@@ -823,7 +1160,7 @@
 									<span class="input-group-btn"><button class="btn sliderbtn up" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 								</div>
 
-								<h4 class="hodl"><abbr title="Spending from a time locked address. p2sh">Hodl</abbr> <small>Time Locked</small> 
+								<h4 class="hodl"><abbr title="Spending from a time locked address. p2sh">Hodl</abbr> <small>Time Locked</small>
 									<span class="badge inputno" title="Number of Hodl Inputs">0</span>
 									<small><span class="bytes">0</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
@@ -835,7 +1172,7 @@
 									<span class="input-group-btn"><button class="btn sliderbtn up" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 								</div>
 
-								<h4 class="unknown"><abbr title="Spending from an unrecognized input. p2sh">Unknown</abbr> 
+								<h4 class="unknown"><abbr title="Spending from an unrecognized input. p2sh">Unknown</abbr>
 									<span class="badge inputno" title="Number of Unknown Inputs">0</span>
 									<small><span class="bytes">0</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
@@ -858,11 +1195,11 @@
 									<span><span class="txsize">0</span> Bytes</span>
 								</div>
 
-								<h4 class="p2pkh"><abbr title="A pay 2 public key hash. Starts with 1. Used with legacy addresses">Regular</abbr> <small>p2pkh (1...)</small> 
-									<span class="badge outputno" title="Number of p2pkh Outputs">2</span> 
+								<h4 class="p2pkh"><abbr title="A pay 2 public key hash. Starts with 1. Used with legacy addresses">Regular</abbr> <small>p2pkh (1...)</small>
+									<span class="badge outputno" title="Number of p2pkh Outputs">2</span>
 									<small><span class="bytes">68</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
-								</h4>	 
+								</h4>
 
 								<div class="input-group">
 									<span class="input-group-btn"><button class="btn sliderbtn down" type="button"><span class="glyphicon glyphicon-chevron-left"></span></button></span>
@@ -870,15 +1207,15 @@
 									<span class="input-group-btn"><button class="btn sliderbtn up" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 								</div>
 
-								<h4 class="p2sh"><abbr title="A pay 2 script hash address. Starts with a 3. For example a segwit or multisig address">Regular</abbr> <small>p2sh (3...)</small> 
-									<span class="badge outputno" title="Number of p2sh Outputs">0</span> 
+								<h4 class="p2sh"><abbr title="A pay 2 script hash address. Starts with a 3. For example a segwit or multisig address">Regular</abbr> <small>p2sh (3...)</small>
+									<span class="badge outputno" title="Number of p2sh Outputs">0</span>
 									<small><span class="bytes">0</span> bytes</small>
 									<small class="estimate hidden"><em> *estimate</em></small>
-								</h4> 
+								</h4>
 
 								<div class="input-group">
 									<span class="input-group-btn"><button class="btn sliderbtn down" type="button"><span class="glyphicon glyphicon-chevron-left"></span></button></span>
-									<input type="range" min="0" max="100" value="0" class="slider txoutput txo_p2sh" rel="p2sh">	
+									<input type="range" min="0" max="100" value="0" class="slider txoutput txo_p2sh" rel="p2sh">
 									<span class="input-group-btn"><button class="btn sliderbtn up" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 								</div>
 
@@ -910,7 +1247,7 @@
 								<p><b>Transaction Fee</b>: <span class="txFee">0.00000000</span></p>
 								<p><b>Satoshi per Byte</b>: <span class="feeSatByte">0</span></p>
 
-								<p>Based on your data and this recently mined transaction we recommend a fee of <b><span class="recommendedFee">0.00000000</span> BTC</b> to get it into the next few blocks</p>
+								<p>Based on your data and this recently mined transaction we recommend a fee of <b><span class="recommendedFee">0.00000000</span> VLS</b> to get it into the next few blocks</p>
 							</div>
 						</div>
 
@@ -974,7 +1311,7 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="verify">
-						<h2>Verify <small>transactions and other scripts</small></h2>
+						<h2 class="page-subtitle">Verify <small>transactions and other scripts</small></h2>
 						<div class="row">
 							<div class="col-md-12">
 								<p>Enter the raw transaction, redeem script, pubkey, hd address or wif key to convert it into a readable format that can be verified manually.</p>
@@ -995,7 +1332,18 @@
     										<div class="input-group">
     											<input type="text" class="form-control address multisigAddress" value="" readonly>
     											<span class="input-group-btn">
-    												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+    												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+														<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+																<div class="button-effect button-show btn">
+																		<span class="label label-show">
+																			<span class="glyphicon glyphicon-qrcode"></span>
+																		</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
     											</span>
     										</div>
     									</div>
@@ -1010,7 +1358,7 @@
     								</table>
 								<br>
 							</div>
-	
+
 							<div class="hidden verifyData" id="verifyRsDataSegWit">
 				                               	<label>Segwit Address</label>
    								<div class="row">
@@ -1018,7 +1366,18 @@
     										<div class="input-group">
     											<input type="text" class="form-control address segWitAddress" value="" readonly>
     											<span class="input-group-btn">
-    												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+    												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+														<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+																<div class="button-effect button-show btn">
+																		<span class="label label-show">
+																			<span class="glyphicon glyphicon-qrcode"></span>
+																		</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
     											</span>
     										</div>
 									</div>
@@ -1033,7 +1392,18 @@
 										<div class="input-group">
 											<input type="text" class="form-control address" value="" readonly>
 											<span class="input-group-btn">
-												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+												<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+														<div class="button-effect button-show btn">
+																<span class="label label-show">
+																	<span class="glyphicon glyphicon-qrcode"></span>
+																</span>
+																<span class="icon">
+																<span></span>
+																</span>
+																<span class="icon2"></span>
+														</div>
+												</a>
 											</span>
 										</div>
 									</div>
@@ -1045,7 +1415,18 @@
 										<div class="input-group">
 											<input type="text" class="form-control address pubkey" value="" readonly>
 											<span class="input-group-btn">
-												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+												<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+														<div class="button-effect button-show btn">
+																<span class="label label-show">
+																	<span class="glyphicon glyphicon-qrcode"></span>
+																</span>
+																<span class="icon">
+																<span></span>
+																</span>
+																<span class="icon2"></span>
+														</div>
+												</a>
 											</span>
 										</div>
 									</div>
@@ -1230,13 +1611,23 @@
 
 						<div id="verifyStatus" class="alert alert-danger hidden"><span class="glyphicon glyphicon-exclamation-sign"></span> Unable to decode</div>
 
-						<input type="button" value="Submit" class="btn btn-primary" id="verifyBtn">
+						<!--<input type="button" value="Submit" class="btn btn-primary" id="verifyBtn">-->
+						<a target="_blank" rel="noopener noreferrer" id="verifyBtn" type="Submit">
+								<div class="button-effect btn">
+										<span class="label">Submit</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
+
 						<br>
 
 					</div>
 
 					<div class="tab-pane tab-content" id="sign">
-						<h2>Sign Transaction <small>once a transaction has been verified</small></h2>
+						<h2 class="page-subtitle">Sign Transaction <small>once a transaction has been verified</small></h2>
 						<p>Once you have <a href="#verify">verified</a> a transaction you can sign and then <a href="#broadcast">broadcast</a> it into the network.</p>
 
 						<div class="row">
@@ -1246,7 +1637,16 @@
 								<div class="input-group">
 									<input id="signPrivateKey" type="password" class="form-control" value="">
 									<span class="input-group-btn">
-										<button class="showKey btn btn-default" type="button">Show</button>
+										<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+										<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+												<div class="button-effect button-show btn">
+														<span class="label label-show">Show</span>
+														<span class="icon">
+														<span></span>
+														</span>
+														<span class="icon2"></span>
+												</div>
+										</a>
 									</span>
 								</div>
 							</div>
@@ -1293,50 +1693,80 @@
 
 						<div class="alert alert-success hidden" id="signedData">
 							<label>Signed transaction</label>
-							<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>
+							<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+							<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;">
+									<div class="button-effect button-show btn">
+											<span class="label label-show">
+												<span class="glyphicon glyphicon-qrcode"></span>
+											</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
 							<p>The above transaction has been signed:</p>
 
                         				<textarea class="form-control script" style="height:160px" readonly></textarea>
-                                    
+
 							<p class="text-muted">Size: <span class="txSize">0</span> <i>bytes</i></p>
 						</div>
 
-						<input type="button" value="Submit" class="btn btn-primary" id="signBtn">
+						<!--<input type="button" value="Submit" class="btn btn-primary" id="signBtn">-->
+						<a target="_blank" rel="noopener noreferrer" id="signBtn" type="Submit">
+								<div class="button-effect btn">
+										<span class="label">Submit</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
+
 						<br>
 					</div>
 
 					<div class="tab-pane tab-content" id="broadcast">
-						<h2>Broadcast Transaction <small>into the bitcoin network</small></h2>
-						<a href="#settings" style="float:right;"><span class="glyphicon glyphicon-cog"></span></a>
-						<p>Enter your hex encoded bitcoin transaction</p>
+						<h2 class="page-subtitle">Broadcast Transaction <small>into the Veles network</small></h2>
+						<!--<a href="#settings" style="float:right;"><span class="glyphicon glyphicon-cog"></span></a>-->
+						<p>Enter your hex encoded Veles transaction</p>
 						<textarea class="form-control" style="height:125px" id="rawTransaction"></textarea>
 						<br>
 						<div id="rawTransactionStatus" class="alert hidden">
 						</div>
-						<input type="button" value="Submit" id="rawSubmitBtn" class="btn btn-primary">
+						<!--<input type="button" value="Submit" id="rawSubmitBtn" class="btn btn-primary">-->
+						<a target="_blank" rel="noopener noreferrer" id="rawSubmitBtn" type="Submit">
+								<div class="button-effect btn">
+										<span class="label">Submit</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
 						<br>
 					</div>
 
 					<div class="tab-pane tab-content" id="dev">
-						<h2>Development <small>Javascript framework, API and more</small></h2>
+						<h2 class="page-subtitle">Development <small>Javascript framework, API and more</small></h2>
 						<div class="alert alert-info">This section is currently under development and is subject to change.</div>
-						
+
 					</div>
 
 					<div class="tab-pane tab-content" id="about">
-						<h2>About <small>open source bitcoin wallet</small></h2>
+						<h2 class="page-subtitle">About <small>open source Veles wallet</small></h2>
 						<p>Version 1.4</p>
-						<p>Compatible with bitcoin core</p>
+						<p>Compatible with Veles core</p>
 						<p>Github <a href="https://github.com/OutCast3k/coinbin/">https://github.com/OutCast3k/coinbin/</a></p>
 						<p>TOR <a href="http://4zpinp6gdkjfplhk.onion">4zpinp6gdkjfplhk.onion</a></p>
-						<h3>What is Bitcoin?</h3>
-						<p>Bitcoin is a type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds, operating independently of a central bank. See <a href="http://www.weusecoins.com/" target="_blank">weusecoins.com</a> for more information.</p>
-						<p>If you are looking to buy some Bitcoin try <a href="https://localbitcoins.com/?ch=173j" target="_blank">LocalBitcoins.com</a>.</p>
+						<h3>What is Veles?</h3>
+						<p>Veles is a type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds, operating independently of a central bank. See <a href="http://www.weusecoins.com/" target="_blank">weusecoins.com</a> for more information.</p>
+						<p>If you are looking to buy some Veles try <a href="https://localVeles.com/?ch=173j" target="_blank">LocalVeless.com</a>.</p>
 						<h3>Information</h3>
 						<p>Coinb.in is a free and open source project released under the MIT license, originally by <a href="https://bitcointalk.org/index.php?action=profile;u=34834" target="_blank">OutCast3k</a> in 2013. Discussion of the project can be found at <a href="https://bitcointalk.org/index.php?topic=390046" target="_blank">bitcointalk.org</a> during its early testing stages when its primary focus was to develop a proof of concept multisig solution in javascript.</p>
 						<p>Coinb.in is run and funded by the generosity of others in terms of <a href="https://github.com/OutCast3k/coinbin/graphs/contributors" target="_blank">development</a> and hosting.</p>
 						<h3>Privacy</h3>
-						<p>Coinb.in believes strongly in privacy, not only do we support the use of TOR, the site does not collect and store IP or transaction data via our servers nor do we store your bitcoins private key. We do route traffic via cloudflare using an SSL certificate.</p>
+						<p>Coinb.in believes strongly in privacy, not only do we support the use of TOR, the site does not collect and store IP or transaction data via our servers nor do we store your Veles private key. We do route traffic via cloudflare using an SSL certificate.</p>
 						<h3>Support</h3>
 						<p>We recommend that you first check our <a href="https://status.coinb.in/" target="_blank">service status</a> page and then <a href="https://blog.coinb.in/" target="_blank">blog</a> page which has multiple <a href="https://blog.coinb.in/guides" target="_blank">guides</a>. However if the problem persists you can contact us by emailing support{at}coinb.in.</p>
 						<h3>Donate</h3>
@@ -1344,7 +1774,7 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="settings">
-						<h2>Settings <small> making coinb.in even better!</small></h2>
+						<h2 class="page-subtitle">Settings <small> making coinb.in even better!</small></h2>
 						<p>These simple settings below make coinb.in one of the most decentralized wallets in the world.</p>
 
 						<div class="row">
@@ -1352,12 +1782,13 @@
 								<b>Network</b>: <br>
 								<p class="text-muted">Select which network you'd like to use for key pair generation.</p>
 								<select class="form-control" id="coinjs_coin">
-									<option value="bitcoin_mainnet" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;coinb.in;coinb.in">Bitcoin (mainnet)</option>
+									<option value="bitcoin_mainnet" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;coinb.in;coinb.in">Veles (mainnet)</option>
 									<option value="litecoin_mainnet" rel="0x30;0xb0;0x32;0x019da462;0x019d9cfe;chain.so_litecoin;chain.so_litecoin">Litecoin (mainnet)</option>
+									<option value="veles_mainnet" rel="0x46;0x1e;0xd4;0xA40C86FA;0xA40B91BD;chain.so_velescoin;chain.so_velescoin">Veles (mainnet)</options>
 									<option value="dogecoin_mainnet" rel="0x1e;0x9e;0x16;0x0827421e;0x089944e4;chain.so_dogecoin;chain.so_dogecoin">Dogecoin (mainnet)</option>
 									<option value="carboncoin_mainnet" rel="0x2f;0xaf;0x05;0x488b21e;0x488ade4;cryptoid.info_carboncoin;cryptoid.info_carboncoin">Carboncoin (mainnet)</option>
 									<option value="shadowcash_mainnet" rel="0x3f;0xbf;0x7d;0xee80286a;0xee8031e8;false;false">ShadowCash (mainnet)</option>
-									<option value="bitcoin_testnet" rel="0x6f;0xef;0xc4;0x043587cf;0x04358394;false;false">Bitcoin (testnet)</option>
+									<option value="bitcoin_testnet" rel="0x6f;0xef;0xc4;0x043587cf;0x04358394;false;false">Veles (testnet)</option>
 
 									<option value="custom" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;false;false">Custom</option>
 								</select>
@@ -1410,16 +1841,16 @@
 								<b>Broadcast</b>: <br>
 								<p class="text-muted">Select the network you wish to broadcast the transaction via</p>
 								<select class="form-control" id="coinjs_broadcast">
-									<option value="coinb.in">coinb.in (Bitcoin mainnet)</option>
-									<option value="chain.so_bitcoinmainnet"> Chain.so (Bitcoin mainnet)</option>
-									<option value="blockcypher_bitcoinmainnet"> Blockcypher.com (Bitcoin mainnet)</option>
+									<option value="coinb.in">coinb.in (Veles mainnet)</option>
+									<option value="chain.so_bitcoinmainnet"> Chain.so (Veles mainnet)</option>
+									<option value="blockcypher_bitcoinmainnet"> Blockcypher.com (Veles mainnet)</option>
 									<option value="chain.so_litecoin"> Chain.so (Litecoin)</option>
 									<option value="chain.so_dogecoin"> Chain.so (Dogecoin)</option>
 									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>
 								</select>
 							</div>
 						</div>
-							
+
 						<hr>
 
 						<div class="row">
@@ -1427,7 +1858,7 @@
 								<b>Unspent outputs</b>: <br>
 								<p class="text-muted">Select the network you wish to retreive your unspent inputs from</p>
 								<select class="form-control" id="coinjs_utxo">
-									<option value="coinb.in">coinb.in (Bitcoin mainnet)</option>
+									<option value="coinb.in">coinb.in (Veles mainnet)</option>
 									<option value="chain.so_litecoin"> Chain.so (Litecoin)</option>
 									<option value="chain.so_dogecoin"> Chain.so (Dogecoin)</option>
 									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>
@@ -1440,7 +1871,16 @@
 						<div id="statusSettings" class="hidden alert">
 						</div>
 
-						<input type="submit" class="btn btn-primary" id="settingsBtn">
+						<!--<input type="submit" class="btn btn-primary" id="settingsBtn">-->
+						<a target="_blank" rel="noopener noreferrer" id="settingsBtn" type="Submit">
+								<div class="button-effect btn">
+										<span class="label">Submit</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
 
 					</div>
 
@@ -1451,13 +1891,262 @@
 				</div>
 			</div>
 		</div>
-
+<!--
 		<div id="footer">
 			<div class="container text-right">
 	        		<p class="text-muted">Version 1.4</p>
 			</div>
 		</div>
+-->
 
+<div class="footer container">
+		<div class="tomottoWrap text-center" id="tomotto"> “In such seconds of decision entire futures are made.”― Dan Simmons, Hyperion
+		</div>
+		<div class="row footer-links">
+				<div class="section col-md-3">
+						<h5>Website</h5> <a href="index.en.html">Home</a> <a href="download.en.html">Download</a> <a href="faq.en.html">FAQ</a> <a href="coin-specs.en.html">Coins-specs</a> <a href="whitepaper.en.html">Whitepaper</a> <a href="masternode-guide.en.html">Masternode guide</a> <a href="exchanges.en.html">Exchanges</a> <a href="external-services.en.html">External-services</a> <a href="crowdfundings.en.html">Crowdfundings</a> <a href="mining-pools.en.html">Mining-pools</a></div>
+				<div class="section col-md-3">
+						<h5>Explorer</h5> <a href="https://explorer.veles.network/">Search</a> <a href="https://explorer.veles.network/richlist">Richlist</a> <a href="https://explorer.veles.network/masternodes">Masternodes</a> <a href="https://explorer.veles.network/movement">Movement</a>
+						<a
+						href="https://explorer.veles.network/miningstats">Mining-stats</a> <a href="https://explorer.veles.network/info">Api</a> </div>
+				<div class="section col-md-3">
+						<h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
+				<div class="section col-md-3">
+						<h5>About Us</h5> <a href="team.en.html">Team</a> <a href="roadmap.en.html">Roadmap</a> <a href="https://github.com/Velescore">Github</a> </div>
+		</div>
+		<div class="footer-copyright text-center py-3">
+				© Copyright MMXIX The Veles Core developers.<br />
+				Non mihi, non tibi, sed nobis.
+				</div>
+		<div class="footer-badges">
+				<img src="https://img.shields.io/badge/Main--net-Live-success.svg?style=for-the-badge">
+				<img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765">
+		</div>
+		<div class="footer-tooltip" id="connection-tooltip">
+				<ul>
+						<li> <i class="fa fa-signal"></i> Websocket Status:
+								<b class="label-success websocket-online">online</b>
+								<b class="label-error websocket-offline" style="display: none;">offline</b>
+						</li>
+						<li>Peer Connections: <b>8</b></li>
+						<li>Websocket Connections: <b>25</b></li>
+				</ul>
+		</div>
+		<div class="footer-tooltip" id="chain-tip-tooltip">
+				<ul>
+						<li><i class="fa fa-cube"></i> Current Block Height:
+								<b data-entity-id="chain.tip" data-attribute="height">0</b>
+						</li>
+						<li>Best block hash: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
+						<li>Found at: <b class="chain-tip-time"></b></li>
+						<li class="first-row">Size: <b class="chain-tip-size-kb">0</b> kB</li>
+						<li class="second-row">Algo: <b class="chain-tip-algo"></b></li>
+						<li>Transactions: <b class="chain-tip-ntx">0</b></li>
+				</ul>
+		</div>
+		<div class="footer-tooltip" id="masternodes-tooltip">
+				<ul>
+						<li><i class="fa fa-server"></i> Masternodes Total: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
+						<li>Enabled: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
+						<li style="display: none;">
+								Pre-Enabled:
+								<b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
+						</li>
+						<li>
+								New Start Required:
+								<b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
+						</li>
+						<li style="display: none;">
+								Expired:
+								<b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
+						</li>
+						<li class="list-separator">Masternode collateral: <b class="masternodes-collateral-amount">0</b> VLS</li>
+						<li>MN block reward part: <b class="masternodes-reward-percent">0</b> %</li>
+						<!--<li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>-->
+				</ul>
+		</div>
+		<div class="footer-tooltip" id="chain-pow-tooltip">
+				<ul>
+						<li>
+								<i class="fa fa-chart-bar"></i>
+								Hashrate Total:
+								<span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="first-row">
+								sha256d: <span data-entity-id="chain.pow" data-attribute="multialgo.sha256d.hashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="second-row">
+								scrypt: <span data-entity-id="chain.pow" data-attribute="multialgo.scrypt.hashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="first-row">
+								lyra2z: <span data-entity-id="chain.pow" data-attribute="multialgo.lyra2z.hashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="second-row">
+								x11: <span data-entity-id="chain.pow" data-attribute="multialgo.x11.hashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="first-row">
+								x16r: <span data-entity-id="chain.pow" data-attribute="multialgo.x16r.hashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="second-row">
+								nist5: <span data-entity-id="chain.pow" data-attribute="multialgo.nist5.hashrate" data-format="hashrate">0</span>
+						</li>
+						<li class="list-separator">
+								Blocks to next halving check: <b class="chain-pow-blocks-to-next-epoch"></b>
+						</li>
+						<li>
+								Epoch supply reached: <b class="chain-pow-supply-target-reached">0%</b> of min 80%
+						</li>
+				</ul>
+		</div>
+		<div class="footer-tooltip" id="price-status-tooltip">
+				<ul>
+						<li> <i class="fa fa-chart-line"></i> VLS Price:
+								<div class="tooltip-price">
+										<span data-entity-id="market.price" data-attribute="price_btc"
+												data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
+										<span data-entity-id="market.price" data-attribute="price_usd"
+												data-format="number" data-fixed-decimals="2" data-unit-before="$">0.00</span>
+								</div>
+						</li>
+						<li class="tooltip-row-tall">
+								<div id="price-tooltip-chart"></div>
+						</li>
+						<li class="list-separator">
+								Volume 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
+						</li>
+						<li class="second-row">
+								&#916; 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
+						</li>
+						<li class="first-row">
+								Market Cap: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
+						</li>
+						<li class="second-row">
+								&#916; 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
+						</li>
+						<li>
+								Total Supply: <b><span
+										data-entity-id="market.price"
+										data-attribute="total_supply"
+										data-multiplier="0.000001"
+										data-format="number"
+										data-fixed-decimals="2"
+										data-title="{total_supply} VLS"
+										></span>m</b>
+								of maximum <b><span
+										data-entity-id="market.price"
+										data-attribute="max_supply"
+										data-multiplier="0.000001"
+										data-format="number"
+										data-fixed-decimals="1"
+										data-title="{max_supply} VLS"
+										></span>m</b> VLS
+						</li>
+				</ul>
+		</div>
+</div>
+<!-- Overlay footer -->
+<div class="footer-overlay">
+		<div class="row footer-panel-row">
+				<div class="col-md-12">
+						<div id="console-toggle" class="status-area">
+								<span class="fa fa-terminal websocket-online" title="Toggle Veles Node Console"></span>
+								<span class="fa fa-window-close console-area" title="Close Console"></span>
+						</div>
+						<div id="console-maximize" class="status-area console-area">
+								<span class="fa fa-window-maximize" title="Maximize Console"></span>
+						</div>
+						<div id="mobile-follow-toggle" class="status-area footer-follow-mobile">
+								<span class="fa brand-color fa-share-alt" title="Veles Core console"></span>
+								<span class="label">Follow Us</span>
+						</div>
+						<div class="footer-follow-wide">
+								<ul class="osx-dock">
+									<li class="active">
+										<span>Bitcointalk</span>
+										<a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+												<i class="fab fa-bitcoin"></i>
+										</a>
+									</li>
+									<li>
+										<span>Twitter</span>
+										<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+												<i class="fab fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<span>GitHub</span>
+										<a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+												<i class="fab fa-github"></i>
+										</a>
+									</li>
+									<li>
+										<span>Discord</span>
+										<a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+												<i class="fab fa-discord"></i>
+										</a>
+									</li>
+								</ul>
+						</div>
+						<div id="price-status" class="status-area websocket-online-animate">
+								<span class="status-label-wide">Price:</span>
+								<span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span>
+								 <span class="status-label-wide">BTC</span>
+						</div>
+						<div id="connection-status" class="status-area">
+								<span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE">
+								</span>
+								<span class="fa fa-rss websocket-online" title="Websocket Status: ONLINE"
+										style="display: none;">
+								</span>️
+						</div>
+						<div id="chain-tip-status" class="status-area websocket-online-animate">
+								<span class="status-label-wide">Blocks:</span>
+								<b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
+						</div>
+						<div id="masternodes-status" class="status-area websocket-online-animate">
+								<span class="status-label-wide">Masternodes:</span>
+								<b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
+								<span class="status-label-short">MNs</span>
+						</div>
+						<div id="chain-pow-status" class="status-area websocket-online-animate">
+								<span class="status-label-wide">Hashrate:</span>
+								<span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
+						</div>
+				</div>
+		</div>
+		<div id="dev-console">
+				<div class="jquery-console-message">Loading blockchain client ...</div>
+		</div>
+		<div id="panel-slide"  class="bg-carbon">
+				<div class="slide-iconset">
+						<a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+								<i class="fab fa-bitcoin"></i>
+						</a>
+						<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+								<i class="fab fa-twitter"></i>
+						</a>
+						<a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+								<i class="fab fa-github"></i>
+						</a>
+						<a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+								<i class="fab fa-discord"></i>
+						</a>
+						<!--
+						<a href="https://www.coingecko.com/en/coins/veles">
+								 <i class="fas fa-coins brand"></i>
+						</a>
+						-->
+						<a target="_blank" rel="noopener noreferrer" href="https://masternodecap.com/coins/VLS">
+								 <i class="fas fa-server brand"></i>
+						</a>
+						<!--
+						<a target="_blank" rel="noopener noreferrer" href="https://coinpaprika.com/coin/vls-veles/">
+								<i class="fas fa-pepper brand"></i>
+						</a>
+						-->
+				</div>
+		</div>
+</div>
 
 	<!-- wallet confirm send modal -->
 	<div class="modal fade" id="modalWalletConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1469,7 +2158,7 @@
 				</div>
 
 				<div class="modal-body">
-					<p>You are about to send a transaction to the value of <span id="spendAmount">0.00</span> BTC</p>
+					<p>You are about to send a transaction to the value of <span id="spendAmount">0.00</span> VLS</p>
 
 					<br>
 					<div id="walletSendConfirmStatus" class="alert alert-danger hidden"></div>
@@ -1482,8 +2171,28 @@
 				</div>
 
 				<div class="modal-footer">
+					<!--
 					<button type="button" class="btn btn-primary" id="walletConfirmSend">Send</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal" id="confirmClose">Close</button>
+				-->
+					<a target="_blank" rel="noopener noreferrer" type="button" id="walletConfirmSend">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Send</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="confirmClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1504,7 +2213,16 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="qrCodeClose">Close</button>
+					<!--<button type="button" class="btn btn-default" data-dismiss="modal" id="qrCodeClose">Close</button>-->
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="qrCodeClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1528,7 +2246,16 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="qrScanClose">Close</button>
+					<!--<button type="button" class="btn btn-default" data-dismiss="modal" id="qrScanClose">Close</button>-->
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="qrScanClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1552,9 +2279,9 @@
 						<div class="col-md-5">
 							<label>Mediator:</label>
 
-							<!-- 
-								You need to contact us before adding your pubkey 
-								and submitting a pull request on github. 
+							<!--
+								You need to contact us before adding your pubkey
+								and submitting a pull request on github.
 
 								format is: pubkey;email;fee
 							-->
@@ -1566,12 +2293,12 @@
 
 						<div class="col-md-5">
 							<label>Address:</label> <span class="text-muted">(for disputes)</span>
-							<input id="mediatorEmail" type="text" class="form-control address" value="" readonly>	
+							<input id="mediatorEmail" type="text" class="form-control address" value="" readonly>
 						</div>
 
 						<div class="col-md-2">
-							<label>Fee (%):</label> 
-							<input id="mediatorFee" type="text" class="form-control address" value="" readonly>	
+							<label>Fee (%):</label>
+							<input id="mediatorFee" type="text" class="form-control address" value="" readonly>
 						</div>
 
 					</div>
@@ -1583,8 +2310,28 @@
 				</div>
 
 				<div class="modal-footer">
+					<!--
 					<button class="btn btn-primary" type="button" id="mediatorAddKey">Add Public Key</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal" id="mediatorClose">Close</button>
+				-->
+					<a target="_blank" rel="noopener noreferrer" type="button" id="mediatorAddKey">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Add Public Key</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="mediatorClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1602,11 +2349,20 @@
 				</div>
 
 				<div class="modal-body">
-					Please be aware that you have created a transaction with what seems to be a very high fee of <span id="modalWarningFeeAmount"></span> BTC!
+					Please be aware that you have created a transaction with what seems to be a very high fee of <span id="modalWarningFeeAmount"></span> VLS!
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal" id="warningFeeClose">OK, I've got it!</button>
+					<!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="warningFeeClose">OK, I've got it!</button>-->
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="warningFeeClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">OK, I've got it!</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
