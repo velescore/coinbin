@@ -18,8 +18,8 @@
 	*/
 	/* public vars */
 	coinjs.pub = 0x46;
-	coinjs.priv = 0x1E;
-	coinjs.multisig = 0xD4;
+	coinjs.priv = 0xD4;
+	coinjs.multisig = 0x1e;
 	coinjs.hdkey = {'prv':0xA40B91BD, 'pub':0xA40C86FA};
 	coinjs.bech32 = {'charset':'qpzry9x8gf2tvdw0s3jn54khce6mua7l', 'version':0, 'hrp':'veles'};
 
