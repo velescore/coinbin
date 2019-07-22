@@ -57,8 +57,7 @@
 		<script type="text/javascript" src="js/coinbin.js"></script>
 	</head>
 
-	<body>
-		<div id="wrap">
+
 			<!-- Fixed navbar -->
 		<!--
 		<div id="header" class="navbar navbar-default " role="navigation">
@@ -99,6 +98,8 @@
 			</div>
 		</div>
 		-->
+	<body>
+		<div id="wrap">
 			<div class="nav navbar navbar-fixed-top" role="navigation">
 			  <div class="container">
 			    <div class="navbar-header">
@@ -116,7 +117,10 @@
 			    <div class="collapse navbar-collapse" id="navbar-collapse">
 			      <ul class="nav navbar-nav">
 			        <li class="nav-item dropdown">
-			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">New</a>
+			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									New
+									<i class="fa fa-angle-down" aria-hidden="true"></i>
+								</a>
 									<ul class="dropdown-menu dropdown-menu-right">
 										<li><a class="dropdown-item" href="#newAddress" data-toggle="tab">Address</a></li>
 										<li><a class="dropdown-item" href="#newSegWit" data-toggle="tab">SegWit Address</a></li>
@@ -131,24 +135,30 @@
 							<li class="nav-item"><a class="nav-link" href="#broadcast">Broadcast</a></li>
 							<li class="nav-item"><a class="nav-link" href="#wallet">Wallet</a></li>
 							<li class="nav-item dropdown">
-			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Website</a>
+			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Website
+									<i class="fa fa-angle-down" aria-hidden="true"></i>
+								</a>
 									<ul class="dropdown-menu dropdown-menu-right">
-										<li><a class="dropdown-item" href="https://www.veles.network/" data-toggle="tab">Home</a></li>
-										<li><a class="dropdown-item" href="https://www.veles.network/roadmap.en.html" data-toggle="tab">Roadmap</a></li>
-										<li><a class="dropdown-item" href="https://www.veles.network/team.en.html" data-toggle="tab">Team</a></li>
-										<li><a class="dropdown-item" href="https://www.veles.network/download.en.html" data-toggle="tab">Download</a></li>
-										<li><a class="dropdown-item" href="https://www.veles.network/coin-specs.en.html" data-toggle="tab">Resources</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/">Home</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/roadmap.en.html">Roadmap</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/team.en.html">Team</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/download.en.html">Download</a></li>
+										<li><a class="dropdown-item" href="https://www.veles.network/coin-specs.en.html">Resources</a></li>
 									</ul>
 			        </li>
 							<li class="nav-item dropdown">
-			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorer</a>
+			          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explorer
+									<i class="fa fa-angle-down" aria-hidden="true"></i>
+								</a>
 									<ul class="dropdown-menu dropdown-menu-right">
-										<li><a class="dropdown-item" href="https://explorer.veles.network/" data-toggle="tab">Index</a></li>
-										<li><a class="dropdown-item" href="https://explorer.veles.network/movement" data-toggle="tab">Movement</a></li>
-										<li><a class="dropdown-item" href="https://explorer.veles.network/richlist" data-toggle="tab">Richlist</a></li>
-										<li><a class="dropdown-item" href="https://explorer.veles.network/masternodes" data-toggle="tab">Masternodes</a></li>
-										<li><a class="dropdown-item" href="https://explorer.veles.network/miningstats" data-toggle="tab">Miningstats</a></li>
-										<li><a class="dropdown-item" href="https://explorer.veles.network/info" data-toggle="tab">Api</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/">Index</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/movement">Movement</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/richlist">Richlist</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/masternodes">Masternodes</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/miningstats">Miningstats</a></li>
+										<li><a class="dropdown-item" href="https://explorer.veles.network/info">Api</a></li>
 									</ul>
 			        </li>
 			      </ul>
@@ -299,11 +309,68 @@
 											<br>
 											<div style="text-align:center; width:350px;">
 												<ul class="nav nav-pills" role="tablist">
+													<!--
 													<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 VLS</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
 													<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
 													<li role="presentation"><a href="https://localVeles.com/?ch=173j" target="_blank">Buy</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
+												-->
+													<li role="presentation" class="active">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletBalance">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">0.00 VLS</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowKeys">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">Keys</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowSpend">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">Spend</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletHistory">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">History</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
+													<li role="presentation">
+														<a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
+																<div class="button-effect btn button-wallet">
+																		<span class="label label-show">Buy</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</li>
 												</ul>
 
 												<br>
@@ -322,7 +389,16 @@
 														<input class="form-control privkey" type="password" readonly>
 
 														<span class="input-group-btn">
-															<button class="showKey btn btn-default" type="button">Show</button>
+															<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+															<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+																	<div class="button-effect button-show btn">
+																			<span class="label label-show">Show</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
 														</span>
 													</div>
 
@@ -390,7 +466,16 @@
 						<div class="input-group">
 							<input id="newBitcoinAddress" type="text" class="form-control address" value="" readonly>
 							<span class="input-group-btn">
-								<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+								<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+								<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+										<div class="button-effect button-show btn">
+												<span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -400,7 +485,16 @@
 						<div class="input-group">
 							<input id="newPrivKey" type="password" class="form-control" value="" readonly>
 							<span class="input-group-btn">
-								<button class="showKey btn btn-default" type="button">Show</button>
+								<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+								<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+										<div class="button-effect button-show btn">
+												<span class="label label-show">Show</span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -440,6 +534,7 @@
 						</div>
 
 						<div class="btn-group">
+							<!--
 							<input type="button" class="btn btn-primary" value="Generate" id="newKeysBtn">
 							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="caret"></span>
@@ -448,6 +543,26 @@
 							<ul class="dropdown-menu">
 								<li><a href="#" id="newPaperwalletBtn">Print</a></li>
 							</ul>
+						-->
+							<a target="_blank" rel="noopener noreferrer" id="newKeysBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Generate</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" id="newPaperwalletBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Print</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
+
 						</div>
 						<br>
 					</div>
@@ -462,7 +577,16 @@
 						<div class="input-group">
 							<input id="newSegWitAddress" type="text" class="form-control address" value="" readonly>
 							<span class="input-group-btn">
-								<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+								<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+								<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+										<div class="button-effect button-show btn">
+												<span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -476,7 +600,16 @@
 						<div class="input-group">
 							<input id="newSegWitPrivKey" type="password" class="form-control" value="" readonly>
 							<span class="input-group-btn">
-								<button class="showKey btn btn-default" type="button">Show</button>
+								<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+								<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+										<div class="button-effect button-show btn">
+												<span class="label label-show">Show</span>
+												<span class="icon">
+												<span></span>
+												</span>
+												<span class="icon2"></span>
+										</div>
+								</a>
 							</span>
 						</div>
 
@@ -494,6 +627,7 @@
 						</div>
 
 						<div class="btn-group">
+							<!--
 							<input type="button" class="btn btn-primary" value="Generate" id="newSegWitKeysBtn">
 							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="caret"></span>
@@ -503,6 +637,25 @@
 							<ul class="dropdown-menu">
 								<li><a href="#" id="newSegwitPaperwalletBtn">Print</a></li>
 							</ul>
+						-->
+							<a target="_blank" rel="noopener noreferrer" value="Generate" id="newSegWitKeysBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Generate</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" id="newSegwitPaperwalletBtn" type="button">
+									<div class="button-effect btn">
+											<span class="label">Print</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
 						</div>
 						<br>
 					</div>
@@ -570,7 +723,18 @@
 									<div class="input-group">
 										<input type="text" class="form-control address" value="" readonly>
 										<span class="input-group-btn">
-											<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+											<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+											<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+													<div class="button-effect button-show btn">
+															<span class="label label-show">
+																<span class="glyphicon glyphicon-qrcode"></span>
+															</span>
+															<span class="icon">
+															<span></span>
+															</span>
+															<span class="icon2"></span>
+													</div>
+											</a>
 										</span>
 									</div>
 								</div>
@@ -633,9 +797,22 @@
                                 <div class="form-group">
                                     <div class='input-group date' id='timeLockedDateTimePicker'>
                                         <input type='text' class="form-control" placeholder="MM/DD/YYYY hh:mm" />
-                                        <span class="input-group-addon">
+																				<!--
+																				<span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
+																			-->
+																				<a href="#" class="input-group-addon" >
+																						<div class="button-effect button-show btn" style="float:right;">
+																								<span class="label label-show">
+																									<span class="glyphicon glyphicon-calendar"></span>
+																								</span>
+																								<span class="icon">
+																								<span></span>
+																								</span>
+																								<span class="icon2"></span>
+																						</div>
+																				</a>
                                     </div>
                                     <div class='input-group hidden' id='timeLockedBlockHeight'>
                                         <input type='text' id='timeLockedBlockHeightVal' class="form-control" placeholder="Blockheight" />
@@ -656,7 +833,18 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control address" value="" readonly>
                                         <span class="input-group-btn">
-                                            <button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+                                            <!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+																						<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+																								<div class="button-effect button-show btn">
+																										<span class="label label-show">
+																											<span class="glyphicon glyphicon-qrcode"></span>
+																										</span>
+																										<span class="icon">
+																										<span></span>
+																										</span>
+																										<span class="icon2"></span>
+																								</div>
+																						</a>
                                         </span>
                                     </div>
                                 </div>
@@ -709,7 +897,17 @@
 							<input type="text" class="form-control hidden" id="HDBrainwallet">
 						</div>
 
-						<input type="button" class="btn btn-primary" value="Generate" id="newHDKeysBtn">
+						<!--<input type="button" class="btn btn-primary" value="Generate" id="newHDKeysBtn">-->
+						<a target="_blank" rel="noopener noreferrer" value="Generate" id="newHDKeysBtn" type="button">
+								<div class="button-effect btn">
+										<span class="label">Generate</span>
+										<span class="icon">
+										<span></span>
+										</span>
+										<span class="icon2"></span>
+								</div>
+						</a>
+
 					</div>
 
 					<div class="tab-pane tab-content" id="newTransaction">
@@ -873,7 +1071,18 @@
 
 						<div id="transactionCreate" class="alert alert-success hidden">
 							<label>Transaction</label>
-							<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>
+							<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+							<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;">
+									<div class="button-effect button-show btn">
+											<span class="label label-show">
+												<span class="glyphicon glyphicon-qrcode"></span>
+											</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
 
 							<p>The transaction below has been generated and encoded. It can be broadcasted once it has been signed.</p>
 							<br>
@@ -1123,7 +1332,18 @@
     										<div class="input-group">
     											<input type="text" class="form-control address multisigAddress" value="" readonly>
     											<span class="input-group-btn">
-    												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+    												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+														<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+																<div class="button-effect button-show btn">
+																		<span class="label label-show">
+																			<span class="glyphicon glyphicon-qrcode"></span>
+																		</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
     											</span>
     										</div>
     									</div>
@@ -1146,7 +1366,18 @@
     										<div class="input-group">
     											<input type="text" class="form-control address segWitAddress" value="" readonly>
     											<span class="input-group-btn">
-    												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+    												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+														<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+																<div class="button-effect button-show btn">
+																		<span class="label label-show">
+																			<span class="glyphicon glyphicon-qrcode"></span>
+																		</span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
     											</span>
     										</div>
 									</div>
@@ -1161,7 +1392,18 @@
 										<div class="input-group">
 											<input type="text" class="form-control address" value="" readonly>
 											<span class="input-group-btn">
-												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+												<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+														<div class="button-effect button-show btn">
+																<span class="label label-show">
+																	<span class="glyphicon glyphicon-qrcode"></span>
+																</span>
+																<span class="icon">
+																<span></span>
+																</span>
+																<span class="icon2"></span>
+														</div>
+												</a>
 											</span>
 										</div>
 									</div>
@@ -1173,7 +1415,18 @@
 										<div class="input-group">
 											<input type="text" class="form-control address pubkey" value="" readonly>
 											<span class="input-group-btn">
-												<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
+												<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+												<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode">
+														<div class="button-effect button-show btn">
+																<span class="label label-show">
+																	<span class="glyphicon glyphicon-qrcode"></span>
+																</span>
+																<span class="icon">
+																<span></span>
+																</span>
+																<span class="icon2"></span>
+														</div>
+												</a>
 											</span>
 										</div>
 									</div>
@@ -1384,7 +1637,16 @@
 								<div class="input-group">
 									<input id="signPrivateKey" type="password" class="form-control" value="">
 									<span class="input-group-btn">
-										<button class="showKey btn btn-default" type="button">Show</button>
+										<!--<button class="showKey btn btn-default" type="button">Show</button>-->
+										<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+												<div class="button-effect button-show btn">
+														<span class="label label-show">Show</span>
+														<span class="icon">
+														<span></span>
+														</span>
+														<span class="icon2"></span>
+												</div>
+										</a>
 									</span>
 								</div>
 							</div>
@@ -1431,7 +1693,18 @@
 
 						<div class="alert alert-success hidden" id="signedData">
 							<label>Signed transaction</label>
-							<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>
+							<!--<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;"><span class="glyphicon glyphicon-qrcode"></span></button>-->
+							<a target="_blank" rel="noopener noreferrer" class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right;">
+									<div class="button-effect button-show btn">
+											<span class="label label-show">
+												<span class="glyphicon glyphicon-qrcode"></span>
+											</span>
+											<span class="icon">
+											<span></span>
+											</span>
+											<span class="icon2"></span>
+									</div>
+							</a>
 							<p>The above transaction has been signed:</p>
 
                         				<textarea class="form-control script" style="height:160px" readonly></textarea>
@@ -1637,7 +1910,7 @@
 						<a
 						href="https://explorer.veles.network/miningstats">Mining-stats</a> <a href="https://explorer.veles.network/info">Api</a> </div>
 				<div class="section col-md-3">
-						<h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Velestalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
+						<h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
 				<div class="section col-md-3">
 						<h5>About Us</h5> <a href="team.en.html">Team</a> <a href="roadmap.en.html">Roadmap</a> <a href="https://github.com/Velescore">Github</a> </div>
 		</div>
@@ -1789,7 +2062,7 @@
 						<div class="footer-follow-wide">
 								<ul class="osx-dock">
 									<li class="active">
-										<span>Velestalk</span>
+										<span>Bitcointalk</span>
 										<a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
 												<i class="fab fa-bitcoin"></i>
 										</a>
@@ -1898,8 +2171,28 @@
 				</div>
 
 				<div class="modal-footer">
+					<!--
 					<button type="button" class="btn btn-primary" id="walletConfirmSend">Send</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal" id="confirmClose">Close</button>
+				-->
+					<a target="_blank" rel="noopener noreferrer" type="button" id="walletConfirmSend">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Send</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="confirmClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1920,7 +2213,16 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="qrCodeClose">Close</button>
+					<!--<button type="button" class="btn btn-default" data-dismiss="modal" id="qrCodeClose">Close</button>-->
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="qrCodeClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1944,7 +2246,16 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="qrScanClose">Close</button>
+					<!--<button type="button" class="btn btn-default" data-dismiss="modal" id="qrScanClose">Close</button>-->
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="qrScanClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1999,8 +2310,28 @@
 				</div>
 
 				<div class="modal-footer">
+					<!--
 					<button class="btn btn-primary" type="button" id="mediatorAddKey">Add Public Key</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal" id="mediatorClose">Close</button>
+				-->
+					<a target="_blank" rel="noopener noreferrer" type="button" id="mediatorAddKey">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Add Public Key</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="mediatorClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">Close</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -2022,7 +2353,16 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal" id="warningFeeClose">OK, I've got it!</button>
+					<!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="warningFeeClose">OK, I've got it!</button>-->
+					<a target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal" id="warningFeeClose">
+							<div class="button-effect button-show btn">
+									<span class="label label-show">OK, I've got it!</span>
+									<span class="icon">
+									<span></span>
+									</span>
+									<span class="icon2"></span>
+							</div>
+					</a>
 				</div>
 			</div>
 		</div>

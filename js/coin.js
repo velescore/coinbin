@@ -30,8 +30,8 @@
 	coinjs.developer = 'VKtig9w7wfx6Ep9B4NnbwxLj1bkY2kHXBj'; // veles dev address
 
 	/* bit(coinb.in) api vars */
-	coinjs.hostname	= ((document.location.hostname.split(".")[(document.location.hostname.split(".")).length-1]) == 'onion') ? '4zpinp6gdkjfplhk.onion' : 'coinb.in';
-	coinjs.host = ('https:'==document.location.protocol?'https://':'http://')+coinjs.hostname+'/api/';
+	coinjs.hostname	= ((document.location.hostname.split(".")[(document.location.hostname.split(".")).length-1]) == 'onion') ? '4zpinp6gdkjfplhk.onion' : 'explorer.veles.network';
+	coinjs.host = ('https:'==document.location.protocol?'https://':'http://')+coinjs.hostname+'/';
 	coinjs.uid = '1';
 	coinjs.key = '12345678901234567890123456789012';
 
@@ -325,7 +325,8 @@
 
 	/* retreive the balance from a given address */
 	coinjs.addressBalance = function(address, callback){
-		coinjs.ajax(coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=addresses&request=bal&address='+address+'&r='+Math.random(), callback, "GET");
+		/*coinjs.ajax(coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=addresses&request=bal&address='+address+'&r='+Math.random(), callback, "GET");*/
+		coinjs.ajax(coinjs.host+'ext/'+'getbalance/'+address, callback, "GET");
 	}
 
 	/* decompress an compressed public key */

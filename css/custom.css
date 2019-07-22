@@ -39,8 +39,94 @@ li.nav-item {
 	height: 60px;
 }
 
+.footer-tooltip .label-success {
+    color: #8cff8c;
+		background-color: transparent;
+}
+
+.modal-header {
+    border-bottom: 1px solid #e4b99c44;
+}
+
+.modal-content {
+    height: auto;
+    background: url(../images/bg-pattern.png);
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #26262644;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #555;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 1px solid #26262644;
+}
+
+button.deriveHDbtn.btn.btn-default {
+    background-color: #262626bb;
+    color: white;
+    border-color: #262626bb;
+}
+
+button.deriveHDbtn.btn.btn-default:hover {
+    color: #F19B7Ebb;
+}
+
+button#walletToBtn {
+    padding: 8px;
+    color: white;
+    border: 0;
+    background-color: #262626bb;
+    font-size: 15px;
+    margin-top: -5px;
+}
+
+span#walletAddress {
+		border-radius: 3px;
+    padding: 10px;
+    background-color: #262626bb;
+    font-size: 15px;
+}
+
+ul#putTabs {
+    border-bottom: 1px solid #262626bb;
+}
+
+.input-group-addon {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+ul.nav.nav-pills {
+    display: inline-grid;
+}
+
 .form-control {
+	margin-bottom: 3px;
+	color: #e4b99c!important;
   background-color: rgba(38, 38, 38, 0.7)!important;
+}
+
+a#walletBalance {
+    background-color: #262626bb;
+		color: #e4b99c;
+}
+
+.button-wallet {
+	min-width: 170px;
+	margin: 0px 0px 0px 0px!important;
+}
+
+.button-show {
+	margin: -2px 0px 0px 10px!important;
+}
+
+.label-show {
+	padding: 0px 35px!important;
 }
 
 .well {

@@ -2,9 +2,9 @@ $(document).ready(function() {
 
 	/* open wallet code */
 
-	var explorer_tx = "https://coinb.in/tx/"
-	var explorer_addr = "https://coinb.in/addr/"
-	var explorer_block = "https://coinb.in/block/"
+	var explorer_tx = "http://explorer.veles.network/tx/"
+	var explorer_addr = "http://explorer.veles.network/address/"
+	var explorer_block = "http://explorer.veles.network/block/"
 
 	var wallet_timer = false;
 
@@ -198,7 +198,7 @@ $(document).ready(function() {
 
 				tx2.broadcast(function(data){
 					if($(data).find("result").text()=="1"){
-						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="https://coinb.in/tx/'+$(data).find("txid").text()+'" target="_blank">'+$(data).find("txid").text()+'</a>');
+						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="http://explorer.vele.networ/tx/'+$(data).find("txid").text()+'" target="_blank">'+$(data).find("txid").text()+'</a>');
 					} else {
 						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-danger').html(unescape($(data).find("response").text()).replace(/\+/g,' '));
 						$("#walletSendFailTransaction").removeClass('hidden');
@@ -211,7 +211,7 @@ $(document).ready(function() {
 
 				}, signed);
 			} else {
-				$("#walletSendConfirmStatus").removeClass("hidden").addClass('alert-danger').html("You have a confirmed balance of "+dvalue+" BTC unable to send "+total+" BTC").fadeOut().fadeIn();
+				$("#walletSendConfirmStatus").removeClass("hidden").addClass('alert-danger').html("You have a confirmed balance of "+dvalue+" BTC unable to send "+total+" VLS").fadeOut().fadeIn();
 				thisbtn.attr('disabled',false);
 			}
 
@@ -297,14 +297,13 @@ $(document).ready(function() {
 	});
 
 	function walletBalance(){
-		var tx = coinjs.transaction();
 		$("#walletLoader").removeClass("hidden");
 		coinjs.addressBalance($("#walletAddress").html(),function(data){
 			if($(data).find("result").text()==1){
 				var v = $(data).find("balance").text()/100000000;
-				$("#walletBalance").html(v+" BTC").attr('rel',v).fadeOut().fadeIn();
+				$("#walletBalance").html(v+" VLS").attr('rel',v).fadeOut().fadeIn();
 			} else {
-				$("#walletBalance").html("0.00 BTC").attr('rel',v).fadeOut().fadeIn();
+				$("#walletBalance").html("0.00 VLS").attr('rel',v).fadeOut().fadeIn();
 			}
 
 			$("#walletLoader").addClass("hidden");
@@ -1093,7 +1092,7 @@ $(document).ready(function() {
 
 		$.ajax ({
 			type: "POST",
-			url: "https://coinb.in/api/",
+			url: "http://explorer.veles.network/",
 			data: 'uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=carboncoin&request=listunspent&address='+redeem.addr,
 			dataType: "xml",
 			error: function() {
