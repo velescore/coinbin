@@ -2,9 +2,9 @@ $(document).ready(function() {
 
 	/* open wallet code */
 
-	var explorer_tx = "http://explorer.veles.network/tx/"
-	var explorer_addr = "http://explorer.veles.network/address/"
-	var explorer_block = "http://explorer.veles.network/block/"
+	var explorer_tx = "https://explorer.veles.network/tx/"
+	var explorer_addr = "https://explorer.veles.network/address/"
+	var explorer_block = "https://explorer.veles.network/block/"
 
 	var wallet_timer = false;
 
@@ -197,10 +197,10 @@ $(document).ready(function() {
 				// and finally broadcast!
 
 				tx2.broadcast(function(data){
-					if($(data).find("result").text()=="1"){
-						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="http://explorer.vele.networ/tx/'+$(data).find("txid").text()+'" target="_blank">'+$(data).find("txid").text()+'</a>');
+					if(!data.hasOwnProperty('error')){
+						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="https://explorer.veles.network/tx/'+data+'" target="_blank">'+data+'</a>');
 					} else {
-						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-danger').html(unescape($(data).find("response").text()).replace(/\+/g,' '));
+						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-danger').html(unescape(data.error.message).replace(/\+/g,' '));
 						$("#walletSendFailTransaction").removeClass('hidden');
 						$("#walletSendFailTransaction textarea").val(signed);
 						thisbtn.attr('disabled',false);
@@ -299,11 +299,22 @@ $(document).ready(function() {
 	function walletBalance(){
 		$("#walletLoader").removeClass("hidden");
 		coinjs.addressBalance($("#walletAddress").html(),function(data){
-			if($(data).find("result").text()==1){
-				var v = $(data).find("balance").text()/100000000;
-				$("#walletBalance").html(v+" VLS").attr('rel',v).fadeOut().fadeIn();
-			} else {
+			var json_data = false;
+
+			if (data.indexOf("{") != -1) {
+				json_data = JSON.parse(data);
+			}
+
+			if (json_data.hasOwnProperty('error')) {
+				if (json_data.error = 'address not found.') {
+					// not a problem, new address with no balance
+					var v = 0;
+				}
+
 				$("#walletBalance").html("0.00 VLS").attr('rel',v).fadeOut().fadeIn();
+			} else {
+				var v = Number(data);
+				$("#walletBalance").html(v + " VLS").attr('rel',v).fadeOut().fadeIn();
 			}
 
 			$("#walletLoader").addClass("hidden");
@@ -1030,6 +1041,8 @@ $(document).ready(function() {
 
 	/* default function to retreive unspent outputs*/
 	function listUnspentDefault(redeem){
+		console.log('UNSPENT DEF CALLED');
+
 		var tx = coinjs.transaction();
 		tx.listUnspent(redeem.addr, function(data){
 			if(redeem.addr) {
@@ -1055,6 +1068,8 @@ $(document).ready(function() {
 
 	/* retrieve unspent data from chainso for Veles */
 	function listUnspentChainso_Velescoin(redeem){
+		console.log('UNSPENT CHAINSO CALLED');
+
 		$.ajax ({
 			type: "GET",
 			url: "https://chain.so/api/v2/get_tx_unspent/ltc/"+redeem.addr,
@@ -1092,7 +1107,7 @@ $(document).ready(function() {
 
 		$.ajax ({
 			type: "POST",
-			url: "http://explorer.veles.network/",
+			url: "https://explorer.veles.network/",
 			data: 'uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=carboncoin&request=listunspent&address='+redeem.addr,
 			dataType: "xml",
 			error: function() {
