@@ -35,7 +35,7 @@
 		<script src="https://veles.network/js/websocket.js"></script>
 		<script src="https://veles.network/js/websocket-ui.js"></script>
 		<script src="https://veles.network/js/footer.js"></script>
-		<script src="https://veles.network/js/console.js"></script>
+		<script src="js/console.js"></script>
 
 
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -55,6 +55,11 @@
 
 		<script type="text/javascript" src="js/coin.js"></script>
 		<script type="text/javascript" src="js/coinbin.js"></script>
+
+		<script>$(document).ready(function(){  
+		  /* $('#home').addClass('active'); */
+		  velesDevConsole.bindToggle('#console-toggle', velesSocketClient);
+		});</script>
 	</head>
 
 

@@ -299,3 +299,8 @@ a:focus, a:active {
 #fees .total {
 	font-size: 100px;
 }
+
+/* Fix console window being too low */
+.footer-overlay.footer-panel-expand {
+  bottom: 20px;
+}
