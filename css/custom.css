@@ -184,6 +184,28 @@ a:focus, a:active {
     text-decoration: underline;
 }
 
+a#donateTxBtn {
+    color: #e4b99c;
+}
+
+a#donateTxBtn:hover {
+    color: #F19B7E;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: white;
+    cursor: default;
+    background-color: #262626bb;
+    border: 1px solid #262626bb;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs>li:hover>a {
+		background-color: #262626bb;
+		border-color: #262626bb;
+		color: #F19B7E;
+}
+
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
     color: white;
     text-decoration: none;
@@ -216,7 +238,6 @@ a:focus, a:active {
 }
 
 #wrap {
-	min-height: 100%;
 	height: auto;
 	/* Negative indent footer by its height */
 	margin: 5% auto 0 0;

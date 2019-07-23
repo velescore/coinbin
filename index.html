@@ -698,7 +698,7 @@
 							</div>
 
 							<div class="col-md-3">
-								<p class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> <a href="javascript:;" data-toggle="modal" data-target="#modalMediator"><abbr>Need a Mediator?</abbr></a></p>
+								<!--<p class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> <a href="javascript:;" data-toggle="modal" data-target="#modalMediator"><abbr>Need a Mediator?</abbr></a></p>-->
 							</div>
 
 							<div class="col-md-1">
@@ -945,7 +945,7 @@
 						<div class="input-group input-group-margin">
 							<span class="input-group-btn">
 								<!--<button class="btn btn-info qrcodeScanner" type="button" data-toggle="modal" data-target="#modalQrcodeScanner" forward-result="#redeemFrom"><span class="glyphicon glyphicon-camera"></span></button>-->
-								<a class="qrcodeBtn" type="button" data-toggle="modal" data-target="#modalQrcode" forward-result="#redeemFrom" style="float:left;">
+								<a class="qrcodeScanner" type="button" data-toggle="modal" data-target="#modalQrcodeScanner" forward-result="#redeemFrom" style="float:left;">
 										<div class="button-effect button-left btn">
 												<span class="label label-show">
 													<span class="glyphicon glyphicon-qrcode"></span>
@@ -1938,7 +1938,6 @@
 					<br>
 					<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/velescore/veles-webwallet/" target="_blank">github</a>. You can even <a href="https://github.com/velescore/veles-webwallet/archive/master.zip">download</a> this page and host it yourself or run it offline!</p>
 					<br>
-
 				</div>
 			</div>
 		</div>
@@ -2320,6 +2319,7 @@
 	<!-- qrcode scanner modal -->
 
 	<!-- mediator modal -->
+	<!--
 	<div class="modal fade" id="modalMediator" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -2335,14 +2335,14 @@
 					<div class="row">
 						<div class="col-md-5">
 							<label>Mediator:</label>
-
+						-->
 							<!--
 								You need to contact us before adding your pubkey
 								and submitting a pull request on github.
 
 								format is: pubkey;email;fee
 							-->
-
+							<!--
 							<select id="mediatorList" class="form-control">
 								<option value="02b6231cc602740c29436eafbb6448880f4058cc3d2745c709deee313104678277;support@coinb.in;1">Coinb.in</option>
 							</select>
@@ -2370,7 +2370,7 @@
 					<!--
 					<button class="btn btn-primary" type="button" id="mediatorAddKey">Add Public Key</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal" id="mediatorClose">Close</button>
-				-->
+
 					<a target="_blank" rel="noopener noreferrer" type="button" id="mediatorAddKey">
 							<div class="button-effect button-show btn">
 									<span class="label label-show">Add Public Key</span>
