@@ -145,7 +145,8 @@ a#walletBalance {
 }
 
 .button-show {
-	margin: -2px 0px 0px 10px!important;
+	/*margin: -2px 0px 0px 10px!important;*/
+  margin: 0px 20px 0px 0px!important;
 }
 
 .button-left {
