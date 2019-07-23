@@ -139,6 +139,7 @@ $(document).ready(function() {
 
 	$("#walletConfirmSend").click(function(){
 		var thisbtn = $(this);
+		var loaderbtn = $('#walletConfirmSendLoader');
 		var tx = coinjs.transaction();
 		var txfee = $("#txFee");
 		var devaddr = coinjs.developer;
@@ -159,7 +160,8 @@ $(document).ready(function() {
 			}
 		});
 
-		thisbtn.attr('disabled',true);
+		thisbtn.hide();
+		loaderbtn.show();
 
 		var script = false;
 		if($("#walletSegwit").is(":checked")){
@@ -197,13 +199,15 @@ $(document).ready(function() {
 				// and finally broadcast!
 
 				tx2.broadcast(function(data){
+					loaderbtn.hide();
+
 					if(!data.hasOwnProperty('error')){
-						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="https://explorer.veles.network/tx/'+data+'" target="_blank">'+data+'</a>');
+						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('Success, your transaction have been sent!<br /><br />txid: <a href="https://explorer.veles.network/tx/'+data+'" target="_blank">'+data+'</a>');
 					} else {
 						$("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-danger').html(unescape(data.error.message).replace(/\+/g,' '));
 						$("#walletSendFailTransaction").removeClass('hidden');
 						$("#walletSendFailTransaction textarea").val(signed);
-						thisbtn.attr('disabled',false);
+						thisbtn.show();
 					}
 
 					// update wallet balance
@@ -212,12 +216,18 @@ $(document).ready(function() {
 				}, signed);
 			} else {
 				$("#walletSendConfirmStatus").removeClass("hidden").addClass('alert-danger').html("You have a confirmed balance of "+dvalue+" BTC unable to send "+total+" VLS").fadeOut().fadeIn();
-				thisbtn.attr('disabled',false);
+				thisbtn.show();
+				loaderbtn.hide();
 			}
 
 			$("#walletLoader").addClass("hidden");
 
 		}, script, script, sequence);
+	});
+
+	/* refresh balance when modal dialog is closed, eg. transaction has been sent */
+	$('#confirmClose').click(function(){
+		walletBalance();
 	});
 
 	$("#walletSendBtn").click(function(){
@@ -270,7 +280,8 @@ $(document).ready(function() {
 				$("#walletSendConfirmStatus").addClass("hidden").removeClass('alert-success').removeClass('alert-danger').html("");
 				$("#spendAmount").html(total);
 				$("#modalWalletConfirm").modal("show");
-				$("#walletConfirmSend").attr('disabled',false);
+				$("#walletConfirmSend").show();
+				$('#walletConfirmSendLoader').hide();
 			} else {
 				$("#walletSendStatus").removeClass("hidden").html("You are trying to spend "+total+' but have a balance of '+balance);
 			}
