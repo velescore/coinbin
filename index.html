@@ -276,247 +276,228 @@
 						</section>
 					</div>
 
-					<div class="tab-pane tab-content light-color" id="wallet">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="page-subtitle">Open Wallet <small> browser based Veles wallet</small></h2>
-								<div id="openLogin">
-									<form class="form-signin" role="form" action="javascript:;">
+					<div class="tab-pane tab-content" id="wallet">
+						<section>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<h2 class="page-subtitle">Open Wallet <small> browser based Veles wallet</small></h2>
+										<div id="openLogin">
+											<form class="form-signin" role="form" action="javascript:;">
 
-										<p>Use the form below to open a wallet and begin using this service.</p>
+												<p>Use the form below to open a wallet and begin using this service.</p>
 
-										<div class="alert alert-warning">
-											<b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as lost accounts can not be recovered!
-										</div>
-
-										<input id="openEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
-										<input id="openPass" type="password" class="form-control" placeholder="Password" required>
-										<input id="openPassConfirm" type="password" class="form-control" placeholder="Password confirm" required>
-										<br>
-
-										<div>
-											<a href="javascript:;" class="optionsCollapse"><div class="well well-sm"><span class="glyphicon glyphicon-collapse-down" id="glyphcollapse"></span> Advanced Options</div></a>
-											<div class="hidden optionsAdvanced">
-												<label>Segregated Witness Address</label>
-												<p class="checkbox">
-													<label><input type="checkbox" id="walletSegwit" class="checkbox-inline" checked> Use a segwit address instead of a regular address. <span class="text-muted"><i>(recommended)</i></span></label></label> <br>
-													<label><input type="radio" id="walletSegwitp2sh" class="walletSegwitType" name="walletSegWitType" value="p2sh" checked> p2sh address</label> <br>
-													<label><input type="radio" id="walletSegwitBech32" class="walletSegwitType" name="walletSegWitType" value="bech32"> bech32 address</label>
-												</p>
-
-												<label>Enable Replace by Fee (RBF)</label>
-												<p class="checkbox">
-													<label><input type="checkbox" id="walletRBF" class="checkbox-inline" checked> Enable RBF on all transactions, allowing you to manually raise the transaction fee later if required. <span class="text-muted"><i>(recommended)</i></span></label></label>
-												</p>
-											</div>
-										</div>
-
-										<div id="openLoginStatus" class="alert alert-danger hidden"></div>
-										<!--<button id="openBtn" class="btn btn-primary" type="submit">Submit</button>-->
-										<a target="_blank" rel="noopener noreferrer" type="submit" id="openBtn">
-												<div class="button-effect btn">
-														<span class="label">Submit</span>
-														<span class="icon">
-														<span></span>
-														</span>
-														<span class="icon2"></span>
-												</div>
-										</a>
-									</form>
-								</div>
-
-								<div id="openWallet" class="hidden">
-									<div class="row">
-										<div class="col-md-12">
-											<p><span style="float:right;"><a href="javascript:;" id="walletLogout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></span>Welcome to your wallet, enjoy your stay!</p>
-										</div>
-									</br>
-										<div class="col-md-5" align="center">
-											<div id="walletQrCode"></div> <br>
-											<div>
-												<!--<span id="walletLoader" class="hidden"><img src="images/loader.gif"></span>-->
-												<span id="walletLoader" class="hidden fa fa-spinner fa-spin"></span>
-												<span id="walletAddress"></span>
-
-												<div class="btn-group">
-													<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="walletToBtn">SegWit <span class="caret"></span></button>
-													<ul class="dropdown-menu">
-														<li><a href="javascript:;" id="walletToSegWit">SegWit</a></li>
-														<li><a href="javascript:;" id="walletToSegWitBech32">SegWit/Bech32</a></li>
-														<li><a href="javascript:;" id="walletToLegacy">Legacy</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3" align="center">
-											<ul class="nav nav-pills" role="tablist">
-												<!--
-												<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 VLS</a></li>
-												<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
-												<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
-												<li role="presentation"><a href="https://localVeles.com/?ch=173j" target="_blank">Buy</a></li>
-												<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
-											-->
-												<li role="presentation" class="active">
-													<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletBalance">
-															<div class="button-effect btn button-wallet">
-																	<span class="label label-show">0.00 VLS</span>
-																	<span class="icon">
-																	<span></span>
-																	</span>
-																	<span class="icon2"></span>
-															</div>
-													</a>
-												</li>
-												<li role="presentation">
-													<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowKeys">
-															<div class="button-effect btn button-wallet">
-																	<span class="label label-show">Keys</span>
-																	<span class="icon">
-																	<span></span>
-																	</span>
-																	<span class="icon2"></span>
-															</div>
-													</a>
-												</li>
-												<li role="presentation">
-													<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowSpend">
-															<div class="button-effect btn button-wallet">
-																	<span class="label label-show">Spend</span>
-																	<span class="icon">
-																	<span></span>
-																	</span>
-																	<span class="icon2"></span>
-															</div>
-													</a>
-												</li>
-												<li role="presentation">
-													<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletHistory">
-															<div class="button-effect btn button-wallet">
-																	<span class="label label-show">History</span>
-																	<span class="icon">
-																	<span></span>
-																	</span>
-																	<span class="icon2"></span>
-															</div>
-													</a>
-												</li>
-												<li role="presentation">
-													<a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
-															<div class="button-effect btn button-wallet">
-																	<span class="label label-show">Buy</span>
-																	<span class="icon">
-																	<span></span>
-																	</span>
-																	<span class="icon2"></span>
-															</div>
-													</a>
-												</li>
-										  </ul>
-									</div>
-									<div class="col-md-4">
-
-											<br>
-
-											<div id="walletKeys" class="hidden">
-												<label>Public Key</label>
-												<input class="form-control pubkey" type="text" readonly>
-
-												<div class="walletSegWitRS hidden">
-													<label>Redeem Script <i>(SegWit)</i></label>
-													<input class="form-control" type="text" readonly>
+												<div class="alert alert-warning">
+													<b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as lost accounts can not be recovered!
 												</div>
 
-												<label>Private key</label>
-												<div class="input-group">
-													<input class="form-control privkey" type="password" readonly>
-
-													<span class="input-group-btn">
-														<!--<button class="showKey btn btn-default" type="button">Show</button>-->
-														<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
-																<div class="button-effect button-show btn">
-																		<span class="label label-show">Show</span>
-																		<span class="icon">
-																		<span></span>
-																		</span>
-																		<span class="icon2"></span>
-																</div>
-														</a>
-													</span>
-												</div>
-
-												<label>Private Key (AES256 encrypted key)</label>
-												<input class="form-control privkeyaes" type="text" readonly>
-											</div>
-
-											<div id="walletSpend" class="hidden">
-												<div class="row">
-													<div class="form-inline output">
-														<div class="col-xs-8">
-															<label>Address</label>
-														</div>
-
-														<div class="col-xs-3">
-															<label>Amount</label>
-														</div>
-													</div>
-												</div>
-
-												<div class="row" id="walletSpendTo">
-													<div class="form-horizontal output">
-														<div class="col-xs-8">
-															<input type="text" class="form-control addressTo" data-original-title="" title="">
-														</div>
-														<div class="col-xs-3">
-															<input type="text" class="form-control amount" data-original-title="" title="" placeholder="0.00">
-
-														</div>
-
-														<a href="javascript:;" class="addressAdd"><span class="glyphicon glyphicon-plus"></span></a>
-														<br><br>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-xs-6">
-														<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr>&nbsp;&nbsp;<a href="javascript:;" id="feesestwallet"><span class="glyphicon glyphicon-question-sign"></span></a></label>
-														<input type="text" class="form-control" value="0.00004000" id="txFee">
-													</div>
-													<div class="col-xs-5">
-														<label><abbr title="the amount to donate to coinb.in">Donation</abbr></label>
-														<input type="text" class="form-control" value="0.003" id="developerDonation">
-													</div>
-												</div>
+												<input id="openEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
+												<input id="openPass" type="password" class="form-control" placeholder="Password" required>
+												<input id="openPassConfirm" type="password" class="form-control" placeholder="Password confirm" required>
 												<br>
 
-												<div id="walletSendStatus" class="alert alert-danger hidden"></div>
-												<!--
-												<button class="btn btn-primary" type="button" id="walletSendBtn">Send</button>
-												<button class="btn btn-default" type="button">Reset</button>
-												-->
-												<a type="button" id="walletSendBtn">
-														<div class="button-effect button-show btn">
-																<span class="label label-show">Send</span></span>
+												<div>
+													<a href="javascript:;" class="optionsCollapse"><div class="well well-sm"><span class="glyphicon glyphicon-collapse-down" id="glyphcollapse"></span> Advanced Options</div></a>
+													<div class="hidden optionsAdvanced">
+														<label>Segregated Witness Address</label>
+														<p class="checkbox">
+															<label><input type="checkbox" id="walletSegwit" class="checkbox-inline" checked> Use a segwit address instead of a regular address. <span class="text-muted"><i>(recommended)</i></span></label></label> <br>
+															<label><input type="radio" id="walletSegwitp2sh" class="walletSegwitType" name="walletSegWitType" value="p2sh" checked> p2sh address</label> <br>
+															<label><input type="radio" id="walletSegwitBech32" class="walletSegwitType" name="walletSegWitType" value="bech32"> bech32 address</label>
+														</p>
+
+														<label>Enable Replace by Fee (RBF)</label>
+														<p class="checkbox">
+															<label><input type="checkbox" id="walletRBF" class="checkbox-inline" checked> Enable RBF on all transactions, allowing you to manually raise the transaction fee later if required. <span class="text-muted"><i>(recommended)</i></span></label></label>
+														</p>
+													</div>
+												</div>
+
+												<div id="openLoginStatus" class="alert alert-danger hidden"></div>
+												<a target="_blank" rel="noopener noreferrer" type="submit" id="openBtn">
+														<div class="button-effect btn">
+																<span class="label">Submit</span>
 																<span class="icon">
 																<span></span>
 																</span>
 																<span class="icon2"></span>
 														</div>
 												</a>
-												<!--<a type="button">
-														<div class="button-effect button-show btn">
-																<span class="label label-show">Reset</span></span>
-																<span class="icon">
-																<span></span>
-																</span>
-																<span class="icon2"></span>
+											</form>
+										</div>
+
+										<div id="openWallet" class="hidden">
+											<div class="row">
+												<div class="col-md-12">
+													<p><span style="float:right;"><a href="javascript:;" id="walletLogout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></span>Welcome to your wallet, enjoy your stay!</p>
+												</div>
+											</br>
+												<div class="col-md-5" align="center">
+													<div id="walletQrCode"></div> <br>
+													<div>
+														<span id="walletLoader" class="hidden fa fa-spinner fa-spin"></span>
+														<span id="walletAddress"></span>
+
+														<div class="btn-group">
+															<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="walletToBtn">SegWit <span class="caret"></span></button>
+															<ul class="dropdown-menu">
+																<li><a href="javascript:;" id="walletToSegWit">SegWit</a></li>
+																<li><a href="javascript:;" id="walletToSegWitBech32">SegWit/Bech32</a></li>
+																<li><a href="javascript:;" id="walletToLegacy">Legacy</a></li>
+															</ul>
 														</div>
-												</a>-->
+													</div>
+												</div>
+												<div class="col-md-3" align="center">
+													<ul class="nav nav-pills" role="tablist">
+														<li role="presentation" class="active">
+															<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletBalance">
+																	<div class="button-effect btn button-wallet">
+																			<span class="label label-show">0.00 VLS</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
+														</li>
+														<li role="presentation">
+															<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowKeys">
+																	<div class="button-effect btn button-wallet">
+																			<span class="label label-show">Keys</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
+														</li>
+														<li role="presentation">
+															<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletShowSpend">
+																	<div class="button-effect btn button-wallet">
+																			<span class="label label-show">Spend</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
+														</li>
+														<li role="presentation">
+															<a target="_blank" rel="noopener noreferrer" href="javascript:;" id="walletHistory">
+																	<div class="button-effect btn button-wallet">
+																			<span class="label label-show">History</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
+														</li>
+														<li role="presentation">
+															<a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
+																	<div class="button-effect btn button-wallet">
+																			<span class="label label-show">Buy</span>
+																			<span class="icon">
+																			<span></span>
+																			</span>
+																			<span class="icon2"></span>
+																	</div>
+															</a>
+														</li>
+												  </ul>
+											</div>
+											<div class="col-md-4">
+
+													<br>
+
+													<div id="walletKeys" class="hidden">
+														<label>Public Key</label>
+														<input class="form-control pubkey" type="text" readonly>
+
+														<div class="walletSegWitRS hidden">
+															<label>Redeem Script <i>(SegWit)</i></label>
+															<input class="form-control" type="text" readonly>
+														</div>
+
+														<label>Private key</label>
+														<div class="input-group">
+															<input class="form-control privkey" type="password" readonly>
+
+															<span class="input-group-btn">
+																<a target="_blank" rel="noopener noreferrer" class="showKey" type="Submit">
+																		<div class="button-effect button-show btn">
+																				<span class="label label-show">Show</span>
+																				<span class="icon">
+																				<span></span>
+																				</span>
+																				<span class="icon2"></span>
+																		</div>
+																</a>
+															</span>
+														</div>
+
+														<label>Private Key (AES256 encrypted key)</label>
+														<input class="form-control privkeyaes" type="text" readonly>
+													</div>
+
+													<div id="walletSpend" class="hidden">
+														<div class="row">
+															<div class="form-inline output">
+																<div class="col-xs-8">
+																	<label>Address</label>
+																</div>
+
+																<div class="col-xs-3">
+																	<label>Amount</label>
+																</div>
+															</div>
+														</div>
+
+														<div class="row" id="walletSpendTo">
+															<div class="form-horizontal output">
+																<div class="col-xs-8">
+																	<input type="text" class="form-control addressTo" data-original-title="" title="">
+																</div>
+																<div class="col-xs-3">
+																	<input type="text" class="form-control amount" data-original-title="" title="" placeholder="0.00">
+
+																</div>
+
+																<a href="javascript:;" class="addressAdd"><span class="glyphicon glyphicon-plus"></span></a>
+																<br><br>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-xs-6">
+																<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr>&nbsp;&nbsp;<a href="javascript:;" id="feesestwallet"><span class="glyphicon glyphicon-question-sign"></span></a></label>
+																<input type="text" class="form-control" value="0.00004000" id="txFee">
+															</div>
+															<div class="col-xs-5">
+																<label><abbr title="the amount to donate to coinb.in">Donation</abbr></label>
+																<input type="text" class="form-control" value="0.003" id="developerDonation">
+															</div>
+														</div>
+														<br>
+
+														<div id="walletSendStatus" class="alert alert-danger hidden"></div>
+														<a type="button" id="walletSendBtn">
+																<div class="button-effect button-show btn">
+																		<span class="label label-show">Send</span></span>
+																		<span class="icon">
+																		<span></span>
+																		</span>
+																		<span class="icon2"></span>
+																</div>
+														</a>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</section>
 					</div>
 
 					<div class="tab-pane tab-content light-color" id="newAddress">
