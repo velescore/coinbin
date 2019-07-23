@@ -95,12 +95,12 @@ button.deriveHDbtn.btn.btn-default:hover {
 }
 
 button#walletToBtn {
-    padding: 8px;
+    padding: 7px;
     color: white;
     border: 0;
     background-color: #262626bb;
     font-size: 15px;
-    margin-top: -5px;
+    margin-top: -2px;
 }
 
 span#walletAddress {
@@ -351,4 +351,30 @@ a#donateTxBtn:hover {
 /* Fix console window being too low */
 .footer-overlay.footer-panel-expand {
   bottom: 20px;
+}
+
+/* Wallet tab */
+#walletQrCode img {
+  border: 5px solid white;
+}
+
+#wallet .button-effect {
+  width: 100%;
+}
+
+#wallet .nav>li>a {
+  padding: 5px 0px;
+}
+
+#wallet .nav>li>a#walletBalance {
+  margin: 5px 0px 10px 3px;
+  padding: 15px;
+}
+
+#wallet #openBtn .button-effect {
+  max-width: 250px;
+}
+
+#wallet ul.nav.nav-pills {
+  min-width: 250px;
 }
