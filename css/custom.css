@@ -231,7 +231,13 @@ a#donateTxBtn:hover {
 }
 
 .jumbotron {
-    background: rgba(38, 38, 38, 0.7);
+	height: calc(100vh - 98px) !important;
+  background: rgba(38, 38, 38, 0.8);
+
+}
+
+p.text-muted {
+	font-size: 15px;
 }
 
 .displaynone {
@@ -241,7 +247,12 @@ a#donateTxBtn:hover {
 #wrap {
 	height: auto;
 	/* Negative indent footer by its height */
-	margin: 5% auto 0 0;
+	margin: 2% auto 0 0;
+}
+
+.card {
+	min-height: 200px;
+  padding: 2.5rem;
 }
 
 .page-subtitle {
