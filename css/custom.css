@@ -84,6 +84,11 @@ button.deriveHDbtn.btn.btn-default:hover {
     color: #F19B7Ebb;
 }
 
+.btn-login {
+	max-width: unset!important;
+	margin-left: 0!important;
+}
+
 button#walletToBtn {
     padding: 7px;
     color: white;
@@ -171,7 +176,7 @@ a#walletBalance {
 }
 
 .alert-warning {
-	background-color: #ee5f5b44;
+	background-color: #ee5f5b74;
   border-color: #ed4d6388;
   color: #ffffff
 }
@@ -259,6 +264,19 @@ p.text-muted {
 	margin: 5px;
 	min-height: 200px;
   padding: 2.5rem;
+}
+
+.card-login {
+  background-color: #e4b99c44!important;
+}
+
+.card-header {
+  padding: 20px;
+  margin: 5px;
+  border-bottom: solid 1px #e4b99cbb;
+  background: #262626bb!important;
+  margin-bottom: -5px!important;
+  font-size: 25px;
 }
 
 .page-subtitle {
