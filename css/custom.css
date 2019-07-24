@@ -141,7 +141,9 @@ ul.nav.nav-pills {
 
 a#walletBalance {
     background-color: #262626bb;
-		color: #e4b99c;
+    color: #F19B7E;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .input-group-margin {
@@ -447,4 +449,22 @@ p.text-muted {
 
 #wallet ul.nav.nav-pills {
   min-width: 250px;
+}
+
+/* Navigation */
+li.nav-item {
+    padding: 6px 0 5px 0;
+}
+div#brand-text {
+    font-size: 21px;
+    margin: 4px 6px;
+}
+div#brand-text .brand-subtitle {
+    font-weight: lighter;
+}
+.navbar-nav>li>a {
+    padding: 15px 8px;
+}
+.dropdown-toggle .fa-angle-down {
+    padding-left: 5px;
 }

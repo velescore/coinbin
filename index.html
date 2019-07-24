@@ -9,8 +9,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="css/style.css" media="screen">		
 		<link rel="stylesheet" href="css/custom.css" media="screen">
-		<link rel="stylesheet" href="css/style.css" media="screen">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://veles.network/js/src/jquery.jqplot.css">
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -55,9 +55,12 @@
 		<div id="wrap">
 			<div class="nav navbar navbar-fixed-top" role="navigation">
 				<div class="container">
+					<a class="navbar-brand" href="#home" title="Wallet Homepage">
+						<img id="icon" src="images/veles.ico"></img>
+						<div id="brand-text"> Veles <span class="brand-subtitle">Wallet</span></div>
+					</a>
 					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"><i class="fas fa-bars"></i></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#home" title="Homepage"><img id="icon" src="images/veles.ico">
-							<p id="brand-text"> Veles</p></a>
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"><i class="fas fa-bars"></i></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 					</div>
 					<div class="collapse navbar-collapse" id="navbar-collapse">
 						<ul class="nav navbar-nav">
@@ -439,7 +442,7 @@
 								<div class="alert alert-danger" id="multiSigErrorMsg" style="display:none"></div>
 								<div class="alert alert-success hidden" id="multiSigData">
 									<label>Address</label>
-									<p>Payment should be made to this address:</p>
+									<p>Payment should be made to this address: </p>
 									<div class="row">
 										<div class="col-lg-6">
 											<div class="input-group">
@@ -499,7 +502,7 @@
 								<div class="alert alert-danger" id="timeLockedErrorMsg" style="display:none"></div>
 								<div class="alert alert-success hidden" id="timeLockedData">
 									<label>Address</label>
-									<p>Payment should be made to this address:</p>
+									<p>Payment should be made to this address: </p>
 									<div class="row">
 										<div class="col-lg-6">
 											<div class="input-group">
@@ -624,7 +627,7 @@
 										<p>Enter the details of inputs you wish to spend.</p>
 										<div class="row">
 											<div class="col-xs-5">
-												<label><abbr title="Transaction ID">Transaction ID:</abbr></label>
+												<label><abbr title="Transaction ID">Transaction ID: </abbr></label>
 											</div>
 											<div class="col-xs-1">
 												<label><abbr title="Transaction Input Number">N</abbr></label>
@@ -933,7 +936,7 @@
 								<div class="alert alert-success hidden" id="signedData">
 									<label>Signed transaction</label><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right">
 										<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
-									<p>The above transaction has been signed:</p>
+									<p>The above transaction has been signed: </p>
 									<textarea class="form-control script" style="height:160px" readonly=""></textarea>
 									<p class="text-muted">Size: <span class="txSize">0</span><i>bytes</i></p>
 								</div><a id="signBtn" target="_blank" rel="noopener noreferrer" type="Submit">
@@ -1054,11 +1057,11 @@
 							<li><span>Discord</span><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg"><i class="fab fa-discord"></i></a></li>
 						</ul>
 					</div>
-					<div class="status-area websocket-online-animate" id="price-status"><span class="status-label-wide">Price:</span><span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span><span class="status-label-wide">BTC</span></div>
+					<div class="status-area websocket-online-animate" id="price-status"><span class="status-label-wide">Price: </span><span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span><span class="status-label-wide"> BTC</span></div>
 					<div class="status-area" id="connection-status"><span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE"></span><span class="fa fa-rss websocket-online" title="Websocket Status: ONLINE" style="display: none"></span>️</div>
-					<div class="status-area websocket-online-animate" id="chain-tip-status"><span class="status-label-wide">Blocks:</span><b><span data-entity-id="chain.tip" data-attribute="height">0</span></b></div>
-					<div class="status-area websocket-online-animate" id="masternodes-status"><span class="status-label-wide">Masternodes:</span><b><span data-entity-id="masternodes" data-attribute="count">0</span></b><span class="status-label-short">MNs</span></div>
-					<div class="status-area websocket-online-animate" id="chain-pow-status"><span class="status-label-wide">Hashrate:</span><span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span></div>
+					<div class="status-area websocket-online-animate" id="chain-tip-status"><span class="status-label-wide">Blocks: </span><b><span data-entity-id="chain.tip" data-attribute="height">0</span></b></div>
+					<div class="status-area websocket-online-animate" id="masternodes-status"><span class="status-label-wide">Masternodes: </span><b><span data-entity-id="masternodes" data-attribute="count">0</span></b><span class="status-label-short">MNs</span></div>
+					<div class="status-area websocket-online-animate" id="chain-pow-status"><span class="status-label-wide">Hashrate: </span><span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span></div>
 				</div>
 			</div>
 			<div id="dev-console">
@@ -1090,7 +1093,7 @@
 					<div class="modal-body">
 						<p>You are about to send a transaction to the value of <span id="spendAmount">0.00</span> VLS</p><br>
 						<div class="alert alert-danger hidden" id="walletSendConfirmStatus"></div>
-						<div class="alert alert-info hidden" id="walletSendFailTransaction"><b>Raw Transaction:</b>
+						<div class="alert alert-info hidden" id="walletSendFailTransaction"><b>Raw Transaction: </b>
 							<p>Below is a copy of the transaction we tried to submit</p>
 							<textarea class="form-control" readonly=""></textarea>
 						</div>
