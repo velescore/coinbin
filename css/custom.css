@@ -153,6 +153,7 @@ a#walletBalance {
 }
 
 .section-dark {
+		overflow: visible;
 		background-image: linear-gradient(180deg,	transparent, #383737)!important;
 }
 
