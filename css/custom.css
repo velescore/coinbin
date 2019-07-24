@@ -87,6 +87,7 @@ button.deriveHDbtn.btn.btn-default:hover {
 .btn-login {
 	max-width: unset!important;
 	margin-left: 0!important;
+	border-radius: 3px;
 }
 
 button#walletToBtn {
@@ -103,6 +104,14 @@ span#walletAddress {
     padding: 10px;
     background-color: #262626bb;
     font-size: 14px;
+}
+
+.icon2-login {
+	border-radius: 4px;
+}
+
+b.smaller {
+	font-size: 15px;
 }
 
 ul#putTabs {
@@ -155,6 +164,7 @@ a#walletBalance {
 .well {
   background-color: rgba(38, 38, 38, 0.7);
   border: 0;
+	margin-bottom: 0px;
 }
 
 .section-dark {
@@ -264,6 +274,14 @@ p.text-muted {
 	margin: 5px;
 	min-height: 200px;
   padding: 2.5rem;
+}
+
+.card-advanced {
+  border-top: solid 1px #e4b99cbb;
+  background-color: rgba(38, 38, 38, 0.7);
+  padding: 25px;
+  font-size: 14px;
+  border-radius: 4px;
 }
 
 .card-login {
