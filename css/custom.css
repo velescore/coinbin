@@ -110,10 +110,6 @@ span#walletAddress {
 	border-radius: 4px;
 }
 
-b.smaller {
-	font-size: 15px;
-}
-
 ul#putTabs {
     border-bottom: 1px solid #262626bb;
 }
@@ -129,7 +125,7 @@ ul.nav.nav-pills {
 }
 
 .form-control {
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 	color: #e4b99c!important;
   background-color: rgba(38, 38, 38, 0.7)!important;
 }
@@ -188,7 +184,8 @@ a#walletBalance {
 .alert-warning {
 	background-color: #ee5f5b74;
   border-color: #ed4d6388;
-  color: #ffffff
+  color: #ffffff;
+	font-size: 14px;
 }
 
 .alert-danger {
@@ -294,7 +291,7 @@ p.text-muted {
   border-bottom: solid 1px #e4b99cbb;
   background: #262626bb!important;
   margin-bottom: -5px!important;
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .page-subtitle {
