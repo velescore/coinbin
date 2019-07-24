@@ -12,10 +12,6 @@ a.navbar-brand {
     margin-left: 0!important;
 }
 
-.section-dark {
-		background-image: linear-gradient(180deg,	transparent, #383737)!important;
-}
-
 p#brand-text {
     margin-left: 6px;
     margin-top: 4px;
@@ -156,22 +152,36 @@ a#walletBalance {
   border: 0;
 }
 
+.section-dark {
+		background-image: linear-gradient(180deg,	transparent, #383737)!important;
+}
+
+.section-light {
+		background-image: linear-gradient(180deg,	#e4b99c22, #6f6158)!important;
+}
+
 .alert-info {
-    color: #F19B7E;
+    /*color: #F19B7E;
     background-color: rgba(38, 38, 38, 0.7);
-    border: 0;
+    border: 0;*/
+		color: white;
+		background-color: #31708f88;
+		border-color: #26262622;
 }
 
 .alert-warning {
-  color: #F19B7E;
-  background-color: rgba(38, 38, 38, 0.7);
-  border: 0;
+	background-color: #ee5f5b88;
+  border-color: #ed4d6388;
+  color: #ffffff
 }
 
 .alert-danger {
-  color: #F19B7E;
+  /*color: #F19B7E;
   background-color: rgba(38, 38, 38, 0.7);
-  border: 0;
+  border: 0;*/
+	background-color: #ee5f5b88;
+  border-color: #ed4d6388;
+  color: #ffffff;
 }
 
 a:focus, a:active {
@@ -227,7 +237,7 @@ a#donateTxBtn:hover {
 .jumbotron {
 	height: calc(100vh - 98px) !important;
   background: rgba(38, 38, 38, 0.8);
-
+	margin-bottom: 0px!important;
 }
 
 p.text-muted {
@@ -245,6 +255,7 @@ p.text-muted {
 }
 
 .card {
+	margin: 5px;
 	min-height: 200px;
   padding: 2.5rem;
 }
