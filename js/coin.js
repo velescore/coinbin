@@ -1098,7 +1098,11 @@
 		r.broadcast = function(callback, txhex){
 			var tx = txhex || this.serialize();
 			// don't need to use  any specialized AJAX API, if we are already connected to the websocket
-			velesSocketClient.get_cmd_result('node', 'sendrawtransaction ' + tx, {}, callback);
+			try {
+				velesSocketClient.get_cmd_result('node', 'sendrawtransaction ' + tx, {}, callback);
+			} catch(e) {
+				callback({'error': {'message': 'There was an error broadcasting your transaction, please try again'}});
+			}
 		}
 
 		/* generate the transaction hash to sign from a transaction input */
