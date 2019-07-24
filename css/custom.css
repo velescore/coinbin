@@ -12,14 +12,8 @@ a.navbar-brand {
     margin-left: 0!important;
 }
 
-.light-color {
-		padding: 0 2% 2% 2%;
-    background-image: linear-gradient(180deg,transparent,	#e4b99c22, #6f6158);
-}
-
-.dark-color {
-		padding: 0 2% 2% 2%;
-    background-image: linear-gradient(180deg, transparent, #383737);
+.section-dark {
+		background-image: linear-gradient(180deg,	transparent, #383737)!important;
 }
 
 p#brand-text {
