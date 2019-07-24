@@ -90,6 +90,15 @@ button.deriveHDbtn.btn.btn-default:hover {
 	border-radius: 3px;
 }
 
+.icon-small {
+    margin-top: -1px;
+    max-height: 35px;
+}
+
+.button-small {
+    margin: 0px 0px 0px 10px!important;
+}
+
 button#walletToBtn {
     padding: 7px;
     color: white;
@@ -173,12 +182,10 @@ a#walletBalance {
 }
 
 .alert-info {
-    /*color: #F19B7E;
-    background-color: rgba(38, 38, 38, 0.7);
-    border: 0;*/
-		color: white;
-		background-color: #31708f88;
-		border-color: #26262622;
+		font-size: 15px;
+    color: white;
+    background-color: #31708f66;
+    border-color: #26262622;
 }
 
 .alert-warning {
@@ -267,10 +274,22 @@ p.text-muted {
 	margin: 2% auto 0 0;
 }
 
+.no-margin {
+	margin-top:0;
+}
+
 .card {
 	margin: 5px;
 	min-height: 200px;
   padding: 2.5rem;
+}
+
+.card-dark {
+    background-color: rgba(38, 38, 38, 0.7);
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
 .card-advanced {

@@ -164,11 +164,11 @@
 									<div class="col-md-12">
 										<div id="openLogin">
 											<form class="form-signin" role="form" action="javascript:;">
-												<div class="col-md-3"></div>
-												<div class="col-md-6">
+												<div class="col-md-2"></div>
+												<div class="col-md-8">
 													<div class="card-header">Login to your wallet<img id="icon" align="right" src="images/veles.ico"></div>
 													<div class="card card-login">
-														<div class="alert alert-warning"><b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as <b class="smaller">lost accounts can not be recovered</b> if you did not <b class="smaller">back up your private keys!</b></div>
+														<div class="alert alert-warning"><b>Notice</b>: Different email address and password combination will open different wallets, be careful when entering your details as <b>lost accounts can not be recovered</b> if you did not <b>back up your private keys!</b></div>
 														<input class="form-control" id="openEmail" type="email" placeholder="Email address" required="" autofocus="">
 														<input class="form-control" id="openPass" type="password" placeholder="Password" required="">
 														<input class="form-control" id="openPassConfirm" type="password" placeholder="Password confirm" required="">
@@ -197,7 +197,7 @@
 														</div>
 													</div>
 												</div>
-												<div class="col-md-3"></div><br>
+												<div class="col-md-2"></div><br>
 												<div></div>
 											</form>
 										</div>
@@ -295,58 +295,66 @@
 						<section>
 							<div class="container">
 								<h2 class="page-subtitle">New Address <small>create a new address</small></h2>
-								<p>Any keys used you will need to manually store safely as they will be needed later to redeem the Veles.</p>
-								<label>Address (Share)</label>
-								<div class="input-group">
-									<input class="form-control address" id="newBitcoinAddress" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-											<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
-								</div>
-								<label>Public key (Share)</label>
-								<input class="form-control" id="newPubKey" type="text" readonly="">
-								<label>Private key (WIF key)</label>
-								<div class="input-group">
-									<input class="form-control" id="newPrivKey" type="password" value="" readonly=""><span class="input-group-btn"><a class="showKey" target="_blank" rel="noopener noreferrer" type="Submit">
-											<div class="button-effect button-show btn"><span class="label label-show">Show</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
-								</div>
-								<div class="hidden" id="aes256wifkey">
-									<label>AES-256 Encrypted WIF key</label>
-									<input class="form-control" id="newPrivKeyEnc" type="text" value="" readonly="">
-								</div>
-								<h3>Address Options</h3>
-								<p>You can use the advanced options below to generate different kind of keys and addresses.</p>
-								<div class="checkbox">
-									<label>
-										<input class="checkbox-inline" id="newCompressed" type="checkbox" checked=""> Compress <span class="text-muted">(recommended)</span>
-									</label>
-								</div>
-								<div class="checkbox">
-									<label>
-										<input class="checkbox-inline" id="newBrainwallet" type="checkbox"> Custom Seed or Brain Wallet
-									</label>
-									<input class="form-control hidden" id="brainwallet" type="text">
-								</div>
-								<div class="checkbox">
-									<label>
-										<input class="checkbox-inline" id="encryptKey" type="checkbox"> Encrypt Private Key with AES-256 Password
-									</label>
-									<div class="row hidden" id="aes256passform">
-										<div class="col-md-6">
-											<input class="form-control" id="aes256pass" type="password" placeholder="Password">
+								<div class="col-lg-1"></div>
+								<div class="col-lg-10">
+									<div class="alert alert-info">
+										<p><i class="fa fa-info-circle" aria-hidden="true"></i>  Any keys used you will need to manually store safely as they will be needed later to redeem the Veles.</p>
+									</div>
+									<label>Address (Share)</label>
+									<div class="input-group">
+										<input class="form-control address" id="newBitcoinAddress" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
+												<div class="button-effect button-small btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+									</div>
+									<label>Public key (Share)</label>
+									<input class="form-control" id="newPubKey" type="text" readonly="">
+									<label>Private key (WIF key)</label>
+									<div class="input-group">
+										<input class="form-control" id="newPrivKey" type="password" value="" readonly=""><span class="input-group-btn"><a class="showKey" target="_blank" rel="noopener noreferrer" type="Submit">
+												<div class="button-effect button-small btn"><span class="label label-show">Show</span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+									</div>
+									<div class="hidden" id="aes256wifkey">
+										<label>AES-256 Encrypted WIF key</label>
+										<input class="form-control" id="newPrivKeyEnc" type="text" value="" readonly="">
+									</div>
+									<div class="card-dark">
+										<h3 class="no-margin">Address Options</h3>
+										<p>You can use the advanced options below to generate different kind of keys and addresses.</p>
+										<div class="checkbox">
+											<label>
+												<input class="checkbox-inline" id="newCompressed" type="checkbox" checked=""> Compress <span class="text-muted">(recommended)</span>
+											</label>
 										</div>
-										<div class="col-md-6">
-											<input class="form-control" id="aes256pass_confirm" type="password" placeholder="Confirm Password">
+										<div class="checkbox">
+											<label>
+												<input class="checkbox-inline" id="newBrainwallet" type="checkbox"> Custom Seed or Brain Wallet
+											</label>
+											<input class="form-control hidden" id="brainwallet" type="text">
+										</div>
+										<div class="checkbox">
+											<label>
+												<input class="checkbox-inline" id="encryptKey" type="checkbox"> Encrypt Private Key with AES-256 Password
+											</label>
+											<div class="row hidden" id="aes256passform">
+												<div class="col-md-6">
+													<input class="form-control" id="aes256pass" type="password" placeholder="Password">
+												</div>
+												<div class="col-md-6">
+													<input class="form-control" id="aes256pass_confirm" type="password" placeholder="Confirm Password">
+												</div>
+											</div>
+											<div class="row hidden" id="aes256passStatus">
+												<div class="col-md-12"><br>
+													<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Your passwords do not match, please try again!</div>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="row hidden" id="aes256passStatus">
-										<div class="col-md-12"><br>
-											<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Your passwords do not match, please try again!</div>
-										</div>
-									</div>
+									<div class="btn-group"><a id="newKeysBtn" target="_blank" rel="noopener noreferrer" type="button">
+											<div class="button-effect btn"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
+											<div class="button-effect btn"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
 								</div>
-								<div class="btn-group"><a id="newKeysBtn" target="_blank" rel="noopener noreferrer" type="button">
-										<div class="button-effect btn"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
-										<div class="button-effect btn"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
 							</div>
+							<div class="col-lg-1"></div>
 						</section>
 					</div>
 					<div class="tab-pane tab-content" id="newSegWit">
