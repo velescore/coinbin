@@ -74,16 +74,37 @@ button.btn.btn-info.qrcodeScanner:hover {
     color: #F19B7Ebb;
 }
 
-button.deriveHDbtn.btn.btn-default {
+.button-small-right {
+		padding-right: 25px!important;
+		padding-left: 25px!important;
     background-color: #262626bb;
     color: white;
-    border-color: #262626bb;
+		border-left: 1px solid #262626bb;
+    border: 1px solid transparent;
 }
 
-button.deriveHDbtn.btn.btn-default:hover {
-    color: #F19B7Ebb;
+.button-small-right:hover {
+	background-color: #262626bb;
+  color: #F19B7Ebb;
+	border: 1px solid transparent;
 }
 
+.button-small-right:focus {
+	outline: 0;
+	background-color: #262626bb;
+  color: #F19B7Ebb;
+	border: 1px solid transparent;
+}
+
+.button-effect {
+		margin-bottom: 10px!important;
+    margin-top: 10px!important;
+		margin: 0px;
+}
+
+.btn {
+	padding: 6px 2px;
+}
 .btn-login {
 	max-width: unset!important;
 	margin-left: 0!important;
@@ -120,6 +141,7 @@ span#walletAddress {
 }
 
 ul#putTabs {
+		display: inline-flex;
     border-bottom: 1px solid #262626bb;
 }
 
@@ -127,6 +149,10 @@ ul#putTabs {
     background-color: transparent;
     border: 0;
     padding: 0;
+}
+
+input#transactionFee {
+	min-width: 55px;
 }
 
 ul.nav.nav-pills {
@@ -261,6 +287,7 @@ a#donateTxBtn:hover {
 }
 
 .wallet-landing {
+	overflow: hidden;
 	height: calc(100vh - 93px);
     min-height: 380px;
     background: rgba(38, 38, 38, 0.8);

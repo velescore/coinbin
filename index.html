@@ -184,6 +184,7 @@
 														<input class="form-control" id="openPassConfirm" type="password" placeholder="Password confirm" required="">
 														<div class="alert alert-danger hidden" id="openLoginStatus"></div><a id="openBtn" target="_blank" rel="noopener noreferrer" type="submit">
 															<div class="button-effect btn btn-login"><span class="label">Submit</span><span class="icon"><span></span></span><span class="icon2 icon2-login"></span></div></a><a class="optionsCollapse" href="javascript:;">
+															<br>
 															<div class="well well-sm"><span class="glyphicon glyphicon-collapse-down" id="glyphcollapse"></span> Advanced Options</div></a>
 														<div class="hidden optionsAdvanced card-advanced">
 															<label>Segregated Witness Address</label>
@@ -312,15 +313,15 @@
 									</div>
 									<label>Address (Share)</label>
 									<div class="input-group">
-										<input class="form-control address" id="newBitcoinAddress" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-												<div class="button-effect button-small btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+										<input class="form-control address" id="newBitcoinAddress" type="text" value="" readonly=""><span class="input-group-btn">
+												<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></span></button></span>
 									</div>
 									<label>Public key (Share)</label>
 									<input class="form-control" id="newPubKey" type="text" readonly="">
 									<label>Private key (WIF key)</label>
 									<div class="input-group">
-										<input class="form-control" id="newPrivKey" type="password" value="" readonly=""><span class="input-group-btn"><a class="showKey" target="_blank" rel="noopener noreferrer" type="Submit">
-												<div class="button-effect button-small btn"><span class="label label-show">Show</span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+										<input class="form-control" id="newPrivKey" type="password" value="" readonly=""><span class="input-group-btn">
+												<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></span></button></span>
 									</div>
 									<div class="hidden" id="aes256wifkey">
 										<label>AES-256 Encrypted WIF key</label>
@@ -360,11 +361,11 @@
 										</div>
 									</div>
 									<div class="btn-group"><a id="newKeysBtn" target="_blank" rel="noopener noreferrer" type="button">
-											<div class="button-effect btn"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
-											<div class="button-effect btn"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
+											<div class="button-effect btn" title="Generate new legacy address"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
+											<div class="button-effect btn" title="Print new legacy address"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
-							<div class="col-lg-1"></div>
 						</section>
 					</div>
 					<div class="tab-pane tab-content" id="newSegWit">
@@ -409,8 +410,8 @@
 											<div class="button-effect btn"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newSegwitPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
 											<div class="button-effect btn"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
-							<div class="col-lg-1"></div>
 						</section>
 					</div>
 					<div class="tab-pane tab-content" id="newMultiSig">
@@ -428,8 +429,8 @@
 									<br>
 									<div class="row" id="multisigPubKeys">
 										<div class="form-horizontal form-flex">
-												<input class="form-control pubkey" type="text">
-												<a class="pubkeyAdd" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a><br><br>
+											<input class="form-control pubkey" type="text">
+											<a class="pubkeyAdd" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a><br><br>
 										</div>
 									</div>
 									<p>Enter the amount of signatures required to release the coins</p>
@@ -699,8 +700,8 @@
 										<a id="transactionBtn" target="_blank" rel="noopener noreferrer" type="Submit">
 										<div class="button-effect btn"><span class="label">Submit</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
 								</div>
+								<div class="col-lg-1"></div>
 							</div>
-							<div class="col-lg-1"></div>
 						</section>
 					</div>
 					<div class="tab-pane tab-content" id="verify">
@@ -920,8 +921,8 @@
 									<div class="alert alert-danger hidden" id="verifyStatus"><span class="glyphicon glyphicon-exclamation-sign"></span> Unable to decode</div><a id="verifyBtn" target="_blank" rel="noopener noreferrer" type="Submit">
 										<div class="button-effect btn"><span class="label">Submit</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
 								</div>
+								<div class="col-lg-1">
 							</div>
-							<div class="col-lg-1">
 						</section>
 					</div>
 					<div class="tab-pane tab-content" id="sign">
@@ -972,9 +973,9 @@
 					<div class="tab-pane tab-content" id="broadcast">
 						<section>
 							<div class="container">
-								<div class="col-lg-1"></div>
 								<h2 class="page-subtitle">Broadcast Transaction <small>into the Veles network</small></h2>
-								<div class="col-lg-12">
+								<div class="col-lg-1"></div>
+								<div class="col-lg-10">
 									<p>Enter your hex encoded Veles transaction</p>
 									<textarea class="form-control" id="rawTransaction" style="height:125px"></textarea><br>
 									<div class="alert hidden" id="rawTransactionStatus"></div>
@@ -983,8 +984,8 @@
 									</a>
 									<div class="button-effect button-show btn" id="rawSubmitLoader" style="display: none"><span class="label label-show fa fa-spinner fa-spin"></span><span class="icon"><span></span></span><span class="icon2"></span></div>
 								</div>
-							<div class="col-lg-1"></div>
-						</div>
+								<div class="col-lg-1"></div>
+							</div>
 						</section>
 					</div>
 					<div class="tab-pane tab-content" id="dev">
