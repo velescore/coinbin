@@ -314,14 +314,14 @@
 									<label>Address (Share)</label>
 									<div class="input-group">
 										<input class="form-control address" id="newBitcoinAddress" type="text" value="" readonly=""><span class="input-group-btn">
-												<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></span></button></span>
+												<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 									</div>
 									<label>Public key (Share)</label>
 									<input class="form-control" id="newPubKey" type="text" readonly="">
 									<label>Private key (WIF key)</label>
 									<div class="input-group">
 										<input class="form-control" id="newPrivKey" type="password" value="" readonly=""><span class="input-group-btn">
-												<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></span></button></span>
+												<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
 									</div>
 									<div class="hidden" id="aes256wifkey">
 										<label>AES-256 Encrypted WIF key</label>
@@ -379,8 +379,8 @@
 									</div>
 									<label>SegWit Address (Share)</label>
 									<div class="input-group">
-										<input class="form-control address" id="newSegWitAddress" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-												<div class="button-effect button-small btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+										<input class="form-control address" id="newSegWitAddress" type="text" value="" readonly=""><span class="input-group-btn">
+												<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 									</div>
 									<label>RedeemScript</label>
 									<input class="form-control" id="newSegWitRedeemScript" type="text" readonly="">
@@ -388,8 +388,8 @@
 									<input class="form-control" id="newSegWitPubKey" type="text" readonly="">
 									<label>Private key (WIF key)</label>
 									<div class="input-group">
-										<input class="form-control" id="newSegWitPrivKey" type="password" value="" readonly=""><span class="input-group-btn"><a class="showKey" target="_blank" rel="noopener noreferrer" type="Submit">
-												<div class="button-effect button-small btn"><span class="label label-show">Show</span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+										<input class="form-control" id="newSegWitPrivKey" type="password" value="" readonly=""><span class="input-group-btn">
+												<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
 									</div>
 									<div class="card-dark">
 										<h3 class="no-margin">Address Options</h3>
@@ -407,8 +407,8 @@
 										</div>
 									</div>
 									<div class="btn-group"><a id="newSegWitKeysBtn" target="_blank" rel="noopener noreferrer" value="Generate" type="button">
-											<div class="button-effect btn"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newSegwitPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
-											<div class="button-effect btn"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
+											<div class="button-effect btn" title="Generate new SegWit address"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a><a id="newSegwitPaperwalletBtn" target="_blank" rel="noopener noreferrer" href="#" type="button">
+											<div class="button-effect btn" title="Print new SegWit address"><span class="label">Print</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></div>
 								</div>
 								<div class="col-lg-1"></div>
 							</div>
@@ -503,8 +503,8 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="input-group date" id="timeLockedDateTimePicker">
-												<input class="form-control" type="text" placeholder="MM/DD/YYYY hh:mm"><a class="input-group-addon" href="#">
-													<div class="button-effect button-small btn"><span class="label label-show"><span class="glyphicon glyphicon-calendar"></span></span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a>
+												<input class="form-control" type="text" placeholder="MM/DD/YYYY hh:mm">
+													<button title="Open calendar" class="input-group-addon btn btn-default button-small-right"><span class="glyphicon glyphicon-calendar"></span></button>
 											</div>
 											<div class="input-group hidden" id="timeLockedBlockHeight">
 												<input class="form-control" id="timeLockedBlockHeightVal" type="text" placeholder="Blockheight">
@@ -543,12 +543,12 @@
 									<label>xPub Address</label>
 									<div class="input-group">
 										<input class="form-control" id="newHDxpub" type="text" value="" readonly=""><span class="input-group-btn">
-											<button class="deriveHDbtn btn btn-default" type="button"><span class="glyphicon glyphicon-chevron-right" title="Derive from key"></span></button></span>
+											<button class="button-small-right bt btn btn-default" title="Derive from xpub" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 									</div>
 									<label>xPrv Address</label>
 									<div class="input-group">
 										<input class="form-control" id="newHDxprv" type="text" value="" readonly=""><span class="input-group-btn">
-											<button class="deriveHDbtn btn btn-default" type="button"><span class="glyphicon glyphicon-chevron-right" title="Derive from key"></span></button></span>
+											<button class="button-small-right btn btn-default" title="Derive from xprv" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 									</div>
 									<div class="card-dark">
 										<h3 class="no-margin">Address Options</h3>
@@ -561,7 +561,7 @@
 										</div>
 									</div>
 									<a id="newHDKeysBtn" target="_blank" rel="noopener noreferrer" value="Generate" type="button">
-									<div class="button-effect btn"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+									<div class="button-effect btn" title="Generate new HD address"><span class="label">Generate</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
 								</div>
 								<div class="col-lg-1"></div>
 							</div>
@@ -574,10 +574,10 @@
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<p>Use this page to create a raw transaction</p><b>Address, WIF key or Redeem Script</b>:
-									<div class="input-group input-group-margin"><span class="input-group-btn"><a class="qrcodeScanner" type="button" data-toggle="modal" data-target="#modalQrcodeScanner" forward-result="#redeemFrom" style="float:left">
-												<div class="button-effect button-left btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
-										<input class="form-control" id="redeemFrom" type="text" value=""><span class="input-group-btn"><a id="redeemFromBtn" type="button" style="float:right">
-												<div class="button-effect button-small btn"><span class="label label-show"><span>Load</span></span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+									<div class="input-group input-group-margin"><span class="input-group-btn">
+												<button data-toggle="modal" title="Load QR from address" forward-result="#redeemFrom" style="float:left" data-target="#modalQrcodeScanner" class="qrcodeScanner btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
+										<input class="form-control" id="redeemFrom" type="text" placeholder="Paste here ..." value=""><span class="input-group-btn">
+												<button title="Load addrress" id="redeemFromBtn" type="button" style="float:right" class="btn btn-default button-small-right" type="button">Load</span></button></span>
 									</div><br>
 									<div class="hidden alert alert-danger" id="redeemFromStatus"></div>
 									<div class="hidden alert alert-info" id="redeemFromAddress"></div>
@@ -610,10 +610,11 @@
 													<input class="checkbox-inline" id="txRBF" type="checkbox"> Make this a <a href="https://en.bitcoin.it/wiki/Transaction_replacement" target="_blank">RBF transaction</a>.
 												</label>
 											</p>
+											<!--
 											<hr>
 											<label>Network</label>
 											<p>The <a href="#settings">settings</a> page can be used to select alternative networks of which you can retrieve your unspent outputs and broadcast a signed transaction into.</p>
-											<hr>
+										-->
 										</div>
 									</div>
 									<br>
@@ -621,25 +622,25 @@
 										<li class="active"><a href="#txoutputs" data-toggle="tab">Outputs <small>(<span id="totalOutput">0.00000000</span>)</small></a></li>
 										<li><a href="#txinputs" data-toggle="tab">Inputs <small>(<span id="totalInput">0.00000000</span>)</small></a></li>
 									</ul>
-									<div class="card-advanced">
+									<div class="card-advanced card-transaction-table">
 										<div class="tab-content">
 											<div class="tab-pane fade in active" id="txoutputs"><span class="pull-right"><a class="btn btn-link" id="donateTxBtn" href="javascript:;"><span class="glyphicon glyphicon-heart"></span> Donate!</a></span>
 												<p>Enter the address and amount you wish to make a payment to.</p>
 												<div class="row">
-													<div class="col-xs-8">
+													<div class="col-xs-7">
 														<label><abbr title="Address to send to">Address</abbr></label>
 													</div>
-													<div class="col-xs-3">
+													<div class="col-xs-4">
 														<label><abbr title="Amount to send">Amount</abbr></label>
 													</div>
 													<div class="col-xs-1"></div>
 												</div>
 												<div id="recipients">
 													<div class="row recipient">
-														<div class="col-xs-8">
+														<div class="col-xs-7 table-transaction">
 															<input class="form-control address" type="text" placeholder="1">
 														</div>
-														<div class="col-xs-3">
+														<div class="col-xs-4">
 															<input class="form-control amount" type="text" placeholder="0.00">
 														</div>
 														<div class="col-xs-1"><a class="addressAddTo" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a></div>
@@ -649,10 +650,10 @@
 											<div class="tab-pane fade" id="txinputs">
 												<p>Enter the details of inputs you wish to spend.</p>
 												<div class="row">
-													<div class="col-xs-5">
+													<div class="col-xs-4">
 														<label><abbr title="Transaction ID">Transaction ID: </abbr></label>
 													</div>
-													<div class="col-xs-1">
+													<div class="col-xs-2">
 														<label><abbr title="Transaction Input Number">N</abbr></label>
 													</div>
 													<div class="col-xs-3">
@@ -665,14 +666,14 @@
 												</div>
 												<div id="inputs">
 													<div class="row inputs">
-														<div class="col-xs-5">
-															<input class="form-control txId" type="text" placeholder="">
+														<div class="col-xs-4">
+															<input class="form-control txId" type="text" placeholder="Paste txID...">
 														</div>
-														<div class="col-xs-1">
+														<div class="col-xs-2">
 															<input class="form-control txIdN" type="text" placeholder="0">
 														</div>
 														<div class="col-xs-3">
-															<input class="form-control txIdScript" type="text">
+															<input class="form-control txIdScript" type="text" placeholder="Paste script key...">
 														</div>
 														<div class="col-xs-2">
 															<input class="form-control txIdAmount" type="text" placeholder="0.00">

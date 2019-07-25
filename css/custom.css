@@ -79,11 +79,18 @@ button.btn.btn-info.qrcodeScanner:hover {
 		padding-left: 25px!important;
     background-color: #262626bb;
     color: white;
-		border-left: 1px solid #262626bb;
+		border-left: 1px solid #262626bb!important;
     border: 1px solid transparent;
 }
 
 .button-small-right:hover {
+	background-color: #262626bb;
+  color: #F19B7Ebb;
+	border: 1px solid transparent;
+}
+
+.button-small-right:active {
+	outline: 0;
 	background-color: #262626bb;
   color: #F19B7Ebb;
 	border: 1px solid transparent;
@@ -145,14 +152,18 @@ ul#putTabs {
     border-bottom: 1px solid #262626bb;
 }
 
-.input-group-addon {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-}
-
 input#transactionFee {
 	min-width: 55px;
+}
+
+.input-group-addon, .input-group-btn {
+  width: unset;
+    /* white-space: nowrap; */
+    /* vertical-align: middle; */
+}
+
+.input-group {
+	 display: flex;
 }
 
 ul.nav.nav-pills {
@@ -160,6 +171,7 @@ ul.nav.nav-pills {
 }
 
 .form-control {
+	min-width: 55px;
 	margin-bottom: 5px;
 	color: #e4b99c!important;
   background-color: rgba(38, 38, 38, 0.7)!important;
@@ -167,6 +179,18 @@ ul.nav.nav-pills {
 
 .form-flex {
 	display: flex;
+}
+
+.table-transaction {
+  margin-right: -15px;
+}
+
+.form-control.txIdN {
+    margin-left: -10px;
+}
+
+.form-control.txIdScript {
+    margin-left: 10px;
 }
 
 a#walletBalance {
@@ -332,6 +356,10 @@ p.text-muted {
   padding: 25px;
   font-size: 14px;
   border-radius: 4px;
+}
+
+.card-transaction-table {
+	border-top: solid 1px transparent;
 }
 
 .card-login {
