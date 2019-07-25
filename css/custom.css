@@ -139,6 +139,10 @@ ul.nav.nav-pills {
   background-color: rgba(38, 38, 38, 0.7)!important;
 }
 
+.form-flex {
+	display: flex;
+}
+
 a#walletBalance {
     background-color: #262626bb;
     color: #F19B7E;
@@ -289,7 +293,7 @@ p.text-muted {
 .card-dark {
     background-color: rgba(38, 38, 38, 0.7);
     padding: 20px;
-    font-size: 14px;
+    font-size: 15px;
     border-radius: 4px;
     margin-top: 10px;
 }
