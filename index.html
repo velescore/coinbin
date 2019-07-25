@@ -457,15 +457,15 @@
 									<div class="alert alert-success hidden" id="multiSigData">
 										<label>Address</label>
 										<p>Payment should be made to this address: </p>
-										<div class="row">
-											<div class="input-group">
-												<input class="form-control address" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-														<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
-											</div>
+										<div class="input-group">
+											<input class="form-control address" type="text" value="" readonly=""><span class="input-group-btn">
+												<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 										</div>
+										<br>
 										<label>Redeem Script</label>
 										<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the Veles.</p>
 										<textarea class="form-control script" style="height:160px" readonly=""></textarea>
+										<br>
 										<label>Shareable URL</label>
 										<input class="scriptUrl form-control" type="text" readonly="">
 									</div><a id="newMultiSigAddress" target="_blank" rel="noopener noreferrer" type="Submit">
@@ -515,15 +515,15 @@
 									<div class="alert alert-success hidden" id="timeLockedData">
 										<label>Address</label>
 										<p>Payment should be made to this address: </p>
-										<div class="row">
-											<div class="input-group">
-												<input class="form-control address" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-														<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
-											</div>
+										<div class="input-group">
+											<input class="form-control address" type="text" value="" readonly=""><span class="input-group-btn">
+													<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 										</div>
+										<br>
 										<label>Redeem Script</label>
 										<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the Veles.</p>
 										<textarea class="form-control script" style="height:160px" readonly=""></textarea>
+										<br>
 										<label>Shareable URL</label>
 										<input class="scriptUrl form-control" type="text" readonly="">
 									</div><a id="newTimeLockedAddress" target="_blank" rel="noopener noreferrer" type="Submit">
@@ -543,12 +543,12 @@
 									<label>xPub Address</label>
 									<div class="input-group">
 										<input class="form-control" id="newHDxpub" type="text" value="" readonly=""><span class="input-group-btn">
-											<button class="button-small-right bt btn btn-default" title="Derive from xpub" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
+											<button class="deriveHDbtn button-small-right bt btn btn-default" title="Derive from xpub" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 									</div>
 									<label>xPrv Address</label>
 									<div class="input-group">
 										<input class="form-control" id="newHDxprv" type="text" value="" readonly=""><span class="input-group-btn">
-											<button class="button-small-right btn btn-default" title="Derive from xprv" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
+											<button class="deriveHDbtn button-small-right btn btn-default" title="Derive from xprv" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button></span>
 									</div>
 									<div class="card-dark">
 										<h3 class="no-margin">Address Options</h3>
@@ -711,11 +711,10 @@
 								<h2 class="page-subtitle">Verify <small>transactions and other scripts</small></h2>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
-									<div class="row">
 											<p>Enter the raw transaction, redeem script, pubkey, hd address or wif key to convert it into a readable format that can be verified manually.</p>
 											<textarea class="form-control" id="verifyScript" type="text" style="height:125px"></textarea>
-									</div><br>
-									<div class="hidden verifyData" id="verifyRsData">
+									<br>
+									<div class="hidden verifyData card-advanced" id="verifyRsData">
 										<h4>Redeem Script</h4>
 										<p><span style="float:right"><a class="verifyLink" href="javascript:;" target="_blank" title="Link to this page"><span class="glyphicon glyphicon-link"></span></a></span>The above redeem script has been decoded</p>
 										<div class="hidden" id="verifyRsDataMultisig">
@@ -723,8 +722,8 @@
 											<div class="row">
 												<div class="col-lg-6">
 													<div class="input-group">
-														<input class="form-control address multisigAddress" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-																<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
+														<input class="form-control address multisigAddress" type="text" value="" readonly=""><span class="input-group-btn">
+															<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 													</div>
 												</div>
 											</div>
@@ -740,8 +739,8 @@
 											<div class="row">
 												<div class="col-lg-6">
 													<div class="input-group">
-														<input class="form-control address segWitAddress" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-																<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
+														<input class="form-control address segWitAddress" type="text" value="" readonly=""><span class="input-group-btn">
+															<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 													</div>
 												</div>
 											</div><br>
@@ -751,8 +750,8 @@
 											<div class="row">
 												<div class="col-md-12">
 													<div class="input-group">
-														<input class="form-control address" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-																<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
+														<input class="form-control address" type="text" value="" readonly=""><span class="input-group-btn">
+															<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 													</div>
 												</div>
 											</div>
@@ -760,8 +759,8 @@
 											<div class="row">
 												<div class="col-md-12">
 													<div class="input-group">
-														<input class="form-control address pubkey" type="text" value="" readonly=""><span class="input-group-btn"><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode">
-																<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
+														<input class="form-control address pubkey" type="text" value="" readonly=""><span class="input-group-btn">
+															<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 													</div>
 												</div>
 											</div>
@@ -775,7 +774,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="hidden verifyData" id="verifyTransactionData">
+									<div class="hidden verifyData card-advanced" id="verifyTransactionData">
 										<h4>Transaction Script</h4>
 										<p><span style="float:right"><a class="verifyLink" href="" target="_blank" title="Link to this page"><span class="glyphicon glyphicon-link"></span></a></span>The above script has been decoded</p>
 										<div><b>Version</b>: <span class="transactionVersion"></span></div>
@@ -809,7 +808,7 @@
 											<tbody></tbody>
 										</table>
 									</div>
-									<div class="hidden verifyData" id="verifyPrivKey">
+									<div class="hidden verifyData card-advanced" id="verifyPrivKey">
 										<h4>WIF key</h4>
 										<p>The above wif key has been decoded</p>
 										<p><b>Address</b>:
@@ -823,7 +822,7 @@
 										</p>
 										<p><b>Is compressed</b>: <span class="iscompressed"></span></p>
 									</div>
-									<div class="hidden verifyData" id="verifyPubKey">
+									<div class="hidden verifyData card-advanced" id="verifyPubKey">
 										<h4>Public key</h4>
 										<p><span style="float:right"><a class="verifyLink" href="" target="_blank" title="Link to this page"><span class="glyphicon glyphicon-link"></span></a></span>The above public key has been encoded to its address</p>
 										<p><b>Legacy Address</b>:
@@ -858,7 +857,7 @@
 											</div><br>
 										</div>
 									</div>
-									<div class="hidden verifyData" id="verifyHDaddress">
+									<div class="hidden verifyData card-advanced" id="verifyHDaddress">
 										<h4>HD Address</h4>
 										<p><span style="float:right"><a class="verifyLink" href="" target="_blank" title="Link to this page"><span class="glyphicon glyphicon-link"></span></a></span>The key <small><span class="hdKey hidden"></span></small> has been decoded</p>
 										<div class="row">
@@ -935,32 +934,30 @@
 									<p>Once you have <a href="#verify">verified</a> a transaction you can sign and then <a href="#broadcast">broadcast</a> it into the network.</p>
 									<label for="signPrivateKey">Private key</label>
 									<div class="input-group">
-										<input class="form-control" id="signPrivateKey" type="password" value=""><span class="input-group-btn"><a class="showKey" target="_blank" rel="noopener noreferrer" type="Submit">
-												<div class="button-effect button-small btn"><span class="label label-show">Show</span><span class="icon"><span></span></span><span class="icon2 icon-small"></span></div></a></span>
+										<input class="form-control" id="signPrivateKey" type="password" value=""><span class="input-group-btn">
+											<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
 									</div>
 									<br>
-									<div class="row">
 										<textarea class="form-control" id="signTransaction" type="text" style="height:125px"></textarea>
-									</div><br><a id="signAdvancedCollapse" href="javascript:;">
+									<br><a id="signAdvancedCollapse" href="javascript:;">
 										<div class="well well-sm"><span class="glyphicon glyphicon-collapse-down"></span> Advanced Options</div></a>
 									<div class="hidden card-advanced" id="signAdvanced">
-										<div class="row">
-											<label for="sighashType">Sig Hash Type</label>
-											<select class="form-control" id="sighashType">
-												<option value="1" rel="SIGHASH_ALL: Signs all the inputs and outputs, protecting everything against modification.">ALL (default)</option>
-												<option value="2" rel="SIGHASH_NONE: Signs all of the inputs but none of the outputs, allowing anyone to change where the satoshis are going unless other signatures using other signature hash flags protect the outputs.">NONE</option>
-												<option value="3" rel="SIGHASH_SINGLE: The only output signed is the one corresponding to this input, ensuring nobody can change your part of the transaction but allowing other signers to change their part of the transaction.">SINGLE</option>
-												<option value="129" rel="SIGHASH_ALL|SIGHASH_ANYONECANPAY: Signs all of the outputs but only this one input, it allows anyone to add or remove other inputs, so anyone can contribute additional satoshis but they cannot change how many satoshis are sent nor where they go.">ALL|ANYONECANPAY</option>
-												<option value="130" rel="SIGHASH_NONE|SIGHASH_ANYONECANPAY: Signs only this one input and allows anyone to add or remove other inputs or outputs, so anyone who gets a copy of this input can spend it however they'd like.">NONE|ANYONECANPAY</option>
-												<option value="131" rel="SIGHASH_SINGLE|SIGHASH_ANYONECANPAY: Signs this one input and its corresponding output. Allows anyone to add or remove other inputs.">SINGLE|ANYONECANPAY</option>
-											</select>
-										</div><br>
 										<div class="alert alert-info" id="sighashTypeInfo">SIGHASH_ALL: The default, signs all the inputs and outputs, protecting everything except the signature scripts against modification.</div>
+										<label for="sighashType">Sig Hash Type</label>
+										<select class="form-control" id="sighashType">
+											<option value="1" rel="SIGHASH_ALL: Signs all the inputs and outputs, protecting everything against modification.">ALL (default)</option>
+											<option value="2" rel="SIGHASH_NONE: Signs all of the inputs but none of the outputs, allowing anyone to change where the satoshis are going unless other signatures using other signature hash flags protect the outputs.">NONE</option>
+											<option value="3" rel="SIGHASH_SINGLE: The only output signed is the one corresponding to this input, ensuring nobody can change your part of the transaction but allowing other signers to change their part of the transaction.">SINGLE</option>
+											<option value="129" rel="SIGHASH_ALL|SIGHASH_ANYONECANPAY: Signs all of the outputs but only this one input, it allows anyone to add or remove other inputs, so anyone can contribute additional satoshis but they cannot change how many satoshis are sent nor where they go.">ALL|ANYONECANPAY</option>
+											<option value="130" rel="SIGHASH_NONE|SIGHASH_ANYONECANPAY: Signs only this one input and allows anyone to add or remove other inputs or outputs, so anyone who gets a copy of this input can spend it however they'd like.">NONE|ANYONECANPAY</option>
+											<option value="131" rel="SIGHASH_SINGLE|SIGHASH_ANYONECANPAY: Signs this one input and its corresponding output. Allows anyone to add or remove other inputs.">SINGLE|ANYONECANPAY</option>
+										</select>
+										<br>
 									</div>
 									<div class="alert alert-danger hidden" id="signedDataError"><span class="glyphicon glyphicon-exclamation-sign"></span> There is a problem with one or more of your inputs, please check and try again</div>
 									<div class="alert alert-success hidden" id="signedData">
-										<label>Signed transaction</label><a class="qrcodeBtn" target="_blank" rel="noopener noreferrer" type="button" data-toggle="modal" data-target="#modalQrcode" style="float:right">
-											<div class="button-effect button-show btn"><span class="label label-show"><span class="glyphicon glyphicon-qrcode"></span></span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+										<label>Signed transaction</label>
+										<button data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn btn btn-default button-small-right" type="button"><span class="glyphicon glyphicon-qrcode"></span></button></span>
 										<p>The above transaction has been signed: </p>
 										<textarea class="form-control script" style="height:160px" readonly=""></textarea>
 										<p class="text-muted">Size: <span class="txSize">0</span><i>bytes</i></p>

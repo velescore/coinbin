@@ -50,7 +50,19 @@ li.nav-item {
 
 .modal-content {
     height: auto;
-    background: url(../images/bg-pattern.png);
+		background-color: #393939dd;
+}
+
+.modal.in .modal-dialog {
+    top: 12%;
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    /* bottom: 50%; */
+    right: 0;
+    left: 0;
+    /* position: absolute; */
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
@@ -173,8 +185,11 @@ ul.nav.nav-pills {
 .form-control {
 	min-width: 55px;
 	margin-bottom: 5px;
-	color: #e4b99c!important;
-  background-color: rgba(38, 38, 38, 0.7)!important;
+	background-color: #262626bb!important;
+}
+
+.form-control:focus {
+	box-shadow: 0 0 0 0.1rem rgb(228, 185, 156,0.2);
 }
 
 .form-flex {
@@ -235,6 +250,12 @@ a#walletBalance {
 
 .section-light {
 		background-image: linear-gradient(180deg,	#e4b99c22, #6f6158)!important;
+}
+
+.alert-success {
+	color: white;
+	background-color: #49762d44;
+	border-color: #49762dbb;
 }
 
 .alert-info {
@@ -351,7 +372,6 @@ p.text-muted {
 }
 
 .card-advanced {
-  border-top: solid 1px #e4b99cbb;
   background-color: rgba(38, 38, 38, 0.7);
   padding: 25px;
   font-size: 14px;
@@ -369,7 +389,7 @@ p.text-muted {
 .card-header {
   padding: 20px;
   margin: 5px;
-  border-bottom: solid 1px #e4b99cbb;
+  border-bottom: solid 1px #262626bb;
   background: #262626bb!important;
   margin-bottom: -5px!important;
   font-size: 23px;
