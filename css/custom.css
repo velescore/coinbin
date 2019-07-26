@@ -1,4 +1,3 @@
-
 html, body {
 	height: 100%;
 }
@@ -11,7 +10,9 @@ html, body {
     height: auto;
 		background-color: #393939dd;
 }
-
+.modal-open .modal {
+    background: #11111188;
+}		
 .modal.in .modal-dialog {
     top: 12%;
     -webkit-transform: translate(0,0);
@@ -167,12 +168,6 @@ ul.nav.nav-pills {
     margin-left: 10px;
 }
 
-a#walletBalance {
-    background-color: #262626bb;
-    color: #F19B7E;
-    font-size: 18px;
-    font-weight: bolder;
-}
 
 .input-group-margin {
 	margin-top: 5px;
@@ -181,11 +176,6 @@ a#walletBalance {
 .button-wallet {
 	min-width: 170px;
 	margin: 0px 0px 0px 0px!important;
-}
-
-.button-show {
-	/*margin: -2px 0px 0px 10px!important;*/
-  margin: 0px 20px 0px 0px!important;
 }
 
 .button-left {
@@ -315,6 +305,7 @@ p.text-muted {
 
 .card-login {
   background-color: #e4b99c44!important;
+	padding-bottom: 15px;
 }
 
 .card-header {
@@ -446,10 +437,7 @@ p.text-muted {
   padding: 5px 0px;
 }
 
-#wallet .nav>li>a#walletBalance {
-  margin: 5px 0px 10px 3px;
-  padding: 15px;
-}
+
 
 #wallet #openBtn .button-effect {
   max-width: 250px;
@@ -578,4 +566,54 @@ li.nav-item {
 
 .wallet-landing .row:first-child {
     height: 140px;
+}
+/* wallet dashboard */
+#large-header .header-tile:hover .tile-label {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+#large-header .header-tile .tile-label {
+    margin: auto auto;
+    text-align: center;
+    transition: all 1.0s ease;
+}
+@media only screen and (max-width: 991px) {
+#large-header .header-tile {
+    font-size: 14px;
+	}
+}
+@media only screen and (max-width: 1024px) {
+#large-header .header-tile {
+    font-size: 16px;
+	}
+}
+#large-header .header-tile {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    border-bottom: none;
+    border-left: none;
+    height: calc((40vh - 40px) / 2);
+    width: 100%;
+    font-size: 18px;
+    z-index: 90;
+}
+@media only screen and (max-width: 460px){
+#large-header {
+    display: block!important;
+	}
+}
+#large-header {
+		background-color: #262626bb!important;
+    display: flex;
+}
+@media only screen and (max-width: 380px){
+	#walletAddress {
+    font-size: 11px!important;
+	}
+}
+@media only screen and (max-width: 380px){
+	#walletToBtn {
+		font-size: 11px!important;
+	}
 }

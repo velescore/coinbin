@@ -214,53 +214,66 @@
 										</div>
 										<div class="hidden" id="openWallet">
 											<div class="row">
-												<div class="col-md-12">
-													<p><span style="float:right"><a id="walletLogout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></span>Welcome to your wallet, enjoy your stay!</p>
-												</div><br>
-												<div class="col-md-5" align="center">
-													<div id="walletQrCode"></div><br>
-													<div><span class="hidden fa fa-spinner fa-spin" id="walletLoader"></span><span id="walletAddress"></span>
-														<div class="btn-group">
-															<button class="btn btn-default btn-xs dropdown-toggle" id="walletToBtn" type="button" data-toggle="dropdown">SegWit <span class="caret"></span></button>
-															<ul class="dropdown-menu">
-																<li><a id="walletToSegWit" href="javascript:;">SegWit</a></li>
-																<li><a id="walletToSegWitBech32" href="javascript:;">SegWit/Bech32</a></li>
-																<li><a id="walletToLegacy" href="javascript:;">Legacy</a></li>
-															</ul>
+												<div class="col-sm-10">
+													<h2 class="page-subtitle">Welcome, <small>enjoy your stay!</small></h2>
+												</div>
+												<div align="right" class="col-sm-2">
+														<span align="right"><a id="walletLogout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></span>
+												</div>
+											</div>	
+											<div class="row">
+												<div class="col-md-12" id="large-header">
+													<div class="header-tile">
+														<div class="tile-label">
+															Price in USD
+															<span class="tile-label-value"
+																		data-entity-id="market.price"
+																		data-attribute="price_usd"
+																		data-format="number"
+																		data-fixed-decimals="2"
+																		data-unit-before="$">0.00 $
+														 </span>
+														</div>
+													</div>
+													<div class="header-tile">
+														<div class="tile-label">
+															Balance
+															<a id="walletBalance"
+																<span class="tile-label-value">0.00 VLS</span>
+															</a>
+														</div>
+													</div>
+													<div class="header-tile">
+														<div class="tile-label">
+															Price in BTC
+															 <span data-entity-id="market.price"
+															 			 data-attribute="price_btc"
+																		 data-format="coin_amount"
+																		 data-unit="BTC"
+																		 class="tile-label-value">0.00 BTC
+															</span>
 														</div>
 													</div>
 												</div>
-												<div class="col-md-3" align="center">
-													<ul class="nav nav-pills" role="tablist">
-														<li class="active" role="presentation"><a id="walletBalance" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">0.00 VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a id="walletShowKeys" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a id="walletShowSpend" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Spend</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a id="walletHistory" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">History</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Buy</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-													</ul>
-												</div>
-												<div class="col-md-4"><br>
-													<div class="hidden" id="walletKeys">
-														<label>Public Key</label>
-														<input class="form-control pubkey" type="text" readonly="">
-														<div class="walletSegWitRS hidden">
-															<label>Redeem Script <i>(SegWit)</i></label>
-															<input class="form-control" type="text" readonly="">
+											</div>
+											<div class="row card-login">
+													<br><br>
+													<div class="row">
+														<div class="col-sm-12" align="center">
+															<span class="hidden fa fa-spinner fa-spin" id="walletLoader"></span>
+															<span id="walletAddress"></span>
+															<div class="btn-group">
+																<button class="btn btn-default btn-xs dropdown-toggle" id="walletToBtn" type="button" data-toggle="dropdown">SegWit <span class="caret"></span></button>
+																<ul class="dropdown-menu">
+																	<li><a id="walletToSegWit" href="javascript:;">SegWit</a></li>
+																	<li><a id="walletToSegWitBech32" href="javascript:;">SegWit/Bech32</a></li>
+																	<li><a id="walletToLegacy" href="javascript:;">Legacy</a></li>
+																</ul>
+															</div>
 														</div>
-														<label>Private key</label>
-														<div class="input-group">
-															<input class="form-control privkey" type="password" readonly=""><span class="input-group-btn"><a class="showKey" target="_blank" rel="noopener noreferrer" type="Submit">
-																	<div class="button-effect button-show btn"><span class="label label-show">Show</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></span>
-														</div>
-														<label>Private Key (AES256 encrypted key)</label>
-														<input class="form-control privkeyaes" type="text" readonly="">
 													</div>
-													<div class="hidden" id="walletSpend">
+													<div class="col-md-4" id="walletSpend">
+														<br>
 														<div class="row">
 															<div class="form-inline output">
 																<div class="col-xs-8">
@@ -282,17 +295,76 @@
 															</div>
 														</div>
 														<div class="row">
-															<div class="col-xs-6">
-																<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr><a id="feesestwallet" href="javascript:;"><span class="glyphicon glyphicon-question-sign"></span></a></label>
+															<div class="col-xs-8">
+																<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr><a id="feesestwallet" href="javascript:;"></a></label>
 																<input class="form-control" id="txFee" type="text" value="0.00004000">
 															</div>
-															<div class="col-xs-5">
-																<label><abbr title="the amount to donate to coinb.in">Donation</abbr></label>
+															<div class="col-xs-4">
+																<label><abbr title="the amount to donate to Veles dev team">Donation</abbr></label>
 																<input class="form-control" id="developerDonation" type="text" value="0.003">
 															</div>
 														</div><br>
 														<div class="alert alert-danger hidden" id="walletSendStatus"></div><a id="walletSendBtn" type="button">
-															<div class="button-effect button-show btn"><span class="label label-show">Send</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+															<div class="button-effect button-show btn"><span class="label label-show">Send VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+													</div>
+												<!--
+												<div class="col-md-5" align="center">
+													<div id="walletQrCode"></div><br>
+
+												</div>
+											-->
+												<div class="col-md-4" align="center">
+													<br>
+													<ul class="nav nav-pills" role="tablist">
+														<!--
+														<li class="active" role="presentation"><a id="walletBalance" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																<div class="button-effect btn button-wallet"><span class="label label-show">0.00 VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+														<li role="presentation"><a id="walletShowKeys" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+														<li role="presentation"><a id="walletShowSpend" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Spend</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+														-->
+														<li role="presentation"><a id="walletHistory" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																<div class="button-effect btn button-wallet"><span class="label label-show">History</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+														<li role="presentation"><a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Buy</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+																<!-- TO DO -->
+														<li role="presentation"><a data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn" type="button">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Display QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+													</ul>
+												</div><br>
+												<div class="col-md-4">
+													<div id="walletKeys">
+														<label>Public Key</label>
+														<input class="form-control pubkey" type="text" readonly="">
+														<div class="walletSegWitRS hidden">
+															<label>Redeem Script <i>(SegWit)</i></label>
+															<input class="form-control" type="text" readonly="">
+														</div>
+														<label>Private key</label>
+														<div class="input-group">
+															<input class="form-control privkey" type="password" readonly=""><span class="input-group-btn">
+																<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
+														</div>
+														<label>Private Key (AES256 encrypted key)</label>
+														<input class="form-control privkeyaes" type="text" readonly="">
+													</div>
+												</div>
+											</div>
+											<div class="modal fade" id="modalQrcode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+															<h4 class="modal-title">qrcode</h4>
+														</div>
+														<div class="modal-body" align="center">
+															<div id="walletQrCode"></div><br>
+														</div>
+														<div class="modal-footer">
+															<!-- <button type="button" class="btn btn-default" data-dismiss="modal" id="qrCodeClose">Close</button>--><a id="qrCodeClose" target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal">
+																<div class="button-effect button-show btn"><span class="label label-show">Close</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -954,8 +1026,8 @@
 											<option value="130" rel="SIGHASH_NONE|SIGHASH_ANYONECANPAY: Signs only this one input and allows anyone to add or remove other inputs or outputs, so anyone who gets a copy of this input can spend it however they'd like.">NONE|ANYONECANPAY</option>
 											<option value="131" rel="SIGHASH_SINGLE|SIGHASH_ANYONECANPAY: Signs this one input and its corresponding output. Allows anyone to add or remove other inputs.">SINGLE|ANYONECANPAY</option>
 										</select>
-										<br>
 									</div>
+									<br>
 									<div class="alert alert-danger hidden" id="signedDataError"><span class="glyphicon glyphicon-exclamation-sign"></span> There is a problem with one or more of your inputs, please check and try again</div>
 									<div class="alert alert-success hidden" id="signedData">
 										<label>Signed transaction</label>
