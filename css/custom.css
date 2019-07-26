@@ -289,9 +289,9 @@ p.text-muted {
 }
 /* Cards */
 .card {
-	margin: 5px;
+	margin: 15px 5px;
 	min-height: 200px;
-  padding: 2.5rem;
+    padding: 2.5rem;
 }
 
 .card-dark {
@@ -325,6 +325,11 @@ p.text-muted {
   margin-bottom: -5px!important;
   font-size: 23px;
 }
+
+.card-title .glyphicon {
+    margin-right: 10px;
+}
+
 /*Fees*/
 .page-subtitle {
 	margin-bottom: 30px;
