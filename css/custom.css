@@ -547,6 +547,12 @@ li.nav-item {
     color: #8cff8c;
 		background-color: transparent;
 }
+@media only screen and (max-width: 768px) {
+	.footer-links .section {
+	    font-size: 15px;
+	    display: inline-table;
+	}
+}
 /* landing page */
 .wallet-landing .main-title, .wallet-landing .main-subtitle {
     text-transform: uppercase;
