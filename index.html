@@ -65,7 +65,7 @@
 					<div class="collapse navbar-collapse" id="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class="nav-item"><a class="nav-link" href="#wallet">Login</a></li>
-							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Generate<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Generate<img class="nav-arrow" src="images/sort-down.png"></img></a>
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li><a class="dropdown-item" href="#newAddress" data-toggle="tab">Address</a></li>
 									<li><a class="dropdown-item" href="#newSegWit" data-toggle="tab">SegWit Address</a></li>
@@ -78,7 +78,7 @@
 							<li class="nav-item"><a class="nav-link" href="#verify">Verify</a></li>
 							<li class="nav-item"><a class="nav-link" href="#sign">Sign</a></li>
 							<li class="nav-item"><a class="nav-link" href="#broadcast">Broadcast</a></li>
-							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Website<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Website<img class="nav-arrow" src="images/sort-down.png"></img></a>
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li><a class="dropdown-item" href="https://www.veles.network/">Home</a></li>
 									<li><a class="dropdown-item" href="https://www.veles.network/roadmap.en.html">Roadmap</a></li>
@@ -87,7 +87,7 @@
 									<li><a class="dropdown-item" href="https://www.veles.network/coin-specs.en.html">Resources</a></li>
 								</ul>
 							</li>
-							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorer<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explorer<img class="nav-arrow" src="images/sort-down.png"></img></a>
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li><a class="dropdown-item" href="https://explorer.veles.network/">Index</a></li>
 									<li><a class="dropdown-item" href="https://explorer.veles.network/movement">Movement</a></li>
@@ -429,8 +429,10 @@
 									<br>
 									<div class="row" id="multisigPubKeys">
 										<div class="form-horizontal form-flex">
-											<input class="form-control pubkey" type="text">
-											<a class="pubkeyAdd" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a><br><br>
+											<div class="col-xs-11">
+												<input class="form-control pubkey" type="text">
+											</div>
+												<a class="pubkeyAdd" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a><br><br>
 										</div>
 									</div>
 									<p>Enter the amount of signatures required to release the coins</p>
