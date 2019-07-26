@@ -10,7 +10,9 @@ html, body {
     height: auto;
 		background-color: #393939dd;
 }
-
+.modal-open .modal {
+    background: #11111188;
+}		
 .modal.in .modal-dialog {
     top: 12%;
     -webkit-transform: translate(0,0);
