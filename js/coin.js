@@ -1097,11 +1097,15 @@
 		/* broadcast a transaction */
 		r.broadcast = function(callback, txhex){
 			var tx = txhex || this.serialize();
-			// don't need to use  any specialized AJAX API, if we are already connected to the websocket
-			try {
-				velesSocketClient.get_cmd_result('node', 'sendrawtransaction ' + tx, {}, callback);
-			} catch(e) {
-				callback({'error': {'message': 'There was an error broadcasting your transaction, please try again'}});
+			// broadcast the TX using websocket
+			if (velesSocketClient.connected) {
+				try {
+					velesSocketClient.get_cmd_result('node', 'sendrawtransaction ' + tx, {}, callback);
+				} catch(e) {
+					callback({'error': {'message': 'There was an error broadcasting your transaction, please try again'}});
+				}
+			} else {
+				callback({'error': {'message': 'Websocked not connected, please try again later'}});
 			}
 		}
 
