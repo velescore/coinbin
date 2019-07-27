@@ -213,6 +213,7 @@
 											</form>
 										</div>
 										<div class="hidden" id="openWallet">
+											<!--
 											<div class="row">
 												<div class="col-sm-10">
 													<h2 class="page-subtitle">Welcome, <small>enjoy your stay!</small></h2>
@@ -220,7 +221,8 @@
 												<div align="right" class="col-sm-2">
 														<span align="right"><a id="walletLogout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></span>
 												</div>
-											</div>	
+											</div>
+										-->
 											<div class="row">
 												<div class="col-md-12" id="large-header">
 													<div class="header-tile">
@@ -328,13 +330,14 @@
 																<div class="button-effect btn button-wallet"><span class="label label-show">History</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
 														<li role="presentation"><a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
 																<div class="button-effect btn button-wallet"><span class="label label-show">Buy</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-																<!-- TO DO -->
 														<li role="presentation"><a data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn" type="button">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Display QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+																<div class="button-effect btn button-wallet"><span class="label label-show">Show QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+														<li role="presentation"><a data-toggle="modal" title="Show your keys" data-target="#modalWalletKeys" class="keysButton hidden" type="button">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Show Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
 													</ul>
 												</div><br>
 												<div class="col-md-4">
-													<div id="walletKeys">
+													<div id="walletKeys" class="hide-keys">
 														<label>Public Key</label>
 														<input class="form-control pubkey" type="text" readonly="">
 														<div class="walletSegWitRS hidden">
@@ -348,6 +351,37 @@
 														</div>
 														<label>Private Key (AES256 encrypted key)</label>
 														<input class="form-control privkeyaes" type="text" readonly="">
+													</div>
+												</div>
+												<div class="modal fade" id="modalWalletKeys" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+																<h4 class="modal-title">Keys</h4>
+															</div>
+															<div class="modal-body" align="center">
+																<div id="walletKeys">
+																	<label>Public Key</label>
+																	<input class="form-control pubkey" type="text" readonly="">
+																	<div class="walletSegWitRS hidden">
+																		<label>Redeem Script <i>(SegWit)</i></label>
+																		<input class="form-control" type="text" readonly="">
+																	</div>
+																	<label>Private key</label>
+																	<div class="input-group">
+																		<input class="form-control privkey" type="password" readonly=""><span class="input-group-btn">
+																			<button title="Display private key" class="showKey btn btn-default button-small-right" type="Submit"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
+																	</div>
+																	<label>Private Key (AES256 encrypted key)</label>
+																	<input class="form-control privkeyaes" type="text" readonly="">
+																</div>
+															</div>
+															<div class="modal-footer">
+																<!-- <button type="button" class="btn btn-default" data-dismiss="modal" id="qrCodeClose">Close</button>--><a id="qrCodeClose" target="_blank" rel="noopener noreferrer" type="button" data-dismiss="modal">
+																	<div class="button-effect button-show btn"><span class="label label-show">Close</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -377,7 +411,9 @@
 					<div class="tab-pane tab-content" id="newAddress">
 						<section>
 							<div class="container">
-								<h2 class="page-subtitle">New Address <small>create a new address</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">New Address <small>create a new address</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<div class="alert alert-info">
@@ -443,7 +479,9 @@
 					<div class="tab-pane tab-content" id="newSegWit">
 						<section class="section-dark">
 							<div class="container">
-								<h2 class="page-subtitle">New SegWit Address <small> Smaller & Faster Transactions</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">New SegWit Address <small> Smaller & Faster Transactions</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<div class="alert alert-info">
@@ -489,7 +527,9 @@
 					<div class="tab-pane tab-content" id="newMultiSig">
 						<section>
 							<div class="container">
-								<h2 class="page-subtitle">New Multisig Address <small>Secure multisig address</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">Multisig <small>Secure multisig address</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<div class="row">
@@ -552,7 +592,9 @@
 					<div class="tab-pane tab-content" id="newTimeLocked">
 						<section class="section-dark">
 							<div class="container">
-								<h2 class="page-subtitle">New Time Locked Address <small>Coins can be released only after a certain date</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">New Time Locked Address <small>Coins can be released only after a certain date</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<div class="row">
@@ -610,7 +652,9 @@
 					<div class="tab-pane tab-content" id="newHDaddress">
 						<section>
 							<div class="container">
-								<h2 class="page-subtitle">New HD Address <small>making bip32 even easier</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">New HD Address <small>making bip32 even easier</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<p>Use the form below to generate a <i>master</i> hierarchical deterministic address.</p>
@@ -644,7 +688,9 @@
 					<div class="tab-pane tab-content" id="newTransaction">
 						<section class="section-dark">
 							<div class="container">
-								<h2 class="page-subtitle">Transaction <small>Create a new transaction</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">Transaction <small>Create a new transaction</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<p>Use this page to create a raw transaction</p><b>Address, WIF key or Redeem Script</b>:
@@ -782,7 +828,9 @@
 					<div class="tab-pane tab-content" id="verify">
 						<section>
 							<div class="container">
-								<h2 class="page-subtitle">Verify <small>transactions and other scripts</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">Verify <small>transaction</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 											<p>Enter the raw transaction, redeem script, pubkey, hd address or wif key to convert it into a readable format that can be verified manually.</p>
@@ -1002,7 +1050,9 @@
 					<div class="tab-pane tab-content" id="sign">
 						<section class="section-dark">
 							<div class="container">
-								<h2 class="page-subtitle">Sign Transaction <small>once a transaction has been verified</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">Sign <small>transaction</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<p>Once you have <a href="#verify">verified</a> a transaction you can sign and then <a href="#broadcast">broadcast</a> it into the network.</p>
@@ -1045,7 +1095,9 @@
 					<div class="tab-pane tab-content" id="broadcast">
 						<section>
 							<div class="container">
-								<h2 class="page-subtitle">Broadcast Transaction <small>into the Veles network</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">Broadcast <small>transaction</small></h2>
+								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
 									<p>Enter your hex encoded Veles transaction</p>
@@ -1063,7 +1115,9 @@
 					<div class="tab-pane tab-content" id="dev">
 						<section>
 							<div class="container">
-								<h2 class="page-subtitle">Development <small>Javascript framework, API and more</small></h2>
+								<div class="col-sm-12">
+									<h2 class="page-subtitle">Development <small>Javascript framework, API and more</small></h2>
+								</div>
 								<div class="alert alert-info">This section is currently under development and is subject to change.</div>
 							</div>
 						</section>
@@ -1079,10 +1133,10 @@
 					<h5>Website</h5><a href="index.en.html">Home</a><a href="download.en.html">Download</a><a href="faq.en.html">FAQ</a><a href="coin-specs.en.html">Coins-specs</a><a href="whitepaper.en.html">Whitepaper</a><a href="masternode-guide.en.html">Masternode guide</a><a href="exchanges.en.html">Exchanges</a><a href="external-services.en.html">External-services</a><a href="crowdfundings.en.html">Crowdfundings</a><a href="mining-pools.en.html">Mining-pools</a><a href="team.en.html">Team</a><a href="roadmap.en.html">Roadmap</a>
 				</div>
 				<div class="section col-md-3">
-					<h5>Explorer</h5><a href="https://explorer.veles.network/">Search</a><a href="https://explorer.veles.network/richlist">Richlist</a><a href="https://explorer.veles.network/masternodes">Masternodes</a><a href="https://explorer.veles.network/movement">Movement</a><a href="https://explorer.veles.network/miningstats">Mining-stats</a><a href="https://explorer.veles.network/info">Api</a>
+					<h5>Webwallet</h5><a href="https://wallet.veles.network/#home">Home</a><a href="https://wallet.veles.network/#newAddress">New Address</a><a href="https://wallet.veles.network/#newSegWit">New SegWit</a><a href="https://wallet.veles.network/#newMultiSig">New MultiSig</a><a href="https://wallet.veles.network/#newTimeLocked">New TimeLocked</a><a href="https://wallet.veles.network/#newHDaddress">New HD Address</a><a href="https://wallet.veles.network/#newTransaction">New Transaction</a><a href="https://wallet.veles.network/#sign">Sign</a><a href="https://wallet.veles.network/#verify">Verify</a><a href="https://wallet.veles.network/#broadcast">Broadcast</a>
 				</div>
 				<div class="section col-md-3">
-					<h5>Webwallet</h5><a href="https://wallet.veles.network/#home">Home</a><a href="https://wallet.veles.network/#newAddress">New Address</a><a href="https://wallet.veles.network/#verify">Verify</a><a href="https://wallet.veles.network/#sign">Sign</a><a href="https://wallet.veles.network/#broadcast">Broadcast</a>
+					<h5>Explorer</h5><a href="https://explorer.veles.network/">Search</a><a href="https://explorer.veles.network/richlist">Richlist</a><a href="https://explorer.veles.network/masternodes">Masternodes</a><a href="https://explorer.veles.network/movement">Movement</a><a href="https://explorer.veles.network/miningstats">Mining-stats</a><a href="https://explorer.veles.network/info">Api</a>
 				</div>
 				<div class="section col-md-3">
 					<h5>Community</h5><a href="https://twitter.com/velescore">Twitter</a><a href="https://discord.gg/P528fGg">Discord</a><a href="https://steemit.com/@velescore/">Steemit</a><a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a><a href="https://www.coingecko.com/en/coins/veles">Coingecko</a><a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a><a href="https://masternodecap.com/coins/VLS">Masternodecap</a>
