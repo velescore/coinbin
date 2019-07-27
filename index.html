@@ -185,7 +185,7 @@
 														<div class="alert alert-danger hidden" id="openLoginStatus"></div><a id="openBtn" target="_blank" rel="noopener noreferrer" type="submit">
 															<div class="button-effect btn btn-login"><span class="label">Submit</span><span class="icon"><span></span></span><span class="icon2 icon2-login"></span></div></a><a class="optionsCollapse" href="javascript:;">
 															<br>
-															<div class="well well-sm"><span class="glyphicon glyphicon-collapse-down" id="glyphcollapse"></span> Advanced Options</div></a>
+															<div class="well well-sm"><img class="nav-arrow" src="images/sort-down.png"></img> Advanced Options</div></a>
 														<div class="hidden optionsAdvanced card-advanced">
 															<label>Segregated Witness Address</label>
 															<p class="checkbox">
@@ -207,7 +207,6 @@
 															</p>
 														</div>
 													</div>
-													<div class="card-footer"></div>
 												</div>
 												<div class="col-md-2"></div><br>
 												<div></div>
@@ -267,7 +266,7 @@
 															<span id="walletAddress"></span>
 															<div class="btn-group">
 																<button class="btn btn-default btn-xs dropdown-toggle" id="walletToBtn" type="button" data-toggle="dropdown">SegWit <span class="caret"></span></button>
-																<ul class="dropdown-menu">
+																<ul class="dropdown-menu dropdown-menu-wallet">
 																	<li><a id="walletToSegWit" href="javascript:;">SegWit</a></li>
 																	<li><a id="walletToSegWitBech32" href="javascript:;">SegWit/Bech32</a></li>
 																	<li><a id="walletToLegacy" href="javascript:;">Legacy</a></li>
@@ -703,7 +702,7 @@
 									<div class="hidden alert alert-danger" id="redeemFromStatus"></div>
 									<div class="hidden alert alert-info" id="redeemFromAddress"></div>
 									<div><a class="optionsCollapse" href="javascript:;">
-											<div class="well well-sm"><span class="glyphicon glyphicon-collapse-down" id="glyphcollapse"></span> Advanced Options</div></a>
+											<div class="well well-sm"><img class="nav-arrow" src="images/sort-down.png"></img> Advanced Options</div></a>
 										<div class="hidden optionsAdvanced card-advanced">
 											<label>Clear Inputs</label>
 											<p class="checkbox">
@@ -830,7 +829,7 @@
 						<section>
 							<div class="container">
 								<div class="col-sm-12">
-									<h2 class="page-subtitle">Verify <small>transaction</small></h2>
+									<h2 class="page-subtitle">Verify <small>transactions and other scripts</small></h2>
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
@@ -1052,7 +1051,7 @@
 						<section class="section-dark">
 							<div class="container">
 								<div class="col-sm-12">
-									<h2 class="page-subtitle">Sign <small>transaction</small></h2>
+									<h2 class="page-subtitle">Sign Tx <small>once a transaction has been verified</small></h2>
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
@@ -1097,7 +1096,7 @@
 						<section>
 							<div class="container">
 								<div class="col-sm-12">
-									<h2 class="page-subtitle">Broadcast <small>transaction</small></h2>
+									<h2 class="page-subtitle">Broadcast Tx<small>into the Veles network</small></h2>
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">

@@ -37,6 +37,10 @@ a.keysButton {
     display: none!important;
 	}
 }
+.button-effect .icon2 {
+		background: rgba(38, 38, 38, 0.9)!important;
+  	border-radius: 4px;
+}
 .button-small-right {
 		padding-right: 25px!important;
 		padding-left: 25px!important;
@@ -95,15 +99,19 @@ button#walletToBtn {
     color: white;
     border: 0;
     background-color: #262626bb;
-    font-size: 15px;
-    margin-top: -2px;
+		font-size: 15px;
+		margin-top: -4px;
+		letter-spacing: 1px;
+		font-weight: 500;
 }
 
 span#walletAddress {
 		border-radius: 3px;
     padding: 10px;
     background-color: #262626bb;
-    font-size: 14px;
+    font-size: 15px;
+		letter-spacing: 1px;
+    font-weight: 500;
 }
 
 .icon2-login {
@@ -180,7 +188,12 @@ ul.nav.nav-pills {
 .well {
   background-color: rgba(38, 38, 38, 0.7);
   border: 0;
+	font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 2px;
 	margin-bottom: 0px;
+	margin-top: 5px;
 }
 @media only screen and (max-width: 767px) {
 section {
@@ -303,7 +316,7 @@ p.text-muted {
 
 .card-login {
   background-color: rgba(32, 32, 32, 0.3)!important;
-	padding-bottom: 15px;
+	padding-bottom: 35px;
 }
 
 .margin-card-login {
@@ -317,15 +330,6 @@ p.text-muted {
   margin-bottom: -5px!important;
   font-size: 23px;
 	border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
-}
-
-.card-footer{
-  padding: 20px;
-  margin: 5px;
-	margin-top: -5px!important;
-  background: #262626bb!important;
-  font-size: 23px;
-	border-top: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
 .card-title .glyphicon {
@@ -469,7 +473,7 @@ p.text-muted {
     background: #11111188;
 }
 .modal.in .modal-dialog {
-    top: 12%;
+    top: 9%;
     -webkit-transform: translate(0,0);
     -ms-transform: translate(0,0);
     -o-transform: translate(0,0);
@@ -522,6 +526,10 @@ div#brand-text .brand-subtitle {
   background-color: transparent;
   border-color: transparent;
   color: white;
+}
+ul.dropdown-menu.dropdown-menu-wallet {
+    background-color: #262626ef;
+    margin-top: 1px;
 }
 .dropdown-menu>li>a {
   color: white;
