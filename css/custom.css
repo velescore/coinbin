@@ -68,9 +68,19 @@ button.btn.btn-info.qrcodeScanner:hover {
 		margin: 0px;
 }
 
+.button-wallet {
+	min-width: 170px;
+	margin: 0px 0px 0px 0px!important;
+}
+
+.button-left {
+	margin: -2px 10px 0px 0px!important;
+}
+
 .btn {
 	padding: 6px 2px;
 }
+
 .btn-login {
 	max-width: unset!important;
 	margin-left: 0!important;
@@ -97,6 +107,14 @@ button#walletToBtn {
 		font-weight: 500;
 }
 
+a#donateTxBtn {
+    color: #e4b99c;
+}
+
+a#donateTxBtn:hover {
+    color: #F19B7E;
+}
+
 .icon2-login {
 	border-radius: 4px;
 }
@@ -114,6 +132,10 @@ input#transactionFee {
   width: unset;
     /* white-space: nowrap; */
     /* vertical-align: middle; */
+}
+
+.input-group-margin {
+	margin-top: 5px;
 }
 
 .input-group {
@@ -148,20 +170,6 @@ ul.nav.nav-pills {
 
 .form-control.txIdScript {
     margin-left: 10px;
-}
-
-
-.input-group-margin {
-	margin-top: 5px;
-}
-
-.button-wallet {
-	min-width: 170px;
-	margin: 0px 0px 0px 0px!important;
-}
-
-.button-left {
-	margin: -2px 10px 0px 0px!important;
 }
 
 .label-show {
@@ -236,14 +244,6 @@ section {
 a:focus, a:active {
     color: #F19B7E;
     text-decoration: underline;
-}
-
-a#donateTxBtn {
-    color: #e4b99c;
-}
-
-a#donateTxBtn:hover {
-    color: #F19B7E;
 }
 
 .wallet-landing {
@@ -674,9 +674,32 @@ span#walletAddress {
 		letter-spacing: 2px;
 		padding: 5px 13px 10px 13px;
 }
+@media only screen and (max-width: 767px) {
+		.address-type-button {
+			font-size: 9px;
+		}
+}
 .switch-address-buttons {
-		margin-top: 0.4rem;
+		margin-top: 4px;
+}
+@media only screen and (max-width: 767px) {
+	.switch-address-buttons {
+	    margin-top: -1px;
+		}
 }
 a.grey-font {
-		border-color: #c6c6c6bb;
+		color: #c6c6c6bb;
+}
+a.grey-font:hover {
+		color: #F19B7Ebb;
+}
+@media only screen and (max-width: 767px) {
+	.row-margin {
+    	margin: 0px;
+  	}
+}
+@media only screen and (max-width: 767px) {
+	.dashboard-subtitle {
+			display: none;
+	}
 }
