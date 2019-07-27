@@ -274,7 +274,8 @@
 															</div>
 														</div>
 													</div>
-													<div class="col-md-4" id="walletSpend">
+													<div class="col-md-1"></div>
+													<div class="col-md-5" id="walletSpend">
 														<br>
 														<div class="row">
 															<div class="form-inline output">
@@ -315,6 +316,7 @@
 
 												</div>
 											-->
+												<div class="col-md-1"></div>
 												<div class="col-md-4" align="center">
 													<br>
 													<ul class="nav nav-pills" role="tablist">
@@ -326,16 +328,18 @@
 														<li role="presentation"><a id="walletShowSpend" target="_blank" rel="noopener noreferrer" href="javascript:;">
 																<div class="button-effect btn button-wallet"><span class="label label-show">Spend</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
 														-->
+														<li role="presentation"><a data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn" type="button">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Show QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+														<li role="presentation"><a data-toggle="modal" title="Show your keys" data-target="#modalWalletKeys" class="keysButton" type="button">
+																<div class="button-effect btn button-wallet"><span class="label label-show">Show Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
 														<li role="presentation"><a id="walletHistory" target="_blank" rel="noopener noreferrer" href="javascript:;">
 																<div class="button-effect btn button-wallet"><span class="label label-show">History</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
 														<li role="presentation"><a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
 																<div class="button-effect btn button-wallet"><span class="label label-show">Buy</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn" type="button">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Show QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a data-toggle="modal" title="Show your keys" data-target="#modalWalletKeys" class="keysButton hidden" type="button">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Show Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-													</ul>
+														</ul>
 												</div><br>
+												<div class="col-md-1"></div>
+												<!--
 												<div class="col-md-4">
 													<div id="walletKeys" class="hide-keys">
 														<label>Public Key</label>
@@ -353,6 +357,7 @@
 														<input class="form-control privkeyaes" type="text" readonly="">
 													</div>
 												</div>
+											-->
 												<div class="modal fade" id="modalWalletKeys" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 													<div class="modal-dialog">
 														<div class="modal-content">

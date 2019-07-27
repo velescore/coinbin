@@ -13,7 +13,11 @@ html, body {
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border-top: 1px solid #26262644;
 }
-
+button#redeemFromBtn {
+		font-weight: 600;
+		letter-spacing: 2px;
+		font-size: 14px;
+}
 button.btn.btn-info.qrcodeScanner {
     background-color: #262626bb;
     border: 1px solid #262626bb;
@@ -324,6 +328,8 @@ p.text-muted {
 }
 
 .card-header {
+	letter-spacing: 2px;
+	font-weight: 600;
   padding: 20px;
   margin: 5px;
   background: #262626bb!important;
@@ -459,7 +465,7 @@ p.text-muted {
 }
 
 #wallet ul.nav.nav-pills {
-  min-width: 250px;
+  min-width: 100%;
 }
 /* Modal */
 .modal-header {
