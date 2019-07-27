@@ -213,16 +213,14 @@
 											</form>
 										</div>
 										<div class="hidden" id="openWallet">
-											<!--
 											<div class="row">
 												<div class="col-sm-10">
 													<h2 class="page-subtitle">Welcome, <small>enjoy your stay!</small></h2>
 												</div>
 												<div align="right" class="col-sm-2">
-														<span align="right"><a id="walletLogout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></span>
+														<span align="right"><a id="walletLogout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a></span>
 												</div>
 											</div>
-										-->
 											<div class="row">
 												<div class="col-md-12" id="large-header">
 													<div class="header-tile">
@@ -259,86 +257,103 @@
 												</div>
 											</div>
 											<div class="row card-login">
-													<br><br>
-													<div class="row">
-														<div class="col-sm-12" align="center">
+													<div class="row"><br><br>
+														<div class="col-sm-3"></div>
+														<div class="col-sm-6" align="center">
 															<span class="hidden fa fa-spinner fa-spin" id="walletLoader"></span>
 															<span id="walletAddress"></span>
 															<div class="btn-group">
+																<!--
 																<button class="btn btn-default btn-xs dropdown-toggle" id="walletToBtn" type="button" data-toggle="dropdown">SegWit <span class="caret"></span></button>
 																<ul class="dropdown-menu dropdown-menu-wallet">
 																	<li><a id="walletToSegWit" href="javascript:;">SegWit</a></li>
 																	<li><a id="walletToSegWitBech32" href="javascript:;">SegWit/Bech32</a></li>
 																	<li><a id="walletToLegacy" href="javascript:;">Legacy</a></li>
 																</ul>
+															-->
 															</div>
 														</div>
+														<div class="col-sm-3"></div>
+														<div class="col-sm-4"></div>
+														<div class="col-sm-4 switch-address-buttons" align="center">
+																<div class="address-type-button">
+																	<a class="grey-font" id="walletToSegWit" href="javascript:;">SegWit</a>
+																</div>
+																<div class="address-type-button">
+																	<a class="grey-font" id="walletToSegWitBech32" href="javascript:;">Bech32</a>
+															  </div>
+																<div class="address-type-button">
+																	<a class="grey-font" id="walletToLegacy" href="javascript:;">Legacy</a>
+																</div>
+														</div>
+														<div class="col-sm-4"></div>
+													</div>
+													<br><br>
+													<div class="row">
+														<div class="col-md-1"></div>
+														<div class="col-md-5" id="walletSpend">
+															<div class="row">
+																<div class="form-inline output">
+																	<div class="col-xs-8">
+																		<label>Address</label>
+																	</div>
+																	<div class="col-xs-3">
+																		<label>Amount</label>
+																	</div>
+																</div>
+															</div>
+															<div class="row" id="walletSpendTo">
+																<div class="form-horizontal output">
+																	<div class="col-xs-8">
+																		<input class="form-control addressTo" type="text" data-original-title="" title="">
+																	</div>
+																	<div class="col-xs-3">
+																		<input class="form-control amount" type="text" data-original-title="" title="" placeholder="0.00">
+																	</div><a class="addressAdd" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a><br><br>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-xs-8">
+																	<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr><a id="feesestwallet" href="javascript:;"></a></label>
+																	<input class="form-control" id="txFee" type="text" value="0.00004000">
+																</div>
+																<div class="col-xs-4">
+																	<label><abbr title="the amount to donate to Veles dev team">Donation</abbr></label>
+																	<input class="form-control" id="developerDonation" type="text" value="0.003">
+																</div>
+															</div><br>
+															<div class="alert alert-danger hidden" id="walletSendStatus"></div><a id="walletSendBtn" type="button">
+																<div class="button-effect button-show btn"><span class="label label-show">Send VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
+														</div>
+													<!--
+													<div class="col-md-5" align="center">
+														<div id="walletQrCode"></div><br>
+
+													</div>
+												-->
+													<div class="col-md-1"></div>
+													<div class="col-md-4" align="center">
+														<ul class="nav nav-pills" role="tablist">
+															<!--
+															<li class="active" role="presentation"><a id="walletBalance" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">0.00 VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															<li role="presentation"><a id="walletShowKeys" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															<li role="presentation"><a id="walletShowSpend" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">Spend</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															-->
+															<li role="presentation"><a data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn" type="button">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">Show QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															<li role="presentation"><a data-toggle="modal" title="Show your keys" data-target="#modalWalletKeys" class="keysButton" type="button">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">Show Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															<li role="presentation"><a id="walletHistory" target="_blank" rel="noopener noreferrer" href="javascript:;">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">History</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															<li role="presentation"><a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
+																	<div class="button-effect btn button-wallet"><span class="label label-show">Buy</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
+															</ul>
 													</div>
 													<div class="col-md-1"></div>
-													<div class="col-md-5" id="walletSpend">
-														<br>
-														<div class="row">
-															<div class="form-inline output">
-																<div class="col-xs-8">
-																	<label>Address</label>
-																</div>
-																<div class="col-xs-3">
-																	<label>Amount</label>
-																</div>
-															</div>
-														</div>
-														<div class="row" id="walletSpendTo">
-															<div class="form-horizontal output">
-																<div class="col-xs-8">
-																	<input class="form-control addressTo" type="text" data-original-title="" title="">
-																</div>
-																<div class="col-xs-3">
-																	<input class="form-control amount" type="text" data-original-title="" title="" placeholder="0.00">
-																</div><a class="addressAdd" href="javascript:;"><span class="glyphicon glyphicon-plus"></span></a><br><br>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-xs-8">
-																<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr><a id="feesestwallet" href="javascript:;"></a></label>
-																<input class="form-control" id="txFee" type="text" value="0.00004000">
-															</div>
-															<div class="col-xs-4">
-																<label><abbr title="the amount to donate to Veles dev team">Donation</abbr></label>
-																<input class="form-control" id="developerDonation" type="text" value="0.003">
-															</div>
-														</div><br>
-														<div class="alert alert-danger hidden" id="walletSendStatus"></div><a id="walletSendBtn" type="button">
-															<div class="button-effect button-show btn"><span class="label label-show">Send VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a>
-													</div>
-												<!--
-												<div class="col-md-5" align="center">
-													<div id="walletQrCode"></div><br>
-
 												</div>
-											-->
-												<div class="col-md-1"></div>
-												<div class="col-md-4" align="center">
-													<br>
-													<ul class="nav nav-pills" role="tablist">
-														<!--
-														<li class="active" role="presentation"><a id="walletBalance" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">0.00 VLS</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a id="walletShowKeys" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a id="walletShowSpend" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Spend</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														-->
-														<li role="presentation"><a data-toggle="modal" title="Show QR code" data-target="#modalQrcode" class="qrcodeBtn" type="button">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Show QR</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a data-toggle="modal" title="Show your keys" data-target="#modalWalletKeys" class="keysButton" type="button">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Show Keys</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a id="walletHistory" target="_blank" rel="noopener noreferrer" href="javascript:;">
-																<div class="button-effect btn button-wallet"><span class="label label-show">History</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														<li role="presentation"><a target="_blank" rel="noopener noreferrer" href="https://veles.network/exchanges.en.html">
-																<div class="button-effect btn button-wallet"><span class="label label-show">Buy</span><span class="icon"><span></span></span><span class="icon2"></span></div></a></li>
-														</ul>
-												</div><br>
-												<div class="col-md-1"></div>
 												<!--
 												<div class="col-md-4">
 													<div id="walletKeys" class="hide-keys">
@@ -395,7 +410,7 @@
 													<div class="modal-content">
 														<div class="modal-header">
 															<button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
-															<h4 class="modal-title">qrcode</h4>
+															<h4 class="modal-title">QRcode</h4>
 														</div>
 														<div class="modal-body" align="center">
 															<div id="walletQrCode"></div><br>
@@ -834,7 +849,7 @@
 						<section>
 							<div class="container">
 								<div class="col-sm-12">
-									<h2 class="page-subtitle">Verify <small>transactions and other scripts</small></h2>
+									<h2 class="page-subtitle">Verify transactions<small> and other scripts</small></h2>
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
@@ -1056,7 +1071,7 @@
 						<section class="section-dark">
 							<div class="container">
 								<div class="col-sm-12">
-									<h2 class="page-subtitle">Sign Tx <small>once a transaction has been verified</small></h2>
+									<h2 class="page-subtitle">Sign transaction<small> once a transaction has been verified</small></h2>
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">
@@ -1101,7 +1116,7 @@
 						<section>
 							<div class="container">
 								<div class="col-sm-12">
-									<h2 class="page-subtitle">Broadcast Tx<small>into the Veles network</small></h2>
+									<h2 class="page-subtitle">Broadcast <small>transaction into the Veles network</small></h2>
 								</div>
 								<div class="col-lg-1"></div>
 								<div class="col-lg-10">

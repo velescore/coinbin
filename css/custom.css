@@ -26,20 +26,8 @@ button.btn.btn-info.qrcodeScanner {
 button.btn.btn-info.qrcodeScanner:hover {
     color: #F19B7Ebb;
 }
-
-a.keysButton {
-	display: none;
-}
-
-@media only screen and (max-width: 769px) {
-	a.hidden.keysButton {
-    display: block!important;
-	}
-}
-@media only screen and (max-width: 769px) {
-	.hide-keys {
-    display: none!important;
-	}
+#walletLogout {
+    color: #ffffff44;
 }
 .button-effect .icon2 {
 		background: rgba(38, 38, 38, 0.9)!important;
@@ -99,7 +87,7 @@ a.keysButton {
 }
 
 button#walletToBtn {
-    padding: 7px;
+    padding: 0.75rem;
     color: white;
     border: 0;
     background-color: #262626bb;
@@ -107,15 +95,6 @@ button#walletToBtn {
 		margin-top: -4px;
 		letter-spacing: 1px;
 		font-weight: 500;
-}
-
-span#walletAddress {
-		border-radius: 3px;
-    padding: 10px;
-    background-color: #262626bb;
-    font-size: 15px;
-		letter-spacing: 1px;
-    font-weight: 500;
 }
 
 .icon2-login {
@@ -447,7 +426,9 @@ p.text-muted {
 
 /* Wallet tab */
 #walletQrCode img {
+	opacity: 0.9;
   border: 5px solid white;
+  margin-top: 10px;
 }
 
 #wallet .button-effect {
@@ -469,11 +450,16 @@ p.text-muted {
 }
 /* Modal */
 .modal-header {
-    border-bottom: 1px solid #e4b99c44;
+	background-color: #26262688;
+	border-bottom: 1px dashed #cccccc44;
+}
+.modal-header .close {
+    margin-top: -2px;
+    color: linen;
 }
 .modal-content {
     height: auto;
-		background-color: #393939dd;
+		background-color: #424242bb;
 }
 .modal-open .modal {
     background: #11111188;
@@ -488,6 +474,11 @@ p.text-muted {
     right: 0;
     left: 0;
     /* position: absolute; */
+}
+.modal-footer {
+    padding: 0px 10px 0;
+		border-top: 1px solid transparent!important;
+    /* background-color: #26262688; */
 }
 /* Navigation */
 li.nav-item {
@@ -666,26 +657,26 @@ li.nav-item {
 		font-size: 11px!important;
 	}
 }
-/*
-.grow{
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
+/* main address + buttons for switching */
+span#walletAddress {
+		border-radius: 3px;
+    padding: 10px;
+    background-color: #262626bb;
+    font-size: 15px;
+		letter-spacing: 1px;
+    font-weight: 500;
 }
-*/
-.hide-keys {
-  filter:blur(0.2rem);
-	-webkit-filter:blur(0.2rem);
-	-moz-filter:blur(0.2rem);
-	-o-filter:blur(0.2rem);
-	-ms-filter:blur(0.2rem);
+.address-type-button {
+		width: 100%;
+		background-color: #262626bb;
+		display: inline;
+		font-size: 11px;
+		letter-spacing: 2px;
+		padding: 5px 13px 10px 13px;
 }
-
-.hide-keys:hover {
-	transition: 0.5s;
-	filter: blur(0px);
-	-webkit-filter: blur(0px);
-	-moz-filter: blur(0px);
-	-o-filter: blur(0px);
-	-ms-filter: blur(0px);
+.switch-address-buttons {
+		margin-top: 0.4rem;
+}
+a.grey-font {
+		border-color: #c6c6c6bb;
 }
