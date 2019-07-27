@@ -277,7 +277,7 @@ p.text-muted {
 }
 /* Cards */
 .card {
-	margin: 5px 5px;
+	margin: 15px 5px;
 	min-height: 200px;
     padding: 2.5rem;
 }
@@ -306,13 +306,26 @@ p.text-muted {
 	padding-bottom: 15px;
 }
 
+.margin-card-login {
+	margin: 5px 5px;
+}
+
 .card-header {
   padding: 20px;
   margin: 5px;
-  border-bottom: solid 1px #262626bb;
   background: #262626bb!important;
   margin-bottom: -5px!important;
   font-size: 23px;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.card-footer{
+  padding: 20px;
+  margin: 5px;
+	margin-top: -5px!important;
+  background: #262626bb!important;
+  font-size: 23px;
+	border-top: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
 .card-title .glyphicon {
