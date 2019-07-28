@@ -485,6 +485,19 @@ li.nav-item {
     padding: 0!important;
 		margin: 0!important;
 }
+@media only screen and (max-width: 767px) {
+	li.nav-item {
+    min-width: 200px;
+    height: 60px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.navbar-nav .open .dropdown-menu {
+    float: none;
+		position: absolute;
+    background-color: black;
+	}
+}
 div#brand-text {
     font-size: 21px;
     margin: 4px 6px;
@@ -583,6 +596,11 @@ li.nav-item {
 	    display: inline-table;
 	}
 }
+@media only screen and (max-width: 320px) {
+.footer-links {
+    margin-left: -2%;
+	}
+}
 /* landing page */
 .wallet-landing .main-title, .wallet-landing .main-subtitle {
     text-transform: uppercase;
@@ -675,16 +693,14 @@ span#walletAddress {
 }
 .address-type-button {
 		width: 100%;
-		background-color: #262626b8;
 		display: inline;
 		font-size: 12px;
 		letter-spacing: 1px;
-		border-top: 1px solid #26262611;
 		padding: 5px 13px 11px 13px;
 }
 @media only screen and (max-width: 767px) {
 		.address-type-button {
-			font-size: 9px;
+			font-size: 11px;
 		}
 }
 .switch-address-buttons {
@@ -697,6 +713,7 @@ span#walletAddress {
 }
 @media only screen and (max-width: 767px) {
 	.switch-address-buttons {
+			overflow: hidden;
 	    margin-top: 1px;
 		}
 }
@@ -705,6 +722,18 @@ a.grey-font {
 }
 a.grey-font:hover {
 		color: #F19B7Ebb;
+}
+a.addressAdd {
+    color: #c6c6c684;
+}
+a.addressAdd:hover {
+    color: #F19B7Ebb;
+}
+a.addressRemove {
+    color: #c6c6c684;
+}
+a.addressRemove:hover {
+    color: #F19B7Ebb;
 }
 @media only screen and (max-width: 770px) {
 	.row-margin {
