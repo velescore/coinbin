@@ -63,6 +63,9 @@ $(document).ready(function() {
 
 					$("#openLogin").hide();
 					$("#openWallet").removeClass("hidden").show();
+					
+					$('.walletLoggedOut').hide();
+					$('.walletLoggedIn').show();
 
 					walletBalance();
 					checkBalanceLoop();
@@ -79,7 +82,7 @@ $(document).ready(function() {
 		$("#openLoginStatus").prepend('<span class="glyphicon glyphicon-exclamation-sign"></span> ');
 	});
 
-	$("#walletLogout").click(function(){
+	$("#walletLogout").add(".walletLogout").click(function(){	// VLS: Multiple loagout triggers
 		$("#openEmail").val("");
 		$("#openPass").val("");
 		$("#openPassConfirm").val("");
@@ -98,6 +101,10 @@ $(document).ready(function() {
 		$("#walletKeys .pubkey").val("");
 
 		$("#openLoginStatus").html("").hide();
+
+		// VLS: Class to easily differe between logged in / out states
+		$('.walletLoggedIn').hide();
+		$('.walletLoggedOut').show();
 	});
 
 	$("#walletSegwit").click(function(){
@@ -265,7 +272,10 @@ $(document).ready(function() {
 				$(amount).parent().addClass('has-error');
 			}
 
-			if(coinjs.addressDecode($(address).val().trim())){	// Veles: Trim the address of whitespaces
+			// Veles: Trim the address of whitespaces
+			$(address).val($(address).val().trim());
+
+			if(coinjs.addressDecode($(address).val())){
 				$(address).parent().removeClass('has-error');
 			} else {
 				$(address).parent().addClass('has-error');

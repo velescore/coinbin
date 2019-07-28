@@ -613,6 +613,7 @@ li.nav-item {
     margin: auto auto;
     text-align: center;
     transition: all 1.0s ease;
+    min-width: 250px;
 }
 @media only screen and (max-width: 991px) {
 #large-header .header-tile {
@@ -630,7 +631,7 @@ li.nav-item {
     border: none;
     border-bottom: none;
     border-left: none;
-    height: calc((40vh - 40px) / 2);
+    height: 100px;
     width: 100%;
     font-size: 18px;
     z-index: 90;
@@ -702,4 +703,9 @@ a.grey-font:hover {
 	.dashboard-subtitle {
 			display: none;
 	}
+}
+
+/* Login logout */
+.nav>li.walletLoggedIn {
+    display: none;
 }

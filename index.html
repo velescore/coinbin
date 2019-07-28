@@ -64,7 +64,9 @@
 					</div>
 					<div class="collapse navbar-collapse" id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li class="nav-item"><a class="nav-link" href="#wallet">Login</a></li>
+							<li class="nav-item walletLoggedOut"><a class="nav-link" href="#wallet">Login</a></li>
+							<li class="nav-item walletLoggedIn"><a class="nav-link walletLogout" href="#wallet">Logout</a></li>
+							<li class="nav-item walletLoggedIn"><a class="nav-link" href="#wallet">Dashboard</a></li>
 							<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Generate<img class="nav-arrow" src="images/sort-down.png"></img></a>
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li><a class="dropdown-item" href="#newAddress" data-toggle="tab">Address</a></li>
@@ -116,7 +118,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="button-effect btn open-wallet-btn"><a href="#wallet"><span class="label">Open wallet »</span><span class="icon"><span></span></span><span class="icon2"></span></a></div><a target="_blank" rel="noopener noreferrer" href="https://veles.network/faq.en.html"></a>
-                                        <p>No registration, no fuss, just log in with new credentials to obtain new VLS address and start using your wallet!</p>
+                                        <p>No registration, no fuss, just log in with new credentials to obtain fresh VLS address and start using your wallet!</p>
 										<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys nor see your login credentials, this can be independently verified by reviewing the source code on <a href="https://github.com/velescore/veles-webwallet/" target="_blank">github</a>. You can even <a href="https://github.com/velescore/veles-webwallet/archive/master.zip">download</a> this page and host it yourself or run it offline!</p>
                                     </div>
                                 </div>
@@ -215,7 +217,7 @@
 										<div class="hidden" id="openWallet">
 											<div class="row">
 												<div class="col-sm-10">
-													<h2 class="page-subtitle dashboard-subtitle">Welcome, <small>enjoy your stay!</small></h2>
+													<h2 class="page-subtitle dashboard-subtitle">Welcome <small>to your online wallet!</small></h2>
 												</div>
 												<div align="right" class="col-sm-2">
 														<span align="right"><a id="walletLogout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a></span>
@@ -225,13 +227,13 @@
 												<div class="col-md-12" id="large-header">
 													<div class="header-tile">
 														<div class="tile-label">
-															USD Estimate
-															 <span class="tile-label-value" id="walletBalanceUSD">$ 0.00</span>
+															Value USD <abbr title="Estimation based on the current price average">*</abbr>
+															<span class="tile-label-value" id="walletBalanceUSD">$ 0.00</span>
 														</div>
 													</div>
 													<div class="header-tile">
 														<div class="tile-label">
-															VLS Balance
+															<b>Balance VLS</b>
 															<a id="walletBalance"
 																<span class="tile-label-value">0.00 VLS</span>
 															</a>
@@ -239,7 +241,7 @@
 													</div>
 													<div class="header-tile">
 														<div class="tile-label">
-															BTC Estimate
+															Value BTC <abbr title="Estimation based on the current price average">*</abbr>
 															<span class="tile-label-value" id="walletBalanceBTC">0.00 BTC</span>
 														</div>
 													</div>
