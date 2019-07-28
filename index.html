@@ -225,19 +225,13 @@
 												<div class="col-md-12" id="large-header">
 													<div class="header-tile">
 														<div class="tile-label">
-															Price in USD
-															<span class="tile-label-value"
-																		data-entity-id="market.price"
-																		data-attribute="price_usd"
-																		data-format="number"
-																		data-fixed-decimals="2"
-																		data-unit-before="$">0.00 $
-														 </span>
+															USD Estimate
+															 <span class="tile-label-value" id="walletBalanceUSD">$ 0.00</span>
 														</div>
 													</div>
 													<div class="header-tile">
 														<div class="tile-label">
-															Balance
+															VLS Balance
 															<a id="walletBalance"
 																<span class="tile-label-value">0.00 VLS</span>
 															</a>
@@ -245,13 +239,8 @@
 													</div>
 													<div class="header-tile">
 														<div class="tile-label">
-															Price in BTC
-															 <span data-entity-id="market.price"
-															 			 data-attribute="price_btc"
-																		 data-format="coin_amount"
-																		 data-unit="BTC"
-																		 class="tile-label-value">0.00 BTC
-															</span>
+															BTC Estimate
+															<span class="tile-label-value" id="walletBalanceBTC">0.00 BTC</span>
 														</div>
 													</div>
 												</div>
@@ -321,7 +310,7 @@
 																</div>
 																<div class="col-xs-4">
 																	<label><abbr title="the amount to donate to Veles dev team">Donation</abbr></label>
-																	<input class="form-control" id="developerDonation" type="text" value="0.003">
+																	<input class="form-control" id="developerDonation" type="text" value="1.00">
 																</div>
 															</div><br>
 															<div class="alert alert-danger hidden" id="walletSendStatus"></div><a id="walletSendBtn" type="button">

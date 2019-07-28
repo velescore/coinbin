@@ -265,7 +265,7 @@ $(document).ready(function() {
 				$(amount).parent().addClass('has-error');
 			}
 
-			if(coinjs.addressDecode($(address).val())){
+			if(coinjs.addressDecode($(address).val().trim())){	// Veles: Trim the address of whitespaces
 				$(address).parent().removeClass('has-error');
 			} else {
 				$(address).parent().addClass('has-error');
@@ -323,9 +323,13 @@ $(document).ready(function() {
 				}
 
 				$("#walletBalance").html("0.00 VLS").attr('rel',v).fadeOut().fadeIn();
+				$('#walletBalanceBTC').html("0.00 BTC");
+				$('#walletBalanceBTC').html("$ 0.00");
 			} else {
 				var v = Number(data);
-				$("#walletBalance").html(v + " VLS").attr('rel',v).fadeOut().fadeIn();
+				$("#walletBalance").html(+parseFloat(v).toFixed(8) + " VLS").attr('rel',v).fadeOut().fadeIn();
+				$('#walletBalanceBTC').html(+parseFloat(v * velesChain.state["market.price"].price_btc).toFixed(8) + ' BTC');
+				$('#walletBalanceUSD').html("$ " + +parseFloat(v * velesChain.state["market.price"].price_usd).toFixed(2));
 			}
 
 			$("#walletLoader").addClass("hidden");
