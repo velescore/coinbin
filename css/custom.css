@@ -485,7 +485,7 @@ li.nav-item {
     padding: 0!important;
 		margin: 0!important;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 766px) {
 	li.nav-item {
     min-width: 200px;
     height: 60px;
@@ -638,6 +638,16 @@ li.nav-item {
     font-size: 14px;
 	}
 }
+@media only screen and (max-height: 1024px) {
+#large-header .header-tile {
+    height: calc(30vh - 80px)!important;
+	}
+}
+@media only screen and (max-height: 816px) {
+#large-header .header-tile {
+    height: calc(40vh - 80px)!important;
+	}
+}
 @media only screen and (max-width: 1024px) {
 #large-header .header-tile {
     font-size: 16px;
@@ -649,7 +659,7 @@ li.nav-item {
     border: none;
     border-bottom: none;
     border-left: none;
-    height: 100px;
+		height: calc(10vh + 75px);
     width: 100%;
     font-size: 18px;
     z-index: 90;
@@ -740,7 +750,7 @@ a.addressRemove:hover {
     	margin: 0px;
   	}
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 767px) {
 	.dashboard-subtitle {
 			display: none;
 	}
