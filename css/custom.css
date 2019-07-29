@@ -643,7 +643,7 @@ li.nav-item {
     height: calc(30vh - 80px)!important;
 	}
 }
-@media only screen and (max-height: 816px) {
+@media only screen and (max-height: 824px) {
 #large-header .header-tile {
     height: calc(40vh - 80px)!important;
 	}
@@ -659,7 +659,7 @@ li.nav-item {
     border: none;
     border-bottom: none;
     border-left: none;
-		height: calc(10vh + 75px);
+		height: calc(10vh + 60px);
     width: 100%;
     font-size: 18px;
     z-index: 90;
