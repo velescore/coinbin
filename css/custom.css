@@ -13,6 +13,9 @@ html, body {
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border-top: 1px solid #26262644;
 }
+.footer-links-font {
+		font-size: 1.85rem;
+}
 button#redeemFromBtn {
 		font-weight: 600;
 		letter-spacing: 2px;
