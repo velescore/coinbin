@@ -608,7 +608,11 @@ li.nav-item {
     letter-spacing: 7.56px;
     white-space: nowrap;
 }
-
+@media only screen and (max-height: 568px) {
+	p.text-muted {
+		font-size: 10px;
+	}
+}
 .wallet-landing  .main-subtitle {
     font-size: 15px;
     color: #eee;
