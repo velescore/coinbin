@@ -741,6 +741,9 @@ span#walletAddress {
 		letter-spacing: 1px;
 		padding: 5px 13px 11px 13px;
 }
+.address-type-button.active {
+    text-decoration: underline transparent;
+}
 @media only screen and (max-width: 767px) {
 		.address-type-button {
 			font-size: 11px;

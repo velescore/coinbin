@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 					$("#openLogin").hide();
 					$("#openWallet").removeClass("hidden").show();
-					
+
 					$('.walletLoggedOut').hide();
 					$('.walletLoggedIn').show();
 
@@ -120,6 +120,10 @@ $(document).ready(function() {
 		$("#walletSegwit")[0].checked = true;
 		$("#walletSegwitp2sh")[0].checked = true;
 		$("#openBtn").click();
+	});
+
+	$('.switch-address-buttons').on('click', '.address-type-button', function() {
+  $(this).addClass('active').siblings().removeClass('active');
 	});
 
 	$("#walletToSegWitBech32").click(function(){
