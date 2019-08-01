@@ -605,27 +605,53 @@ li.nav-item {
 	}
 }
 /* landing page */
-.wallet-landing .main-title, .wallet-landing .main-subtitle {
+.main-title {
     text-transform: uppercase;
     font-size: 75px;
     letter-spacing: 7.56px;
     white-space: nowrap;
+}
+.main-subtitle {
+		text-transform: uppercase;
+		white-space: nowrap;
+    font-size: 15px;
+		letter-spacing: 7.56px;
+    color: #eee;
+    top: calc(50% + 75px);
+}
+@media only screen and (max-width: 414px) {
+		.main-title {
+				margin-top: 40px;
+				font-size: 35px;
+				letter-spacing: 7.56px;
+		}
+}
+@media only screen and (max-width: 414px) {
+		.main-subtitle {
+				margin-top: 40px;
+				font-size: 12px;
+				letter-spacing: 2.56px;
+		}
+}
+@media only screen and (max-width: 320px) {
+		.main-title {
+				font-size: 30px;
+		}
+}
+@media only screen and (max-width: 320px) {
+		.main-subtitle {
+				font-size: 10px;
+		}
 }
 @media only screen and (max-height: 568px) {
 	p.text-muted {
 		font-size: 10px;
 	}
 }
-.wallet-landing  .main-subtitle {
-    font-size: 15px;
-    color: #eee;
-    top: calc(50% + 75px);
-}
 .wallet-landing h1:first-child {
     margin-bottom: 35px!important;
     padding-top: 50px;
 }
-
 .wallet-landing .row:first-child {
     height: 140px;
 }
