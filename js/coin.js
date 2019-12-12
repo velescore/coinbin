@@ -1105,7 +1105,7 @@
 					callback({'error': {'message': 'There was an error broadcasting your transaction, please try again'}});
 				}
 			} else {
-				callback({'error': {'message': 'Websocked not connected, please try again later'}});
+				callback({'error': {'message': 'Websocket not connected, please try again later'}});
 			}
 		}
 
